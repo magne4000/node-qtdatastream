@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>NodeJS QtDataStream lib Index</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	
+	<link type="text/css" rel="stylesheet" href="styles/site.cerulean.css">
+	
+</head>
+
+<body>
+<div class="container-fluid">
+	<div class="navbar navbar-fixed-top navbar-inverse">
+		<div class="navbar-inner">
+			<a class="brand" href="index.html">NodeJS QtDataStream lib</a>
+			<ul class="nav">
+				
+				<li class="dropdown">
+					<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b
+						class="caret"></b></a>
+
+					<ul class="dropdown-menu ">
+						
+						<li>
+							<a href="module-qtdatastream.html">qtdatastream</a>
+						</li>
+						
+						<li>
+							<a href="reader.html">qtdatastream/reader</a>
+						</li>
+						
+						<li>
+							<a href="writer.html">qtdatastream/writer</a>
+						</li>
+						
+
+					</ul>
+				</li>
+				
+				<li class="dropdown">
+					<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b
+						class="caret"></b></a>
+
+					<ul class="dropdown-menu ">
+						
+						<li>
+							<a href="reader-Reader.html">Reader</a>
+						</li>
+						
+						<li>
+							<a href="writer-Writer.html">Writer</a>
+						</li>
+						
+						<li>
+							<a href="QBool.html">QBool</a>
+						</li>
+						
+						<li>
+							<a href="QList.html">QList</a>
+						</li>
+						
+						<li>
+							<a href="QMap.html">QMap</a>
+						</li>
+						
+						<li>
+							<a href="QString.html">QString</a>
+						</li>
+						
+						<li>
+							<a href="QUInt.html">QUInt</a>
+						</li>
+						
+						<li>
+							<a href="QVariant.html">QVariant</a>
+						</li>
+						
+
+					</ul>
+				</li>
+				
+			</ul>
+		</div>
+	</div>
+
+	<div class="row-fluid">
+
+		
+		<div class="span8">
+			
+				<div id="main">
+					
+
+
+	
+	<span class="page-title">Index</span>
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+
+
+
+
+
+    <section>
+        <article><h1>node-qtdatastream</h1>
+<p>Nodejs lib which can read/write Qt formatted Datastreams.</p>
+<p>For the moment the following types are handled for reading and writing: QBool, QUInt, QMap, QList, QString, QVariant</p>
+<h2>Getting Started</h2>
+<p>Install the module with <code>npm install node-qtdatastream --production</code>,
+or <code>npm install node-qtdatastream</code> for development purpose.</p>
+<h2>Documentation</h2>
+<p><a href="http://magne4000.github.io/node-qtdatastream/">Technical documentation</a></p>
+<h3>Type inference</h3>
+<p>Javascript type are automatically converted to Qt Types following by Writer:</p>
+<ul>
+<li>string -&gt; QString</li>
+<li>number -&gt; QUInt</li>
+<li>boolean -&gt; QBool</li>
+<li>Array -&gt; QList&lt;QVariant&lt;?&gt;&gt;</li>
+<li>Object -&gt; QMap&lt;QString, QVariant&lt;?&gt;&gt;</li>
+</ul>
+<p>And by Reader:</p>
+<ul>
+<li>QString -&gt; string</li>
+<li>QUInt -&gt; number</li>
+<li>QBool -&gt; boolean</li>
+<li>QList -&gt; Array</li>
+<li>QMap -&gt; Object</li>
+</ul>
+<h2>Examples</h2>
+<h3>Basic usage</h3>
+<pre><code class="lang-javascript">var net = require('net'),
+    Writer = require('qtdatastream').Writer,
+    Reader = require('qtdatastream').Reader;
+var client = net.Socket();
+
+// Connect to a Qt socket
+// and write something into the socket
+client.connect(65000, &quot;domain.tld&quot;, function(){
+    var writer = new Writer({
+        &quot;AString&quot;: &quot;BString&quot;,
+        &quot;CString&quot;: [&quot;DString&quot;, 1, 4, true],
+        &quot;EString&quot;: &quot;&quot;
+    });
+
+    client.write(writer.getBuffer());
+});
+
+// Read data from the socket
+client.on('data', function(data) {
+    var reader = new Reader(data);
+    var parsedObject = reader.parse();
+    //...
+});</code></pre>
+<h3>Extended usage</h3>
+<pre><code class="lang-javascript">var net = require('net'),
+    Writer = require('qtdatastream').Writer,
+    Reader = require('qtdatastream').Reader;
+var client = net.Socket();
+
+// Connect to a Qt socket
+// and write something into the socket
+client.connect(65000, &quot;domain.tld&quot;, function(){
+    var writer = new Writer({
+        &quot;AString&quot;: new QVariant(new QString(&quot;BString&quot;)),
+        &quot;CString&quot;: new QVariant(new QUInt(42))
+    });
+    client.write(writer.getBuffer());
+});</code></pre>
+<h2>Release History</h2>
+<h3>v0.1.0</h3>
+<ul>
+<li>Initial release</li>
+<li>Tested only tested with Qt protocol v10</li>
+</ul>
+<h2>License</h2>
+<p>Copyright (c) 2014 Joël Charles<br>Licensed under the MIT license.</p></article>
+    </section>
+
+
+
+
+
+
+
+				</div>
+
+				<div class="clearfix"></div>
+				<footer>
+					
+					
+		<span class="copyright">
+		Joël Charles Copyright © 2014
+		</span>
+					<br />
+					
+		<span class="jsdoc-message">
+		Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a>
+		on Fri Apr 18 2014 17:39:23 GMT+0200 (CEST) using the <a href="https://github.com/terryweiss/docstrap">DocStrap template</a>.
+		</span>
+				</footer>
+			</div>
+
+			
+			<div class="span3">
+				<div id="toc"></div>
+			</div>
+			
+			<br clear="both">
+		</div>
+
+	</div>
+	<script src="scripts/sunlight.js"></script>
+	<script src="scripts/sunlight.javascript.js"></script>
+	<script src="scripts/sunlight-plugin.doclinks.js"></script>
+	<script src="scripts/sunlight-plugin.linenumbers.js"></script>
+	<script src="scripts/sunlight-plugin.menu.js"></script>
+	<script src="scripts/jquery.min.js"></script>
+	<script src="scripts/jquery.scrollTo.js"></script>
+	<script src="scripts/jquery.localScroll.js"></script>
+	<script src="scripts/bootstrap-dropdown.js"></script>
+	<script src="scripts/toc.js"></script>
+
+
+	<script>  Sunlight.highlightAll({lineNumbers:true,  showMenu: true, enableDoclinks :true}); </script>
+
+	<script>
+		$( function () {
+			$( "#toc" ).toc( {
+				selectors   : "h1,h2,h3,h4",
+				showAndHide : false,
+				scrollTo    : 60
+			} );
+			$( "#toc>ul" ).addClass( "nav nav-pills nav-stacked" );
+			$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+
+		} );
+	</script>
+
+	
+
+</body>
+</html>
