@@ -1,5 +1,5 @@
 {
-  "name": "node-qtdatastream",
+  "name": "qtdatastream",
   "main": "./lib/qdatastream",
   "description": "Nodejs lib which can read/write Qt formatted Datastreams",
   "version": "0.1.0",
