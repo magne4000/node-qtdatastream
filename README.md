@@ -12,7 +12,9 @@ or `npm install node-qtdatastream` for development purpose.
 [Technical documentation](http://magne4000.github.io/qtdatastream/)
 
 ### Type inference
-Javascript type are automatically converted to Qt Types following by Writer:
+Javascript types are automatically converted to Qt Types, and vice versa.
+
+By Writer:
 
 * string -> QString
 * number -> QUInt
@@ -20,7 +22,7 @@ Javascript type are automatically converted to Qt Types following by Writer:
 * Array -> QList&lt;QVariant&lt;?&gt;&gt;
 * Object -> QMap&lt;QString, QVariant&lt;?&gt;&gt;
 
-And by Reader:
+By Reader:
 
 * QString -> string
 * QUInt -> number
