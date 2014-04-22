@@ -36,7 +36,6 @@
     "jsdoc": "~3.3.0",
     "ink-docstrap": "~0.3.0"
   },
-  "keywords": [],
   "dependencies": {
     "iconv": "~2.0.7"
   }
