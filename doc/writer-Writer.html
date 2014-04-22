@@ -490,7 +490,7 @@ var buffer = w.getBuffer(); //Buffer ready to be sent to a socket !</pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="writer.js.html">writer.js</a>, <a href="writer.js.html#sunlight-1-line-88">line 88</a>
+        <a href="writer.js.html">writer.js</a>, <a href="writer.js.html#sunlight-1-line-97">line 97</a>
     </li></ul></dd>
     
 
@@ -627,7 +627,7 @@ var buffer = w.getBuffer(); //Buffer ready to be sent to a socket !</pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="writer.js.html">writer.js</a>, <a href="writer.js.html#sunlight-1-line-141">line 141</a>
+        <a href="writer.js.html">writer.js</a>, <a href="writer.js.html#sunlight-1-line-150">line 150</a>
     </li></ul></dd>
     
 
@@ -741,7 +741,7 @@ var buffer = w.getBuffer(); //Buffer ready to be sent to a socket !</pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="writer.js.html">writer.js</a>, <a href="writer.js.html#sunlight-1-line-159">line 159</a>
+        <a href="writer.js.html">writer.js</a>, <a href="writer.js.html#sunlight-1-line-168">line 168</a>
     </li></ul></dd>
     
 
@@ -855,7 +855,7 @@ var buffer = w.getBuffer(); //Buffer ready to be sent to a socket !</pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="writer.js.html">writer.js</a>, <a href="writer.js.html#sunlight-1-line-182">line 182</a>
+        <a href="writer.js.html">writer.js</a>, <a href="writer.js.html#sunlight-1-line-191">line 191</a>
     </li></ul></dd>
     
 
@@ -969,7 +969,7 @@ var buffer = w.getBuffer(); //Buffer ready to be sent to a socket !</pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="writer.js.html">writer.js</a>, <a href="writer.js.html#sunlight-1-line-150">line 150</a>
+        <a href="writer.js.html">writer.js</a>, <a href="writer.js.html#sunlight-1-line-159">line 159</a>
     </li></ul></dd>
     
 
@@ -1083,7 +1083,7 @@ var buffer = w.getBuffer(); //Buffer ready to be sent to a socket !</pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="writer.js.html">writer.js</a>, <a href="writer.js.html#sunlight-1-line-132">line 132</a>
+        <a href="writer.js.html">writer.js</a>, <a href="writer.js.html#sunlight-1-line-141">line 141</a>
     </li></ul></dd>
     
 
@@ -1197,7 +1197,7 @@ var buffer = w.getBuffer(); //Buffer ready to be sent to a socket !</pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="writer.js.html">writer.js</a>, <a href="writer.js.html#sunlight-1-line-207">line 207</a>
+        <a href="writer.js.html">writer.js</a>, <a href="writer.js.html#sunlight-1-line-216">line 216</a>
     </li></ul></dd>
     
 
@@ -1233,7 +1233,100 @@ var buffer = w.getBuffer(); //Buffer ready to be sent to a socket !</pre>
     
     
     <div class="description">
-        <p>Get the buffer representation of the object</p>
+        <p>Get the buffer representation of the object.
+It is prefixed by the packet size as defined in Qt framework.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="writer.js.html">writer.js</a>, <a href="writer.js.html#sunlight-1-line-59">line 59</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>A Qt styled buffer ready to be sent through a socket</p>
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">Buffer</span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="getRawBuffer"><span class="type-signature"></span>getRawBuffer<span class="signature">()</span><span class="type-signature"> &rarr; {Buffer}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Get the buffer without prefixing it by its size.</p>
     </div>
     
 
@@ -1290,10 +1383,6 @@ var buffer = w.getBuffer(); //Buffer ready to be sent to a socket !</pre>
     <h5>Returns:</h5>
     
             
-<div class="param-desc">
-    <p>A Qt styled buffer ready to be sent through a socket</p>
-</div>
-
 
 
 <dl>
@@ -1408,7 +1497,7 @@ with the object as parameter</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="writer.js.html">writer.js</a>, <a href="writer.js.html#sunlight-1-line-78">line 78</a>
+        <a href="writer.js.html">writer.js</a>, <a href="writer.js.html#sunlight-1-line-87">line 87</a>
     </li></ul></dd>
     
 
@@ -1549,7 +1638,7 @@ with the object as parameter</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="writer.js.html">writer.js</a>, <a href="writer.js.html#sunlight-1-line-222">line 222</a>
+        <a href="writer.js.html">writer.js</a>, <a href="writer.js.html#sunlight-1-line-231">line 231</a>
     </li></ul></dd>
     
 
@@ -1689,7 +1778,7 @@ with the object as parameter</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="writer.js.html">writer.js</a>, <a href="writer.js.html#sunlight-1-line-233">line 233</a>
+        <a href="writer.js.html">writer.js</a>, <a href="writer.js.html#sunlight-1-line-242">line 242</a>
     </li></ul></dd>
     
 
@@ -1826,7 +1915,7 @@ with the object as parameter</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="writer.js.html">writer.js</a>, <a href="writer.js.html#sunlight-1-line-262">line 262</a>
+        <a href="writer.js.html">writer.js</a>, <a href="writer.js.html#sunlight-1-line-271">line 271</a>
     </li></ul></dd>
     
 
@@ -1989,7 +2078,7 @@ with the object as parameter</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="writer.js.html">writer.js</a>, <a href="writer.js.html#sunlight-1-line-299">line 299</a>
+        <a href="writer.js.html">writer.js</a>, <a href="writer.js.html#sunlight-1-line-308">line 308</a>
     </li></ul></dd>
     
 
@@ -2126,7 +2215,7 @@ with the object as parameter</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="writer.js.html">writer.js</a>, <a href="writer.js.html#sunlight-1-line-286">line 286</a>
+        <a href="writer.js.html">writer.js</a>, <a href="writer.js.html#sunlight-1-line-295">line 295</a>
     </li></ul></dd>
     
 
@@ -2263,7 +2352,7 @@ with the object as parameter</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="writer.js.html">writer.js</a>, <a href="writer.js.html#sunlight-1-line-245">line 245</a>
+        <a href="writer.js.html">writer.js</a>, <a href="writer.js.html#sunlight-1-line-254">line 254</a>
     </li></ul></dd>
     
 
@@ -2400,7 +2489,7 @@ with the object as parameter</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="writer.js.html">writer.js</a>, <a href="writer.js.html#sunlight-1-line-274">line 274</a>
+        <a href="writer.js.html">writer.js</a>, <a href="writer.js.html#sunlight-1-line-283">line 283</a>
     </li></ul></dd>
     
 
@@ -2470,7 +2559,7 @@ with the object as parameter</p>
 					
 		<span class="jsdoc-message">
 		Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a>
-		on Fri Apr 18 2014 17:58:49 GMT+0200 (CEST) using the <a href="https://github.com/terryweiss/docstrap">DocStrap template</a>.
+		on Tue Apr 22 2014 16:53:26 GMT+0200 (CEST) using the <a href="https://github.com/terryweiss/docstrap">DocStrap template</a>.
 		</span>
 				</footer>
 			</div>
