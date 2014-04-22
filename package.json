@@ -21,7 +21,6 @@
       "url": "https://github.com/magne4000/node-qtdatastream/blob/master/LICENSE-MIT"
     }
   ],
-  "main": "lib/node-qtdatastream",
   "engines": {
     "node": ">= 0.10.0"
   },
