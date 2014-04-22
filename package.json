@@ -2,7 +2,7 @@
   "name": "qtdatastream",
   "main": "./lib/qtdatastream",
   "description": "Nodejs lib which can read/write Qt formatted Datastreams",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "homepage": "https://github.com/magne4000/node-qtdatastream",
   "author": {
     "name": "Joël Charles",
