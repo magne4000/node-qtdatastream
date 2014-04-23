@@ -5,7 +5,8 @@ var qtdatastream = require('../lib/qtdatastream'),
     Reader = qtdatastream.Reader,
     QStringList = qtdatastream.QStringList,
     QInt = qtdatastream.QInt,
-    QShort = qtdatastream.QShort;
+    QShort = qtdatastream.QShort,
+    QUserType = qtdatastream.QUserType;
 
 /*
   ======== A Handy Little Nodeunit Reference ========
@@ -31,12 +32,30 @@ exports['pingpong'] = {
   setUp: function(done) {
     // Generate an object that will be converted
     // to buffer, and converted back to an object
+    
+    qtdatastream.registerUserType("NetworkId", qtdatastream.Types.INT);
+    qtdatastream.registerUserType("BufferInfo", [
+        {id: qtdatastream.Types.INT},
+        {network: qtdatastream.Types.INT},
+        {type: qtdatastream.Types.SHORT},
+        {group: qtdatastream.Types.INT},
+        {name: qtdatastream.Types.BYTEARRAY}
+    ]);
+    
     this.streamObj = {
         "AString": "BString",
         "CString": ["DString", 1, 4, true],
         "TestStringList" : new QStringList(["a", "b", "c"]),
         "TestInt" : new QInt(2),
         "TestShort" : new QShort(4),
+        "NetworkId": new QUserType("NetworkId", 32),
+        "BufferInfo": new QUserType("BufferInfo", {
+            id: 2,
+            network: 4,
+            type: 5,
+            group: 1,
+            name: "BufferInfo2"
+        }),
         "EString": ""
     };
     this.streamObjRet = {
@@ -45,6 +64,14 @@ exports['pingpong'] = {
         "TestStringList" : ["a", "b", "c"],
         "TestInt" : 2,
         "TestShort" : 4,
+        "NetworkId": 32,
+        "BufferInfo": {
+            id: 2,
+            network: 4,
+            type: 5,
+            group: 1,
+            name: "BufferInfo2"
+        },
         "EString": ""
     };
     done();

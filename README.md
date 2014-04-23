@@ -2,7 +2,8 @@
 
 Nodejs lib which can read/write Qt formatted Datastreams.
 
-For the moment the following types are handled for reading and writing: QBool, QUInt, QMap, QList, QString, QVariant
+For the moment the following types are handled for reading and writing:
+  QBool, QUInt, QMap, QList, QString, QVariant, QStringList, QShort, QInt, QByteArray, QUserType
 
 ## Getting Started
 Install the module with `npm install node-qtdatastream --production`,
@@ -32,6 +33,7 @@ By Reader:
 * QBool -> boolean
 * QList -> Array
 * QStringList -> Array&lt;string&gt;
+* QByteArray -> Buffer
 * QMap -> Object
 * QUserType -> Object
 
@@ -47,13 +49,13 @@ is the QUserType key.
 The Reader use an internal mechanism to know which parser must be used for each
 QUserType, they are defined like this :
 ```javascript
-Reader.registerUserType("NetworkId", qtdatastream.Types.INT); //NetworkId here is our key
+qtdatastream.registerUserType("NetworkId", qtdatastream.Types.INT); //NetworkId here is our key
 ```
 
 This tell the reader to decode `NetworkId` bytearray like and INT. But those
 structures can be much more complicated :
 ```javascript
-Reader.registerUserType("BufferInfo", [
+qtdatastream.registerUserType("BufferInfo", [
     {id: qtdatastream.Types.INT},
     {network: qtdatastream.Types.INT},
     {type: qtdatastream.Types.SHORT},
@@ -73,7 +75,22 @@ The definition is contained into an array to force a parsing order (here, `id` w
 always be the first &lt;int32&gt; block).
 
 ##### Writer
-Not done yet.
+Custom UserTypes must be defined as in Reader, with the help of `qtdatastream.registerUserType` method.
+
+Writing UserType is done as follow:
+```javascript
+new Writer({
+    "BufferInfo": new QUserType("BufferInfo", {
+        id: 2,
+        network: 4,
+        type: 5,
+        group: 1,
+        name: "BufferInfo2"
+    })
+});
+```
+
+See test folder for details.
 
 ## Examples
 ### Basic usage
@@ -122,6 +139,12 @@ client.connect(65000, "domain.tld", function(){
 ```
 
 ## Release History
+### v0.2.1
+* New types : QUserType, QByteArray
+
+### v0.2.0
+* New types : QInt, QStringList, QShort
+
 ### v0.1.0
 * Initial release
 * Tested only tested with Qt protocol v10
