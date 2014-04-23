@@ -21,14 +21,59 @@ By Writer:
 * boolean -> QBool
 * Array -> QList&lt;QVariant&lt;?&gt;&gt;
 * Object -> QMap&lt;QString, QVariant&lt;?&gt;&gt;
+* Q\*\*\* -> Q\*\*\*
 
 By Reader:
 
 * QString -> string
 * QUInt -> number
+* QInt -> number
+* QShort -> number
 * QBool -> boolean
 * QList -> Array
+* QStringList -> Array&lt;string&gt;
 * QMap -> Object
+* QUserType -> Object
+
+#### QUserType special treatment
+QUserType are special types defined by user (QVariant::UserType).
+
+QUserType are defined like this `<size:uint32><bytearray of size>`. bytearray
+can be casted to string (but it is not a string as intended by Qt,
+because it is UTF8 and not UTF16) : `bytearray.toString()`. The resulting string
+is the QUserType key.
+
+##### Reader
+The Reader use an internal mechanism to know which parser must be used for each
+QUserType, they are defined like this :
+```javascript
+Reader.registerUserType("NetworkId", qtdatastream.Types.INT); //NetworkId here is our key
+```
+
+This tell the reader to decode `NetworkId` bytearray like and INT. But those
+structures can be much more complicated :
+```javascript
+Reader.registerUserType("BufferInfo", [
+    {id: qtdatastream.Types.INT},
+    {network: qtdatastream.Types.INT},
+    {type: qtdatastream.Types.SHORT},
+    {group: qtdatastream.Types.INT},
+    {name: qtdatastream.Types.BYTEARRAY}
+]);
+```
+
+The bytearray corresponding to this structure look like this :
+```
+  <int32><int32><int16><int32><qbytearray>
+```
+
+The whole new type will be put in a new Object, the `id` key will contain the first
+&lt;int32&gt;, the `network` key will contain the second &lt;int32&gt;, etc.
+The definition is contained into an array to force a parsing order (here, `id` will
+always be the first &lt;int32&gt; block).
+
+##### Writer
+Not done yet.
 
 ## Examples
 ### Basic usage

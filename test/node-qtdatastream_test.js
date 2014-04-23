@@ -1,7 +1,11 @@
 'use strict';
 
-var Writer = require('../lib/qtdatastream').Writer,
-    Reader = require('../lib/qtdatastream').Reader;
+var qtdatastream = require('../lib/qtdatastream'),
+    Writer = qtdatastream.Writer,
+    Reader = qtdatastream.Reader,
+    QStringList = qtdatastream.QStringList,
+    QInt = qtdatastream.QInt,
+    QShort = qtdatastream.QShort;
 
 /*
   ======== A Handy Little Nodeunit Reference ========
@@ -30,6 +34,17 @@ exports['pingpong'] = {
     this.streamObj = {
         "AString": "BString",
         "CString": ["DString", 1, 4, true],
+        "TestStringList" : new QStringList(["a", "b", "c"]),
+        "TestInt" : new QInt(2),
+        "TestShort" : new QShort(4),
+        "EString": ""
+    };
+    this.streamObjRet = {
+        "AString": "BString",
+        "CString": ["DString", 1, 4, true],
+        "TestStringList" : ["a", "b", "c"],
+        "TestInt" : 2,
+        "TestShort" : 4,
         "EString": ""
     };
     done();
@@ -39,7 +54,7 @@ exports['pingpong'] = {
     var w = new Writer(this.streamObj);
     var r = new Reader(w.getBuffer());
     r.parse();
-    test.deepEqual(r.parsed, this.streamObj, 'Original and computed objects are not the same.');
+    test.deepEqual(r.parsed, this.streamObjRet, 'Original and computed objects are not the same.');
     test.done();
   }
 };
