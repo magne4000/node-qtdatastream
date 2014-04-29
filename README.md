@@ -141,6 +141,9 @@ client.connect(65000, "domain.tld", function(){
 ```
 
 ## Release History
+### v0.2.3
+* Fix QDateTime Reader
+
 ### v0.2.2
 * New type : QDateTime
 

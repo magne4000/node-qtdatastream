@@ -41,7 +41,8 @@ exports['pingpong'] = {
         {group: qtdatastream.Types.INT},
         {name: qtdatastream.Types.BYTEARRAY}
     ]);
-    
+    this.date = new Date();
+
     this.streamObj = {
         "AString": "BString",
         "CString": ["DString", 1, 4, true],
@@ -56,6 +57,7 @@ exports['pingpong'] = {
             group: 1,
             name: "BufferInfo2"
         }),
+        "Date": this.date,
         "EString": ""
     };
     this.streamObjRet = {
@@ -72,6 +74,7 @@ exports['pingpong'] = {
             group: 1,
             name: "BufferInfo2"
         },
+        "Date": this.date,
         "EString": ""
     };
     done();
