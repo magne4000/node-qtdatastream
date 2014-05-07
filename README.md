@@ -76,6 +76,15 @@ The whole new type will be put in a new Object, the `id` key will contain the fi
 The definition is contained into an array to force a parsing order (here, `id` will
 always be the first &lt;int32&gt; block).
 
+
+UserTypes can also be nested, by specifying the USERTYPE name instead of Qt type :
+```javascript
+qtdatastream.registerUserType("BufferInfoContainer", [
+    {id: qtdatastream.Types.INT},
+    {bufferInfo: "BufferInfo"}
+]);
+```
+
 ##### Writer
 Custom UserTypes must be defined as in Reader, with the help of `qtdatastream.registerUserType` method.
 
@@ -141,6 +150,9 @@ client.connect(65000, "domain.tld", function(){
 ```
 
 ## Release History
+### v0.2.4
+* Add the possibility to nest userTypes
+
 ### v0.2.3
 * Fix QDateTime Reader
 

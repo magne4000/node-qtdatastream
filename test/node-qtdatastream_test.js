@@ -39,7 +39,8 @@ exports['pingpong'] = {
         {network: qtdatastream.Types.INT},
         {type: qtdatastream.Types.SHORT},
         {group: qtdatastream.Types.INT},
-        {name: qtdatastream.Types.BYTEARRAY}
+        {name: qtdatastream.Types.BYTEARRAY},
+        {networkId: "NetworkId"}
     ]);
     this.date = new Date();
 
@@ -55,7 +56,8 @@ exports['pingpong'] = {
             network: 4,
             type: 5,
             group: 1,
-            name: "BufferInfo2"
+            name: "BufferInfo2",
+            networkId: 4
         }),
         "Date": this.date,
         "EString": ""
@@ -72,7 +74,8 @@ exports['pingpong'] = {
             network: 4,
             type: 5,
             group: 1,
-            name: "BufferInfo2"
+            name: "BufferInfo2",
+            networkId: 4
         },
         "Date": this.date,
         "EString": ""
