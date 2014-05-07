@@ -161,20 +161,6 @@ exports.Types = {
     SHORT: 133
 };
 
-exports.Class = [];
-exports.Class[exports.Types.BOOL] = exports.QBool,
-exports.Class[exports.Types.INT] = exports.QInt;
-exports.Class[exports.Types.UINT] = exports.QUInt;
-exports.Class[exports.Types.MAP] = exports.QMap;
-exports.Class[exports.Types.LIST] = exports.QList;
-exports.Class[exports.Types.STRING] = exports.QString;
-exports.Class[exports.Types.STRINGLIST] = exports.QStringList;
-exports.Class[exports.Types.BYTEARRAY] = exports.QByteArray;
-exports.Class[exports.Types.TIME] = exports.QTime;
-exports.Class[exports.Types.DATETIME] = exports.QDateTime;
-exports.Class[exports.Types.USERTYPE] = exports.QUserType;
-exports.Class[exports.Types.SHORT] = exports.QShort;
-
 exports.QTDATASTREAMCLASS = "__QTDATASTREAMCLASS__";
 
 exports.userTypes = {};
@@ -216,7 +202,7 @@ exports.isUserTypeComplex = function(key) {
  * new Writer("a string"); // will be written as QString
  * new Writer(new QVariant("a string")); // will be written as QVariant&lt;QString>
  */
-exports.QVariant = function(obj){
+exports.QVariant = function QVariant(obj){
     this.obj = obj;
     this._qclass = exports.QTDATASTREAMCLASS;
     if (typeof obj === 'object') {
@@ -266,7 +252,7 @@ exports.QVariant = function(obj){
  * @name QTime
  * @param {*} obj
  */
-exports.QTime = function(obj){
+exports.QTime = function QTime(obj){
     this.obj = obj;
     this._qclass = exports.QTDATASTREAMCLASS;
 };
@@ -278,7 +264,7 @@ exports.QTime = function(obj){
  * @name QDateTime
  * @param {*} obj
  */
-exports.QDateTime = function(obj){
+exports.QDateTime = function QDateTime(obj){
     this.obj = obj;
     this._qclass = exports.QTDATASTREAMCLASS;
 };
@@ -294,7 +280,7 @@ exports.QDateTime = function(obj){
  * @example
  * new Writer(new QString(null)); // will be written as a null QString
  */
-exports.QString = function(obj){
+exports.QString = function QString(obj){
     this.obj = obj;
     this._qclass = exports.QTDATASTREAMCLASS;
 };
@@ -307,7 +293,7 @@ exports.QString = function(obj){
  * @name QMap
  * @param {*} obj
  */
-exports.QMap = function(obj){
+exports.QMap = function QMap(obj){
     this.obj = obj;
     this._qclass = exports.QTDATASTREAMCLASS;
 };
@@ -321,7 +307,7 @@ exports.QMap = function(obj){
  * @name QList
  * @param {*} obj
  */
-exports.QList = function(obj){
+exports.QList = function QList(obj){
     this.obj = obj;
     this._qclass = exports.QTDATASTREAMCLASS;
 };
@@ -333,7 +319,7 @@ exports.QList = function(obj){
  * @name QStringList
  * @param {*} obj
  */
-exports.QStringList = function(obj){
+exports.QStringList = function QStringList(obj){
     this.obj = obj;
     this._qclass = exports.QTDATASTREAMCLASS;
 };
@@ -347,7 +333,7 @@ exports.QStringList = function(obj){
  * @name QUInt
  * @param {*} obj
  */
-exports.QUInt = function(obj){
+exports.QUInt = function QUInt(obj){
     this.obj = obj;
     this._qclass = exports.QTDATASTREAMCLASS;
 };
@@ -361,7 +347,7 @@ exports.QUInt = function(obj){
  * @name QBool
  * @param {*} obj
  */
-exports.QBool = function(obj){
+exports.QBool = function QBool(obj){
     this.obj = obj?1:0;
     this._qclass = exports.QTDATASTREAMCLASS;
 };
@@ -373,7 +359,7 @@ exports.QBool = function(obj){
  * @name QInt
  * @param {*} obj
  */
-exports.QInt = function(obj){
+exports.QInt = function QInt(obj){
     this.obj = obj;
     this._qclass = exports.QTDATASTREAMCLASS;
 };
@@ -385,7 +371,7 @@ exports.QInt = function(obj){
  * @name QShort
  * @param {*} obj
  */
-exports.QShort = function(obj){
+exports.QShort = function QShort(obj){
     this.obj = obj;
     this._qclass = exports.QTDATASTREAMCLASS;
 };
@@ -397,7 +383,7 @@ exports.QShort = function(obj){
  * @name QByteArray
  * @param {*} obj
  */
-exports.QByteArray = function(obj){
+exports.QByteArray = function QByteArray(obj){
     this.obj = obj;
     this._qclass = exports.QTDATASTREAMCLASS;
 };
@@ -410,7 +396,7 @@ exports.QByteArray = function(obj){
  * @param {string} name
  * @param {*} obj
  */
-exports.QUserType = function(name, obj){
+exports.QUserType = function QUserType(name, obj){
     this.obj = obj;
     this._qusertype_name = name;
     this._qclass = exports.QTDATASTREAMCLASS;
@@ -426,6 +412,36 @@ exports.QUserType.prototype.getName = function() {
 exports.Writer = require('./writer');
 
 exports.Reader = require('./reader');
+
+exports.Class = function(type, value) {
+    switch(type) {
+        case exports.Types.BOOL:
+            return new exports.QBool(value);
+        case exports.Types.INT:
+            return new exports.QInt(value);
+        case exports.Types.UINT:
+            return new exports.QUInt(value);
+        case exports.Types.MAP:
+            return new exports.QMap(value);
+        case exports.Types.LIST:
+            return new exports.QList(value);
+        case exports.Types.STRING:
+            return new exports.QString(value);
+        case exports.Types.STRINGLIST:
+            return new exports.QStringList(value);
+        case exports.Types.BYTEARRAY:
+            return new exports.QByteArray(value);
+        case exports.Types.TIME:
+            return new exports.QTime(value);
+        case exports.Types.DATETIME:
+            return new exports.QDateTime(value);
+        case exports.Types.USERTYPE:
+            return new exports.QUserType(value);
+        case exports.Types.SHORT:
+            return new exports.QShort(value);
+    }
+};
+
 </pre>
         </article>
     </section>
@@ -447,7 +463,7 @@ exports.Reader = require('./reader');
 					
 		<span class="jsdoc-message">
 		Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a>
-		on Wed May 07 2014 16:15:38 GMT+0200 (CEST) using the <a href="https://github.com/terryweiss/docstrap">DocStrap template</a>.
+		on Wed May 07 2014 20:39:12 GMT+0200 (CEST) using the <a href="https://github.com/terryweiss/docstrap">DocStrap template</a>.
 		</span>
 				</footer>
 			</div>

@@ -6,6 +6,7 @@ var qtdatastream = require('../lib/qtdatastream'),
     QStringList = qtdatastream.QStringList,
     QInt = qtdatastream.QInt,
     QShort = qtdatastream.QShort,
+    QByteArray = qtdatastream.QByteArray,
     QUserType = qtdatastream.QUserType;
 
 /*
@@ -40,7 +41,7 @@ exports['pingpong'] = {
         {type: qtdatastream.Types.SHORT},
         {group: qtdatastream.Types.INT},
         {name: qtdatastream.Types.BYTEARRAY},
-        {networkId: "NetworkId"}
+        {ni: "NetworkId"}
     ]);
     this.date = new Date();
 
@@ -49,6 +50,7 @@ exports['pingpong'] = {
         "CString": ["DString", 1, 4, true],
         "TestStringList" : new QStringList(["a", "b", "c"]),
         "TestInt" : new QInt(2),
+        "TestByteArray" : new QByteArray("aaa"),
         "TestShort" : new QShort(4),
         "NetworkId": new QUserType("NetworkId", 32),
         "BufferInfo": new QUserType("BufferInfo", {
@@ -57,7 +59,7 @@ exports['pingpong'] = {
             type: 5,
             group: 1,
             name: "BufferInfo2",
-            networkId: 4
+            ni: new QUserType("NetworkId", 4000)
         }),
         "Date": this.date,
         "EString": ""
@@ -67,6 +69,7 @@ exports['pingpong'] = {
         "CString": ["DString", 1, 4, true],
         "TestStringList" : ["a", "b", "c"],
         "TestInt" : 2,
+        "TestByteArray" : "aaa",
         "TestShort" : 4,
         "NetworkId": 32,
         "BufferInfo": {
@@ -74,20 +77,54 @@ exports['pingpong'] = {
             network: 4,
             type: 5,
             group: 1,
-            name: "BufferInfo2",
-            networkId: 4
+            name: new Buffer("BufferInfo2"),
+            ni: 4000
         },
         "Date": this.date,
         "EString": ""
     };
+
+     this.slist = [
+        2,
+        "BacklogManager",
+        "",
+        "requestBacklog",
+        new qtdatastream.QUserType("NetworkId", 5),
+        new qtdatastream.QUserType("NetworkId", -1),
+        new qtdatastream.QUserType("NetworkId", -1),
+    ];
+
+    this.slistRet = [
+        2,
+        "BacklogManager",
+        "",
+        "requestBacklog",
+        5,
+        -1,
+        -1
+    ];
     done();
   },
   'no args': function(test) {
-    test.expect(1);
+    test.expect(2);
     var w = new Writer(this.streamObj);
     var r = new Reader(w.getBuffer());
-    r.parse();
+    try {
+        r.parse();
+    } catch (e){
+        console.trace(e);
+    }
     test.deepEqual(r.parsed, this.streamObjRet, 'Original and computed objects are not the same.');
+
+    w = new Writer(this.slist);
+    r = new Reader(w.getBuffer());
+    try {
+        r.parse();
+    } catch (e){
+        console.trace(e);
+    }
+    test.deepEqual(r.parsed, this.slistRet, 'Original and computed objects are not the same.');
+    
     test.done();
   }
 };

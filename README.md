@@ -3,7 +3,7 @@
 Nodejs lib which can read/write Qt formatted Datastreams.
 
 For the moment the following types are handled for reading and writing:
-  QBool, QUInt, QMap, QList, QString, QVariant, QStringList, QShort, QInt, QByteArray, QUserType, QDateTime
+  QBool, QUInt, QMap, QList, QString, QVariant, QStringList, QShort, QInt, QByteArray, QUserType, QDateTime, QTime
 
 ## Getting Started
 Install the module with `npm install node-qtdatastream --production`,
@@ -38,6 +38,7 @@ By Reader:
 * QMap -> Object
 * QUserType -> Object
 * QDateTime -> Date
+* QTime -> number
 
 #### QUserType special treatment
 QUserType are special types defined by user (QVariant::UserType).
@@ -150,6 +151,9 @@ client.connect(65000, "domain.tld", function(){
 ```
 
 ## Release History
+### v0.2.5
+* Fix writing userTypes and byteArrays
+
 ### v0.2.4
 * Add the possibility to nest userTypes
 
