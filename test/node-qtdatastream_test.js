@@ -29,7 +29,7 @@ var qtdatastream = require('../lib/qtdatastream'),
     test.ifError(value)
 */
 
-exports['pingpong'] = {
+exports.pingpong = {
   setUp: function(done) {
     // Generate an object that will be converted
     // to buffer, and converted back to an object
@@ -84,7 +84,7 @@ exports['pingpong'] = {
         "EString": ""
     };
 
-     this.slist = [
+    this.slist = [
         2,
         "BacklogManager",
         "",

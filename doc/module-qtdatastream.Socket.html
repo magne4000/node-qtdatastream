@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>NodeJS QtDataStream lib Class: QUInt</title>
+	<title>NodeJS QtDataStream lib Class: Socket</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -131,12 +131,14 @@
 					
 
 
-	<h1 class="page-title">Class: QUInt</h1>
+	<h1 class="page-title">Class: Socket</h1>
 <section>
 
 <header>
     <h2>
-    QUInt
+        <span class="ancestors"><a href="module-qtdatastream.html">qtdatastream</a>.</span>
+    
+    Socket
     </h2>
     
 </header>
@@ -148,7 +150,7 @@
     
         
 <dt>
-    <h4 class="name" id="QUInt"><span class="type-signature"></span>new QUInt<span class="signature">(obj)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="Socket"><span class="type-signature"></span>new Socket<span class="signature">(socket)</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -156,10 +158,9 @@
     
     
     <div class="description">
-        <p>This class allow users to force a specific object to be recognized as
-a QUInt for the Writer.
-Javascript number are converted to QUInt objects internally.
-When parsed from reader, QUInt objects are converted back to Javascript number</p>
+        <p>Qt compliant Socket overload.
+'data' event is triggered only when full buffer is received.
+'error', 'close' and 'end' event are not altered.</p>
     </div>
     
 
@@ -193,13 +194,13 @@ When parsed from reader, QUInt objects are converted back to Javascript number</
 
         <tr>
             
-                <td class="name"><code>obj</code></td>
+                <td class="name"><code>socket</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">*</span>
+<span class="param-type">net.Socket</span>
 
 
             
@@ -241,7 +242,7 @@ When parsed from reader, QUInt objects are converted back to Javascript number</
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="qtdatastream.js.html">qtdatastream.js</a>, <a href="qtdatastream.js.html#sunlight-1-line-273">line 273</a>
+        <a href="qtdatastream.js.html">qtdatastream.js</a>, <a href="qtdatastream.js.html#sunlight-1-line-48">line 48</a>
     </li></ul></dd>
     
 
@@ -281,6 +282,128 @@ When parsed from reader, QUInt objects are converted back to Javascript number</
 
     
 
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        <dl>
+            
+<dt>
+    <h4 class="name" id="write"><span class="type-signature"></span>write<span class="signature">(data)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Write data to the socket</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Data that will be written using Writer</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="qtdatastream.js.html">qtdatastream.js</a>, <a href="qtdatastream.js.html#sunlight-1-line-108">line 108</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        </dl>
     
 
     

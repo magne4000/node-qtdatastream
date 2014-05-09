@@ -108,28 +108,28 @@ See test folder for details.
 ### Basic usage
 ```javascript
 var net = require('net'),
-    Writer = require('qtdatastream').Writer,
-    Reader = require('qtdatastream').Reader;
+    qtdatastream = require('qtdatastream'),
+    QtSocket = qtdatastream.Socket;
 var client = net.Socket();
 
 // Connect to a Qt socket
 // and write something into the socket
 client.connect(65000, "domain.tld", function(){
-    var writer = new Writer({
-        "AString": "BString",
-        "CString": ["DString", 1, 4, true],
-        "EString": ""
+    var qtsocket = new QtSocket(client);
+    
+    // Here data is the already parsed response
+    qtsocket.on('data', function(data) {
+        //...
     });
     
-    client.write(writer.getBuffer());
+    // Write something to the socket
+    qtsocket.write({
+        "AString": "BString",
+        "CString": 42
+    });
 });
 
-// Read data from the socket
-client.on('data', function(data) {
-    var reader = new Reader(data);
-    var parsedObject = reader.parse();
-    //...
-});
+
 ```
 
 ### Extended usage
@@ -148,9 +148,30 @@ client.connect(65000, "domain.tld", function(){
     });
     client.write(writer.getBuffer());
 });
+
+client.on('data', function(data) {
+    var reader = new Reader(data);
+    var parsedData = data.parse();
+    //...
+});
+
+//NB: It is not advisable to use net.Socket directly because buffers are received
+//in chunks. Using qtdatastream.Socket allows to ignore this. Moreover, its parses
+//automatically the buffers.
+```
+
+## Debugging
+Debug mode can be activated by setting environment variable QTDSDEBUG in your shell before launching your program:
+```
+export QTDSDEBUG="ON"
 ```
 
 ## Release History
+### v0.3.0
+* New Socket class returning 'data' event only when full parseable buffer received.
+It also have a write(...) method to write data to the buffer without directly
+using Writer class.
+
 ### v0.2.5
 * Fix writing userTypes and byteArrays
 
