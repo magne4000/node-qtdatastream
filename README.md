@@ -167,6 +167,9 @@ export QTDSDEBUG="ON"
 ```
 
 ## Release History
+### v0.3.1
+* Fix QByteArray writing
+
 ### v0.3.0
 * New Socket class returning 'data' event only when full parseable buffer received.
 It also have a write(...) method to write data to the buffer without directly

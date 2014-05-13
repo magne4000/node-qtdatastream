@@ -69,7 +69,7 @@ exports.pingpong = {
         "CString": ["DString", 1, 4, true],
         "TestStringList" : ["a", "b", "c"],
         "TestInt" : 2,
-        "TestByteArray" : "aaa",
+        "TestByteArray" : new Buffer("aaa"),
         "TestShort" : 4,
         "NetworkId": 32,
         "BufferInfo": {
