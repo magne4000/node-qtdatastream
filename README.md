@@ -167,6 +167,9 @@ export QTDSDEBUG="ON"
 ```
 
 ## Release History
+### v0.3.2
+* Fix steam parsing
+
 ### v0.3.1
 * Fix QByteArray writing
 
