@@ -4,6 +4,7 @@ var qtdatastream = require('../lib/qtdatastream'),
     Writer = qtdatastream.Writer,
     Reader = qtdatastream.Reader,
     QStringList = qtdatastream.QStringList,
+    QChar = qtdatastream.QChar,
     QInt = qtdatastream.QInt,
     QShort = qtdatastream.QShort,
     QByteArray = qtdatastream.QByteArray,
@@ -47,6 +48,7 @@ exports.pingpong = {
 
     this.streamObj = {
         "AString": "BString",
+        "CharTest": new QChar("a"),
         "CString": ["DString", 1, 4, true],
         "TestStringList" : new QStringList(["a", "b", "c"]),
         "TestInt" : new QInt(2),
@@ -66,6 +68,7 @@ exports.pingpong = {
     };
     this.streamObjRet = {
         "AString": "BString",
+        "CharTest": "a",
         "CString": ["DString", 1, 4, true],
         "TestStringList" : ["a", "b", "c"],
         "TestInt" : 2,

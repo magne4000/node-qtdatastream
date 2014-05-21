@@ -3,7 +3,7 @@
 Nodejs lib which can read/write Qt formatted Datastreams.
 
 For the moment the following types are handled for reading and writing:
-  QBool, QUInt, QMap, QList, QString, QVariant, QStringList, QShort, QInt, QByteArray, QUserType, QDateTime, QTime
+  QBool, QUInt, QMap, QList, QString, QVariant, QStringList, QShort, QInt, QByteArray, QUserType, QDateTime, QTime, QChar
 
 ## Getting Started
 Install the module with `npm install node-qtdatastream --production`,
@@ -39,6 +39,7 @@ By Reader:
 * QUserType -> Object
 * QDateTime -> Date
 * QTime -> number
+* QChar -> string
 
 #### QUserType special treatment
 QUserType are special types defined by user (QVariant::UserType).
@@ -167,38 +168,31 @@ export QTDSDEBUG="ON"
 ```
 
 ## Release History
-### v0.3.2
-* Fix steam parsing
-
-### v0.3.1
-* Fix QByteArray writing
-
-### v0.3.0
-* New Socket class returning 'data' event only when full parseable buffer received.
-It also have a write(...) method to write data to the buffer without directly
-using Writer class.
-
-### v0.2.5
-* Fix writing userTypes and byteArrays
-
-### v0.2.4
-* Add the possibility to nest userTypes
-
-### v0.2.3
-* Fix QDateTime Reader
-
-### v0.2.2
-* New type : QDateTime
-
-### v0.2.1
-* New types : QUserType, QByteArray
-
-### v0.2.0
-* New types : QInt, QStringList, QShort
-
-### v0.1.0
-* Initial release
-* Tested only tested with Qt protocol v10
+* v0.3.3
+  * New type : QChar
+* v0.3.2
+  * Fix steam parsing
+* v0.3.1
+  * Fix QByteArray writing
+* v0.3.0
+  * New Socket class returning 'data' event only when full parseable buffer received.
+  It also have a write(...) method to write data to the buffer without directly
+  using Writer class.
+* v0.2.5
+  * Fix writing userTypes and byteArrays
+* v0.2.4
+  * Add the possibility to nest userTypes
+* v0.2.3
+  * Fix QDateTime Reader
+* v0.2.2
+  * New type : QDateTime
+* v0.2.1
+  * New types : QUserType, QByteArray
+* v0.2.0
+  * New types : QInt, QStringList, QShort
+* v0.1.0
+  * Initial release
+  * Tested only tested with Qt protocol v10
 
 ## License
 Copyright (c) 2014 Joël Charles  
