@@ -168,6 +168,8 @@ export QTDSDEBUG="ON"
 ```
 
 ## Release History
+* v0.3.4
+  * iconv deleted from dependency (using internal UCS2 with fix for UTF16BE)
 * v0.3.3
   * New type : QChar
 * v0.3.2

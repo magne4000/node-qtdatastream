@@ -3,7 +3,7 @@
   "main": "./lib/qtdatastream",
   "keywords": ["qtdatastream", "qt", "datastream", "qvariant", "buffer"],
   "description": "Nodejs lib which can read/write Qt formatted Datastreams",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "homepage": "https://github.com/magne4000/node-qtdatastream",
   "author": {
     "name": "Joël Charles",
@@ -35,8 +35,5 @@
     "grunt": "~0.4.4",
     "jsdoc": "~3.3.0",
     "ink-docstrap": "~0.3.0"
-  },
-  "dependencies": {
-    "iconv": "~2.0.7"
   }
 }
