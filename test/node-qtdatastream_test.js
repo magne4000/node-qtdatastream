@@ -69,7 +69,7 @@ exports.pingpong = {
     this.streamObjRet = {
         "AString": "BString",
         "CharTest": "a",
-        "CString": ["DString", 1, 4, true],
+        "CString": ["DString", 1, 4, 1],
         "TestStringList" : ["a", "b", "c"],
         "TestInt" : 2,
         "TestByteArray" : new Buffer("aaa"),

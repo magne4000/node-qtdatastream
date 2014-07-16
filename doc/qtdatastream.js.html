@@ -198,9 +198,9 @@ exports.toggleEndianness = function(buffer) {
  * 'data' event is triggered only when full buffer is received.
  * 'error', 'close' and 'end' event are not altered.
  * @class
- * @param {net.Socket}
+ * @param {net.Socket} socket
  */
-exports.Socket = function Socket(socket) {
+exports.Socket = function Socket(socket, readCallback, writeCallback) {
     var Reader = require('./reader');
     if (!(socket instanceof NetSocket)) {
         throw "Socket must be an instance of net.Socket";
@@ -208,40 +208,54 @@ exports.Socket = function Socket(socket) {
     var self = this;
     self.socket = socket;
     self.oldbuf = null;
+    self.readCallback = readCallback;
+    self.writeCallback = writeCallback;
     
     this.socket.on('data', function(data) {
-        var stop = false;
-        while (!stop) {
-            if (data === null) {
-                data = self.oldbuf;
-            }else if (self.oldbuf !== null) {
-                data = Buffer.concat([self.oldbuf, data]);
-            }
-            var reader = new Reader(data);
-            if (reader.size > data.length - 4) {
-                if (debug) {
-                    console.log("("+ (data.length - 4) +"/"+ reader.size + ") Waiting for end of buffer");
-                }
-                stop = true;
-                self.oldbuf = data;
-            } else {
-                if (debug) {
-                    console.log("("+ (data.length - 4) +"/"+ reader.size + ") Received full buffer");
-                }
-                reader.parse();
-                if (debug) {
-                    console.log('Received result');
-                    console.log(reader.parsed);
-                }
-                self.oldbuf = reader.remaining;
-                stop = !(self.oldbuf !== null && self.oldbuf.length > 0);
-                self.emit('data', reader.parsed);
-            }
-            if (!stop) {
-                data = null;
-            }
+        if (typeof self.readCallback === 'function') {
+            self.readCallback(data, handleData);
+        } else {
+            handleData(null, data);
         }
     });
+
+    function handleData(err, data) {
+        if (!err) {
+            var stop = false;
+            while (!stop) {
+                if (data === null) {
+                    data = self.oldbuf;
+                }else if (self.oldbuf !== null) {
+                    data = Buffer.concat([self.oldbuf, data]);
+                }
+                var reader = new Reader(data);
+                if (reader.size > data.length - 4) {
+                    if (debug) {
+                        console.log("("+ (data.length - 4) +"/"+ reader.size + ") Waiting for end of buffer");
+                    }
+                    stop = true;
+                    self.oldbuf = data;
+                } else {
+                    if (debug) {
+                        console.log("("+ (data.length - 4) +"/"+ reader.size + ") Received full buffer");
+                    }
+                    reader.parse();
+                    if (debug) {
+                        console.log('Received result');
+                        console.log(reader.parsed);
+                    }
+                    self.oldbuf = reader.remaining;
+                    stop = !(self.oldbuf !== null && self.oldbuf.length > 0);
+                    self.emit('data', reader.parsed);
+                }
+                if (!stop) {
+                    data = null;
+                }
+            }
+        } else {
+            console.log(err);
+        }
+    }
     
     this.socket.on('error', function(e) {
         if (debug) {
@@ -273,7 +287,19 @@ util.inherits(exports.Socket, EventEmitter);
 exports.Socket.prototype.write = function(data) {
     var Writer = require('./writer');
     var writer = new Writer(data);
-    this.socket.write(writer.getBuffer());
+    var buffer = writer.getBuffer();
+    var self = this;
+    if (typeof this.writeCallback === 'function') {
+        this.writeCallback(buffer, function(err, buffer2) {
+            if (!err) {
+                self.socket.write(buffer2);
+            } else {
+                console.log(err);
+            }
+        });
+    } else {
+        this.socket.write(buffer);
+    }
 };
 
 /**
@@ -468,13 +494,13 @@ exports.QUInt = function QUInt(obj){
  * This class allow users to force a specific object to be recognized as
  * a QBool for the Writer.
  * Javascript boolean are converted to QBool objects internally.
- * When parsed from reader, QBool objects are converted to Javascript number (0 or 1)
+ * When parsed from reader, QBool objects are converted to Javascript number
  * @class
  * @name QBool
  * @param {*} obj
  */
 exports.QBool = function QBool(obj){
-    this.obj = obj?1:0;
+    this.obj = obj;
     this._qclass = exports.QTDATASTREAMCLASS;
 };
 
@@ -591,7 +617,7 @@ exports.Class = function(type, value) {
 					
 		<span class="jsdoc-message">
 		Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a>
-		on Thu May 22 2014 14:48:44 GMT+0200 (CEST) using the <a href="https://github.com/terryweiss/docstrap">DocStrap template</a>.
+		on Wed Jul 16 2014 11:42:46 GMT+0200 (CEST) using the <a href="https://github.com/terryweiss/docstrap">DocStrap template</a>.
 		</span>
 				</footer>
 			</div>

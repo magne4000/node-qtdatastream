@@ -31,7 +31,7 @@ By Reader:
 * QUInt -> number
 * QInt -> number
 * QShort -> number
-* QBool -> boolean
+* QBool -> number
 * QList -> Array
 * QStringList -> Array&lt;string&gt;
 * QByteArray -> Buffer
