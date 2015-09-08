@@ -197,5 +197,5 @@ export QTDSDEBUG="ON"
   * Tested only tested with Qt protocol v10
 
 ## License
-Copyright (c) 2014 Joël Charles  
+Copyright (c) 2014-2015 Joël Charles  
 Licensed under the MIT license.
