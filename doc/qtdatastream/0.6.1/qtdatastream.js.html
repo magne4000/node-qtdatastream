@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>qtdatastream.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="module-qtdatastream.Socket.html">Socket</a><ul class='methods'><li data-type='method'><a href="module-qtdatastream.Socket.html#updateSocket">updateSocket</a></li><li data-type='method'><a href="module-qtdatastream.Socket.html#write">write</a></li></ul></li><li><a href="module-qtdatastream_reader-Reader.html">Reader</a><ul class='methods'><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#.conv">conv</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getBool">getBool</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getByteArray">getByteArray</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getChar">getChar</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getDateTime">getDateTime</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getInt">getInt</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getInt64">getInt64</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getList">getList</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getMap">getMap</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getQVariant">getQVariant</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getQVariantByType">getQVariantByType</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getQVariantType">getQVariantType</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getShort">getShort</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getString">getString</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getStringList">getStringList</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getTime">getTime</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getUInt">getUInt</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getUInt64">getUInt64</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#parse">parse</a></li></ul></li><li><a href="module-qtdatastream_writer-Writer.html">Writer</a><ul class='methods'><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#.conv">conv</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse">_parse</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_bool">_parse_bool</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_class">_parse_class</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qbytearray">_parse_qbytearray</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qchar">_parse_qchar</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qdatetime">_parse_qdatetime</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qint">_parse_qint</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qint64">_parse_qint64</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qlist">_parse_qlist</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qmap">_parse_qmap</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qshort">_parse_qshort</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qstring">_parse_qstring</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qstringlist">_parse_qstringlist</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_quint">_parse_quint</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_quint64">_parse_quint64</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qusertype">_parse_qusertype</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qvariant">_parse_qvariant</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#getBuffer">getBuffer</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#getRawBuffer">getRawBuffer</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#parse">parse</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#write">write</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeBool">writeBool</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeByteArray">writeByteArray</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeChar">writeChar</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeDateTime">writeDateTime</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeInt">writeInt</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeInt64">writeInt64</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeQVariant">writeQVariant</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeShort">writeShort</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeString">writeString</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeUInt">writeUInt</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeUInt64">writeUInt64</a></li></ul></li><li><a href="module-qtdatastream-QBool.html">QBool</a></li><li><a href="module-qtdatastream-QByteArray.html">QByteArray</a></li><li><a href="module-qtdatastream-QChar.html">QChar</a></li><li><a href="module-qtdatastream-QDateTime.html">QDateTime</a></li><li><a href="module-qtdatastream-QInt.html">QInt</a></li><li><a href="module-qtdatastream-QInt64.html">QInt64</a></li><li><a href="module-qtdatastream-QList.html">QList</a></li><li><a href="module-qtdatastream-QMap.html">QMap</a></li><li><a href="module-qtdatastream-QShort.html">QShort</a></li><li><a href="module-qtdatastream-QString.html">QString</a></li><li><a href="module-qtdatastream-QStringList.html">QStringList</a></li><li><a href="module-qtdatastream-QTime.html">QTime</a></li><li><a href="module-qtdatastream-QUInt.html">QUInt</a></li><li><a href="module-qtdatastream-QUInt64.html">QUInt64</a></li><li><a href="module-qtdatastream-QUserType.html">QUserType</a></li><li><a href="module-qtdatastream-QVariant.html">QVariant</a></li></ul><h3>Modules</h3><ul><li><a href="module-qtdatastream.html">qtdatastream</a><ul class='methods'><li data-type='method'><a href="module-qtdatastream.html#.getUserType">getUserType</a></li><li data-type='method'><a href="module-qtdatastream.html#.isUserTypeComplex">isUserTypeComplex</a></li><li data-type='method'><a href="module-qtdatastream.html#.registerUserType">registerUserType</a></li></ul></li><li><a href="module-qtdatastream_reader.html">qtdatastream/reader</a></li><li><a href="module-qtdatastream_writer.html">qtdatastream/writer</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">qtdatastream.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/*
+ * node-qtdatastream
+ * https://github.com/magne4000/node-qtdatastream
+ *
+ * Copyright (c) 2014 Joël Charles
+ * Licensed under the MIT license.
+ */
+
+var EventEmitter = require('events').EventEmitter,
+    NetSocket = require('net').Socket,
+    debuglib = require('debug'),
+    logger = debuglib('qtdatastream:main'),
+    util = require('util'),
+    debug = !!process.env.QTDSDEBUG || debuglib.enabled("qtdatastream:*");
+    
+/** @module qtdatastream */
+
+/**
+ * Qt types list
+ * @readonly
+ * @enum {number}
+ */
+exports.Types = {
+    BOOL: 1,
+    INT: 2,
+    UINT: 3,
+    INT64: 4,
+    UINT64: 5,
+    CHAR: 7,
+    MAP: 8,
+    LIST: 9,
+    STRING: 10,
+    STRINGLIST: 11,
+    BYTEARRAY: 12,
+    TIME: 15,
+    DATETIME: 16,
+    USERTYPE: 127,
+    SHORT: 133
+};
+
+if (debug &amp;&amp; !debuglib.enabled("qtdatastream:*")) {
+    debuglib.enable("qtdatastream:*");
+}
+
+exports.QTDATASTREAMCLASS = "__QTDATASTREAMCLASS__";
+
+exports.userTypes = {};
+
+exports.toggleEndianness = function(buffer) {
+    var l = buffer.length;
+    if (l &amp; 0x01) {
+        throw new Error('Buffer length must be even');
+    }
+    var output = new Buffer(l);
+    for (var i = 0; i &lt; l; i += 2) {
+        output[i + 1] = buffer[i];
+        output[i] = buffer[i + 1];
+    }
+    return output; 
+};
+
+/**
+ * Qt compliant Socket overload.
+ * 'data' event is triggered only when full buffer is received.
+ * 'error', 'close' and 'end' event are not altered.
+ * @class
+ * @param {net.Socket} socket
+ */
+exports.Socket = function Socket(socket, readCallback, writeCallback) {
+    if (!(socket instanceof NetSocket)) {
+        throw "Socket must be an instance of net.Socket";
+    }
+    var self = this;
+    self.socket = socket;
+    self.oldbuf = null;
+    self.readCallback = readCallback;
+    self.writeCallback = writeCallback;
+    
+    self.updateSocket(socket, readCallback, writeCallback);
+};
+util.inherits(exports.Socket, EventEmitter);
+
+/**
+ * Write data to the socket
+ * @param {*} data Data that will be written using Writer
+ */
+exports.Socket.prototype.write = function(data) {
+    var Writer = require('./writer');
+    var writer = new Writer(data);
+    var buffer = writer.getBuffer();
+    var self = this;
+    if (typeof this.writeCallback === 'function') {
+        this.writeCallback(buffer, function(err, buffer2) {
+            if (!err) {
+                self.socket.write(buffer2);
+            } else {
+                logger(err);
+            }
+        });
+    } else {
+        this.socket.write(buffer);
+    }
+};
+
+/**
+ * Update the socket (for example to promote it to SSL stream)
+ * @param {Stream} socket object implementing Stream interface
+ */
+exports.Socket.prototype.updateSocket = function(socket) {
+    var Reader = require('./reader');
+    var self = this;
+
+    this.socket.removeAllListeners();
+
+    this.socket = socket;
+
+    this.socket.on('data', function(data) {
+        if (typeof self.readCallback === 'function') {
+            self.readCallback(data, handleData);
+        } else {
+            handleData(null, data);
+        }
+    });
+
+    function handleData(err, data) {
+        var dataLength;
+        if (!err) {
+            var stop = false;
+            while (!stop) {
+                if (data === null) {
+                    data = self.oldbuf;
+                }else if (self.oldbuf !== null) {
+                    data = Buffer.concat([self.oldbuf, data]);
+                }
+                var reader = new Reader(data);
+                dataLength = data.length - 4;
+                self.emit('progress', dataLength, reader.size);
+                if (reader.size > dataLength) {
+                    if (debug) {
+                        logger("("+ dataLength +"/"+ reader.size + ") Waiting for end of buffer");
+                    }
+                    stop = true;
+                    self.oldbuf = data;
+                } else {
+                    if (debug) {
+                        logger("("+ dataLength +"/"+ reader.size + ") Received full buffer");
+                    }
+                    reader.parse();
+                    if (debug) {
+                        logger('Received result');
+                        logger(reader.parsed);
+                    }
+                    self.oldbuf = reader.remaining;
+                    stop = !(self.oldbuf !== null &amp;&amp; self.oldbuf.length > 0);
+                    self.emit('data', reader.parsed);
+                }
+                if (!stop) {
+                    data = null;
+                }
+            }
+        } else {
+            logger(err);
+        }
+    }
+    
+    this.socket.on('error', function(e) {
+        if (debug) {
+            logger('ERROR');
+        }
+        self.emit('error', e);
+    });
+    
+    this.socket.on('close', function() {
+        if (debug) {
+            logger('Connection closed');
+        }
+        self.emit('close');
+    });
+    
+    this.socket.on('end', function() {
+        if (debug) {
+            logger('END');
+        }
+        self.emit('end');
+    });
+};
+
+/**
+ * Register a new QUserType.
+ * @param {string} key
+ * @param {number} type
+ */
+exports.registerUserType = function(key, type) {
+    exports.userTypes[key] = type;
+};
+
+/**
+ * Get the QUserType definition
+ * @param {string} key
+ * @returns {*}
+ */
+exports.getUserType = function(key) {
+    return exports.userTypes[key];
+};
+
+/**
+ * Return true if the QUserType specified by key contains multiple fields
+ * @param {string} key
+ * @returns {*}
+ */
+exports.isUserTypeComplex = function(key) {
+    return Object.prototype.toString.call(exports.getUserType(key)) === '[object Array]';
+};
+
+/**
+ * This class allow users to force a specific object to be recognized as
+ * a QVariant for the Writer
+ * @class
+ * @name QVariant
+ * @param {*} obj
+ * @example
+ * new Writer("a string"); // will be written as QString
+ * new Writer(new QVariant("a string")); // will be written as QVariant&lt;QString>
+ */
+exports.QVariant = function QVariant(obj){
+    this.obj = obj;
+    this._qclass = exports.QTDATASTREAMCLASS;
+    if (typeof obj === 'object') {
+        var jstype = Object.prototype.toString.call(obj);
+        if (obj instanceof exports.QString) {
+            this.type = exports.Types.STRING;
+        } else if (obj instanceof exports.QChar) {
+            this.type = exports.Types.CHAR;
+        } else if (obj instanceof exports.QMap) {
+            this.type = exports.Types.MAP;
+        } else if (obj instanceof exports.QList) {
+            this.type = exports.Types.LIST;
+        } else if (jstype === '[object Array]') {
+            this.type = exports.Types.LIST;
+        } else if (obj instanceof exports.QUInt) {
+            this.type = exports.Types.UINT;
+        } else if (obj instanceof exports.QBool) {
+            this.type = exports.Types.BOOL;
+        } else if (obj instanceof exports.QShort) {
+            this.type = exports.Types.SHORT;
+        } else if (obj instanceof exports.QInt) {
+            this.type = exports.Types.INT;
+        } else if (obj instanceof exports.QInt64) {
+            this.type = exports.Types.INT64;
+        } else if (obj instanceof exports.QUInt64) {
+            this.type = exports.Types.UINT64;
+        } else if (obj instanceof exports.QStringList) {
+            this.type = exports.Types.STRINGLIST;
+        } else if (obj instanceof exports.QTime) {
+            this.type = exports.Types.TIME;
+        } else if (obj instanceof exports.QDateTime) {
+            this.type = exports.Types.DATETIME;
+        } else if (jstype === '[object Date]') {
+            this.type = exports.Types.DATETIME;
+        } else if (obj instanceof exports.QUserType) {
+            this.type = exports.Types.USERTYPE;
+        } else if (obj instanceof exports.QByteArray) {
+            this.type = exports.Types.BYTEARRAY;
+        } else {
+            this.type = exports.Types.MAP;
+        }
+    } else if (typeof obj === 'string') {
+        this.type = exports.Types.STRING;
+    } else if (typeof obj === 'number') {
+        this.type = exports.Types.UINT;
+    } else if (typeof obj === 'boolean') {
+        this.type = exports.Types.BOOL;
+    }
+};
+
+/**
+ * This class allow users to force a specific object to be recognized as
+ * a QTime for the Writer.
+ * @class
+ * @name QTime
+ * @param {*} obj
+ */
+exports.QTime = function QTime(obj){
+    this.obj = obj;
+    this._qclass = exports.QTDATASTREAMCLASS;
+};
+
+/**
+ * This class allow users to force a specific object to be recognized as
+ * a QDateTime for the Writer.
+ * @class
+ * @name QDateTime
+ * @param {*} obj
+ */
+exports.QDateTime = function QDateTime(obj){
+    this.obj = obj;
+    this._qclass = exports.QTDATASTREAMCLASS;
+};
+
+/**
+ * This class allow users to force a specific object to be recognized as
+ * a QString for the Writer.
+ * Javascript string are converted to QString objects internally.
+ * When parsed from reader, QString objects are converted back to Javascript string
+ * @class
+ * @name QString
+ * @param {*} obj
+ * @example
+ * new Writer(new QString(null)); // will be written as a null QString
+ */
+exports.QString = function QString(obj){
+    this.obj = obj;
+    this._qclass = exports.QTDATASTREAMCLASS;
+};
+
+/**
+ * This class allow users to force a specific object to be recognized as
+ * a QChar for the Writer.
+ * @class
+ * @name QChar
+ * @param {*} obj
+ */
+exports.QChar = function QChar(obj){
+    this.obj = obj;
+    this._qclass = exports.QTDATASTREAMCLASS;
+};
+
+/**
+ * This class allow users to force a specific object to be recognized as
+ * a QMap for the Writer.
+ * @class
+ * @name QMap
+ * @param {*} obj
+ */
+exports.QMap = function QMap(obj){
+    this.obj = obj;
+    this._qclass = exports.QTDATASTREAMCLASS;
+};
+
+/**
+ * This class allow users to force a specific object to be recognized as
+ * a QList for the Writer.
+ * Javascript Array are converted to QList objects internally.
+ * When parsed from reader, QList objects are converted back to Javascript Array
+ * @class
+ * @name QList
+ * @param {*} obj
+ */
+exports.QList = function QList(obj){
+    this.obj = obj;
+    this._qclass = exports.QTDATASTREAMCLASS;
+};
+
+/**
+ * This class allow users to force a specific object to be recognized as
+ * a QStringList for the Writer.
+ * @class
+ * @name QStringList
+ * @param {*} obj
+ */
+exports.QStringList = function QStringList(obj){
+    this.obj = obj;
+    this._qclass = exports.QTDATASTREAMCLASS;
+};
+
+/**
+ * This class allow users to force a specific object to be recognized as
+ * a QUInt for the Writer.
+ * Javascript number are converted to QUInt objects internally.
+ * When parsed from reader, QUInt objects are converted back to Javascript number
+ * @class
+ * @name QUInt
+ * @param {*} obj
+ */
+exports.QUInt = function QUInt(obj){
+    this.obj = obj;
+    this._qclass = exports.QTDATASTREAMCLASS;
+};
+
+/**
+ * This class allow users to force a specific object to be recognized as
+ * a QBool for the Writer.
+ * Javascript boolean are converted to QBool objects internally.
+ * When parsed from reader, QBool objects are converted to Javascript number
+ * @class
+ * @name QBool
+ * @param {*} obj
+ */
+exports.QBool = function QBool(obj){
+    this.obj = obj;
+    this._qclass = exports.QTDATASTREAMCLASS;
+};
+
+/**
+ * This class allow users to force a specific object to be recognized as
+ * a QInt for the Writer.
+ * @class
+ * @name QInt
+ * @param {*} obj
+ */
+exports.QInt = function QInt(obj){
+    this.obj = obj;
+    this._qclass = exports.QTDATASTREAMCLASS;
+};
+
+/**
+ * This class allow users to force a specific object to be recognized as
+ * a QInt64 for the Writer.
+ * @class
+ * @name QInt64
+ * @param {*} obj
+ */
+exports.QInt64 = function QInt64(obj){
+    this.obj = obj;
+    this._qclass = exports.QTDATASTREAMCLASS;
+};
+
+/**
+ * This class allow users to force a specific object to be recognized as
+ * a QUInt64 for the Writer.
+ * @class
+ * @name QUInt64
+ * @param {*} obj
+ */
+exports.QUInt64 = function QUInt64(obj){
+    this.obj = obj;
+    this._qclass = exports.QTDATASTREAMCLASS;
+};
+
+/**
+ * This class allow users to force a specific object to be recognized as
+ * a QShort for the Writer.
+ * @class
+ * @name QShort
+ * @param {*} obj
+ */
+exports.QShort = function QShort(obj){
+    this.obj = obj;
+    this._qclass = exports.QTDATASTREAMCLASS;
+};
+
+/**
+ * This class allow users to force a specific object to be recognized as
+ * a QByteArray for the Writer.
+ * @class
+ * @name QByteArray
+ * @param {*} obj
+ */
+exports.QByteArray = function QByteArray(obj){
+    this.obj = obj;
+    this._qclass = exports.QTDATASTREAMCLASS;
+};
+
+/**
+ * This class allow users to force a specific object to be recognized as
+ * a QUserType for the Writer.
+ * @class
+ * @name QUserType
+ * @param {string} name
+ * @param {*} obj
+ */
+exports.QUserType = function QUserType(name, obj){
+    this.obj = obj;
+    this._qusertype_name = name;
+    this._qclass = exports.QTDATASTREAMCLASS;
+};
+
+/**
+ * Get user defined type name
+ */
+exports.QUserType.prototype.getName = function() {
+    return this._qusertype_name;
+};
+
+exports.Writer = require('./writer');
+
+exports.Reader = require('./reader');
+
+exports.util = require('./util');
+
+exports.Class = function(type, value) {
+    switch(type) {
+        case exports.Types.BOOL:
+            return new exports.QBool(value);
+        case exports.Types.INT:
+            return new exports.QInt(value);
+        case exports.Types.UINT:
+            return new exports.QUInt(value);
+        case exports.Types.INT64:
+            return new exports.QInt64(value);
+        case exports.Types.UINT64:
+            return new exports.QUInt64(value);
+        case exports.Types.MAP:
+            return new exports.QMap(value);
+        case exports.Types.LIST:
+            return new exports.QList(value);
+        case exports.Types.STRING:
+            return new exports.QString(value);
+        case exports.Types.CHAR:
+            return new exports.QChar(value);
+        case exports.Types.STRINGLIST:
+            return new exports.QStringList(value);
+        case exports.Types.BYTEARRAY:
+            return new exports.QByteArray(value);
+        case exports.Types.TIME:
+            return new exports.QTime(value);
+        case exports.Types.DATETIME:
+            return new exports.QDateTime(value);
+        case exports.Types.USERTYPE:
+            return new exports.QUserType(value);
+        case exports.Types.SHORT:
+            return new exports.QShort(value);
+    }
+};
+
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Wed Mar 16 2016 16:16:31 GMT+0100 (CET) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>writer.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="module-qtdatastream.Socket.html">Socket</a><ul class='methods'><li data-type='method'><a href="module-qtdatastream.Socket.html#updateSocket">updateSocket</a></li><li data-type='method'><a href="module-qtdatastream.Socket.html#write">write</a></li></ul></li><li><a href="module-qtdatastream_reader-Reader.html">Reader</a><ul class='methods'><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#.conv">conv</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getBool">getBool</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getByteArray">getByteArray</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getChar">getChar</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getDateTime">getDateTime</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getInt">getInt</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getInt64">getInt64</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getList">getList</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getMap">getMap</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getQVariant">getQVariant</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getQVariantByType">getQVariantByType</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getQVariantType">getQVariantType</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getShort">getShort</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getString">getString</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getStringList">getStringList</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getTime">getTime</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getUInt">getUInt</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getUInt64">getUInt64</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#parse">parse</a></li></ul></li><li><a href="module-qtdatastream_writer-Writer.html">Writer</a><ul class='methods'><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#.conv">conv</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse">_parse</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_bool">_parse_bool</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_class">_parse_class</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qbytearray">_parse_qbytearray</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qchar">_parse_qchar</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qdatetime">_parse_qdatetime</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qint">_parse_qint</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qint64">_parse_qint64</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qlist">_parse_qlist</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qmap">_parse_qmap</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qshort">_parse_qshort</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qstring">_parse_qstring</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qstringlist">_parse_qstringlist</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_quint">_parse_quint</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_quint64">_parse_quint64</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qusertype">_parse_qusertype</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qvariant">_parse_qvariant</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#getBuffer">getBuffer</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#getRawBuffer">getRawBuffer</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#parse">parse</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#write">write</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeBool">writeBool</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeByteArray">writeByteArray</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeChar">writeChar</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeDateTime">writeDateTime</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeInt">writeInt</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeInt64">writeInt64</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeQVariant">writeQVariant</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeShort">writeShort</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeString">writeString</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeUInt">writeUInt</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeUInt64">writeUInt64</a></li></ul></li><li><a href="module-qtdatastream-QBool.html">QBool</a></li><li><a href="module-qtdatastream-QByteArray.html">QByteArray</a></li><li><a href="module-qtdatastream-QChar.html">QChar</a></li><li><a href="module-qtdatastream-QDateTime.html">QDateTime</a></li><li><a href="module-qtdatastream-QInt.html">QInt</a></li><li><a href="module-qtdatastream-QInt64.html">QInt64</a></li><li><a href="module-qtdatastream-QList.html">QList</a></li><li><a href="module-qtdatastream-QMap.html">QMap</a></li><li><a href="module-qtdatastream-QShort.html">QShort</a></li><li><a href="module-qtdatastream-QString.html">QString</a></li><li><a href="module-qtdatastream-QStringList.html">QStringList</a></li><li><a href="module-qtdatastream-QTime.html">QTime</a></li><li><a href="module-qtdatastream-QUInt.html">QUInt</a></li><li><a href="module-qtdatastream-QUInt64.html">QUInt64</a></li><li><a href="module-qtdatastream-QUserType.html">QUserType</a></li><li><a href="module-qtdatastream-QVariant.html">QVariant</a></li></ul><h3>Modules</h3><ul><li><a href="module-qtdatastream.html">qtdatastream</a><ul class='methods'><li data-type='method'><a href="module-qtdatastream.html#.getUserType">getUserType</a></li><li data-type='method'><a href="module-qtdatastream.html#.isUserTypeComplex">isUserTypeComplex</a></li><li data-type='method'><a href="module-qtdatastream.html#.registerUserType">registerUserType</a></li></ul></li><li><a href="module-qtdatastream_reader.html">qtdatastream/reader</a></li><li><a href="module-qtdatastream_writer.html">qtdatastream/writer</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">writer.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/*
+ * node-qtdatastream
+ * https://github.com/magne4000/node-qtdatastream
+ *
+ * Copyright (c) 2014 Joël Charles
+ * Licensed under the MIT license.
+ */
+
+/** @module qtdatastream/writer */
+
+var qtdatastream = require('./qtdatastream'),
+    Iterator = require('./iterator'),
+    Int64 = require('int64-buffer').Int64BE,
+    UInt64 = require('int64-buffer').Uint64BE,
+    T = qtdatastream.Types,
+    QVariant = qtdatastream.QVariant,
+    QString = qtdatastream.QString,
+    QChar = qtdatastream.QChar,
+    QMap = qtdatastream.QMap,
+    QList = qtdatastream.QList,
+    QUInt = qtdatastream.QUInt,
+    QInt64 = qtdatastream.QInt64,
+    QUInt64 = qtdatastream.QUInt64,
+    QBool = qtdatastream.QBool,
+    QInt = qtdatastream.QInt,
+    QShort = qtdatastream.QShort,
+    QStringList = qtdatastream.QStringList,
+    QUserType = qtdatastream.QUserType,
+    QByteArray = qtdatastream.QByteArray,
+    QTime = qtdatastream.QTime,
+    QDateTime = qtdatastream.QDateTime;
+
+/**
+ * @class
+ * @classdesc Class to generate a buffer from a Javascript object
+ * @param {Object} obj Javascript object
+ * @example
+ * var w = new Writer(obj);
+ * var buffer = w.getBuffer(); //Buffer ready to be sent to a socket !
+ */
+var Writer = function(obj) {
+    this.bufs = [];
+    this.size = 0;
+    this.type = null;
+    this.parse(obj);
+};
+
+Writer.prototype.getUserTypeIterator = function(key) {
+    return new Iterator(qtdatastream.getUserType(key));
+};
+
+/**
+ * Converts an UTF-8 string to an UTF-16 buffer
+ * @param {Buffer} msg An UTF-8 string
+ * @returns {Buffer} An UTF-16 Buffer
+ */
+Writer.conv = function(msg) {
+    return qtdatastream.toggleEndianness(new Buffer(msg, "ucs2"));
+};
+
+/**
+ * Get the buffer without prefixing it by its size.
+ * @returns {Buffer}
+ */
+Writer.prototype.getRawBuffer = function() {
+    return Buffer.concat(this.bufs);
+};
+
+/**
+ * Get the buffer representation of the object.
+ * It is prefixed by the packet size as defined in Qt framework.
+ * @returns {Buffer} A Qt styled buffer ready to be sent through a socket
+ */
+Writer.prototype.getBuffer = function(){
+    var tempBuf = Buffer.concat(this.bufs);
+    this.size = this.size+5; // because we add a QVariant in the end
+    
+    // The first block is the size of the data sent
+    var bsize = new Buffer(4);
+    bsize.writeUInt32BE(this.size, 0); 
+    // Write QVariant type
+    var bqvariant = new Buffer(4);
+    var bqvariantisnull = new Buffer(1);
+    bqvariant.writeUInt32BE(this.type, 0, true);
+    if (this.bufs.length > 0) {
+        bqvariantisnull.writeInt8(0, 0);
+    } else {
+        bqvariantisnull.writeInt8(1, 0);
+    }
+    
+    // generate final Buffer
+    var buf = Buffer.concat([bsize, bqvariant, bqvariantisnull, tempBuf]);
+    
+    return buf;
+};
+
+/**
+ * Should not be called directly, it is better to call new Writer(...)
+ * with the object as parameter
+ * @param {*} obj
+ */
+Writer.prototype.parse = function(obj){
+    this.type = this._parse(obj);
+};
+
+/**
+ * Parses next element of the buffer
+ * @protected
+ * @param {*} obj
+ * @returns {Number} Type as defined in {@link module:qtdatastream.Types}
+ */
+Writer.prototype._parse = function(obj){
+    if (typeof obj === 'undefined') return;
+    if (typeof obj === 'object') {
+        var type = Object.prototype.toString.call(obj);
+        if (obj instanceof QVariant) {
+            this._parse_qvariant(obj);
+            return obj.type;
+        } else if (obj instanceof QString) {
+            this._parse_qstring(obj);
+            return T.STRING;
+        } else if (obj instanceof QChar) {
+            this._parse_qchar(obj);
+            return T.CHAR;
+        } else if (obj instanceof QMap) {
+            this._parse_qmap(obj);
+            return T.MAP;
+        } else if (obj instanceof QList) {
+            this._parse_qlist(obj);
+            return T.LIST;
+        } else if (obj instanceof QStringList) {
+            this._parse_qstringlist(obj);
+            return T.STRINGLIST;
+        } else if (type === '[object Array]') {
+            this._parse_qlist(new QList(obj));
+            return T.LIST;
+        } else if (obj instanceof QUInt) {
+            this._parse_quint(obj);
+            return T.UINT;
+        } else if (obj instanceof QInt) {
+            this._parse_qint(obj);
+            return T.INT;
+        } else if (obj instanceof QInt64) {
+            this._parse_qint64(obj);
+            return T.INT;
+        } else if (obj instanceof QUInt64) {
+            this._parse_quint64(obj);
+            return T.INT;
+        } else if (obj instanceof QBool) {
+            this._parse_bool(obj);
+            return T.BOOL;
+        } else if (obj instanceof QShort) {
+            this._parse_qshort(obj);
+            return T.SHORT;
+        } else if (obj instanceof QByteArray) {
+            this._parse_qbytearray(obj);
+            return T.BYTEARRAY;
+        } else if (obj instanceof QTime) {
+            this._parse_quint(obj);
+            return T.TIME;
+        } else if (obj instanceof QDateTime) {
+            this._parse_qdatetime(obj);
+            return T.DATETIME;
+        } else if (type === '[object Date]') {
+            this._parse_qdatetime(new QDateTime(obj));
+            return T.DATETIME;
+        } else if (obj instanceof QUserType) {
+            this._parse_qusertype(obj);
+            return T.USERTYPE;
+        }
+        this._parse_qmap(new QMap(obj));
+        return T.MAP;
+    } else if (typeof obj === 'string') {
+        this._parse_qstring(new QString(obj));
+        return T.STRING;
+    } else if (typeof obj === 'number') {
+        this._parse_quint(new QUInt(obj));
+        return T.UINT;
+    } else if (typeof obj === 'boolean') {
+        this._parse_bool(new QBool(obj));
+        return T.BOOL;
+    }
+};
+
+/**
+ * @param {QDateTime} obj
+ * @protected
+ */
+Writer.prototype._parse_qdatetime = function(obj){
+    this.writeDateTime(obj.obj);
+    return;
+};
+
+/**
+ * @param {QShort} obj
+ * @protected
+ */
+Writer.prototype._parse_qshort = function(obj){
+    this.writeShort(obj.obj);
+    return;
+};
+
+/**
+ * @param {QInt} obj
+ * @protected
+ */
+Writer.prototype._parse_qint = function(obj){
+    this.writeInt(obj.obj);
+    return;
+};
+
+/**
+ * @param {QUInt} obj
+ * @protected
+ */
+Writer.prototype._parse_quint = function(obj){
+    this.writeUInt(obj.obj);
+    return;
+};
+
+/**
+ * @param {QInt64} obj
+ * @protected
+ */
+Writer.prototype._parse_qint64 = function(obj){
+    this.writeInt64(obj.obj);
+    return;
+};
+
+/**
+ * @param {QUInt64} obj
+ * @protected
+ */
+Writer.prototype._parse_quint64 = function(obj){
+    this.writeUInt64(obj.obj);
+    return;
+};
+
+/**
+ * @param {QBool} obj
+ * @protected
+ */
+Writer.prototype._parse_bool = function(obj){
+    this.writeBool(obj.obj);
+    return;
+};
+
+/**
+ * @param {QString} obj
+ * @protected
+ */
+Writer.prototype._parse_qstring = function(obj){
+    this.writeString(obj.obj);
+    return;
+};
+
+
+/**
+ * @param {QChar} obj
+ * @protected
+ */
+Writer.prototype._parse_qchar = function(obj){
+    this.writeChar(obj.obj);
+    return;
+};
+
+/**
+ * @param {QByteArray} obj
+ * @protected
+ */
+Writer.prototype._parse_qbytearray = function(obj){
+    this.writeByteArray(obj.obj);
+    return;
+};
+
+/**
+ * @param {QUserType} obj
+ * @protected
+ */
+Writer.prototype._parse_qusertype = function(obj){
+    if (qtdatastream.isUserTypeComplex(obj.getName())) {
+        var iter = this.getUserTypeIterator(obj.getName());
+        while (iter.hasNext()) {
+            var item = iter.next();
+            if (item.value.length > 1) { //QUserType
+                if (obj.obj[item.key] instanceof QUserType) {
+                    this._parse(obj.obj[item.key]);
+                } else {
+                    this._parse(new QUserType(item.value[1], obj.obj[item.key]));
+                }
+            } else {
+                this._parse(new qtdatastream.Class(item.value[0], obj.obj[item.key]));
+            }
+        }
+    } else {
+        var type = qtdatastream.getUserType(obj.getName());
+        this._parse(new qtdatastream.Class(type, obj.obj));
+    }
+};
+
+/**
+ * If obj[key] is not of class newclass, instanciate it.
+ * Then call _parse().
+ * @param {*} obj
+ * @param {*} key
+ * @param {*} newclass
+ * @protected
+ */
+Writer.prototype._parse_class = function(obj, key, newclass){
+    if (obj.obj[key] instanceof newclass) {
+        this._parse(obj.obj[key]);
+    } else {
+        this._parse(new newclass(obj.obj[key]));
+    }
+};
+
+/**
+ * @param {QStringList} obj
+ * @protected
+ */
+Writer.prototype._parse_qstringlist = function(obj){
+    var size = 0, key;
+    for (key in obj.obj) {
+        if (obj.obj.hasOwnProperty(key)) size++;
+    }
+    this.writeUInt(size); // nb of elements in the list
+    for (key in obj.obj) {
+        if (obj.obj.hasOwnProperty(key)) {
+            // Value
+            this._parse_class(obj, key, QString);
+        }
+    }
+    return;
+};
+
+/**
+ * @param {QList} obj
+ * @protected
+ */
+Writer.prototype._parse_qlist = function(obj){
+    var size = 0, key;
+    for (key in obj.obj) {
+        if (obj.obj.hasOwnProperty(key)) size++;
+    }
+    this.writeUInt(size); // nb of elements in the list
+    for (key in obj.obj) {
+        if (obj.obj.hasOwnProperty(key)) {
+            // Value
+            this._parse_class(obj, key, QVariant);
+        }
+    }
+    return;
+};
+
+/**
+ * @param {QMap} obj
+ * @protected
+ */
+Writer.prototype._parse_qmap = function(obj){
+    var size = 0, key;
+    for (key in obj.obj) {
+        if (obj.obj.hasOwnProperty(key)) size++;
+    }
+    this.writeUInt(size); // nb of elements in the map
+    for (key in obj.obj) {
+        if (obj.obj.hasOwnProperty(key)) {
+            // Key
+            this._parse(key);
+            // Value
+            this._parse_class(obj, key, QVariant);
+        }
+    }
+    return;
+};
+
+/**
+ * @param {QVariant} obj
+ * @protected
+ */
+Writer.prototype._parse_qvariant = function(obj){
+    var isNull = 0;
+    if (typeof obj.obj === 'undefined' || typeof obj.obj === 'null'){
+        isNull = 1;
+    }
+    this.writeQVariant(obj.type, isNull);
+    if (obj.obj instanceof QUserType) {
+        this.writeByteArray(obj.obj.getName());
+    }
+    return this._parse(obj.obj);
+};
+
+/**
+ * Add specified buffer to the internal buffer list, with its size
+ * @param {Buffer} b
+ * @param {Number} size
+ * @returns {Writer}
+ */
+Writer.prototype.write = function(b, size){
+    this.bufs.push(b);
+    this.size += size;
+    return this;
+};
+
+/**
+ * Add a boolean buffer to the internal buffer list
+ * @param {(Number|boolean)} bool
+ * @returns {Writer}
+ */
+Writer.prototype.writeBool = function(bool){
+    var b = new Buffer(1);
+    b.writeInt8(bool, 0);
+    this.write(b, 1);
+    return this;
+};
+
+/**
+ * Add a string buffer to the internal buffer list
+ * @param {string} str
+ * @returns {Writer}
+ */
+Writer.prototype.writeString = function(str) {
+    if (str === null){
+        // Special case for NULL QString
+        this.writeUInt(0xffffffff);
+    } else {
+        var b = Writer.conv(str);
+        this.writeUInt(b.length);
+        this.write(b, b.length);
+    }
+    return this;
+};
+
+/**
+ * Add a char buffer to the internal buffer list
+ * @param {string} str
+ * @returns {Writer}
+ */
+Writer.prototype.writeChar = function(str) {
+    var b = Writer.conv(str);
+    this.write(b, b.length);
+    return this;
+};
+
+/**
+ * Add a byteArray buffer to the internal buffer list
+ * @param {(Array|string)} arr
+ * @returns {Writer}
+ */
+Writer.prototype.writeByteArray = function(arr) {
+    if (arr === null){
+        this.writeUInt(0xffffffff);
+    } else {
+        this.writeUInt(arr.length);
+        var b = new Buffer(arr);
+        this.write(b, arr.length);
+    }
+    return this;
+};
+
+/**
+ * Add a int32 buffer to the internal buffer list
+ * @param {Number} i
+ * @returns {Writer}
+ */
+Writer.prototype.writeInt = function(i){
+    var b = new Buffer(4);
+    b.writeInt32BE(i, 0, true);
+    this.write(b, 4);
+    return this;
+};
+
+/**
+ * Add a uint32 buffer to the internal buffer list
+ * @param {Number} i
+ * @returns {Writer}
+ */
+Writer.prototype.writeUInt = function(i){
+    var b = new Buffer(4);
+    b.writeUInt32BE(i, 0, true);
+    this.write(b, 4);
+    return this;
+};
+
+/**
+ * Add a int64 buffer to the internal buffer list
+ * @param {Number} i
+ * @returns {Writer}
+ */
+Writer.prototype.writeInt64 = function(i){
+    var b = Int64(i).toBuffer();
+    this.write(b, 8);
+    return this;
+};
+
+/**
+ * Add a uint64 buffer to the internal buffer list
+ * @param {Number} i
+ * @returns {Writer}
+ */
+Writer.prototype.writeUInt64 = function(i){
+    var b = UInt64(i).toBuffer();
+    this.write(b, 8);
+    return this;
+};
+
+/**
+ * Add a uint16 buffer to the internal buffer list
+ * @param {Number} i
+ * @returns {Writer}
+ */
+Writer.prototype.writeShort = function(i){
+    var b = new Buffer(2);
+    b.writeUInt16BE(i, 0, true);
+    this.write(b, 2);
+    return this;
+};
+
+/**
+ * Add a QDateTime buffer to the internal buffer list.
+ * &lt;uint32 julian day>&lt;uint32 milliseconds since midnight>&lt;bool isUTC>
+ * @param {Date} i
+ * @returns {Writer}
+ */
+Writer.prototype.writeDateTime = function(datetime){
+    var milliseconds = ((+datetime) % 86400000);
+    var julianday = Math.floor((((+datetime) / 86400000) + 2440587.5));
+    this.writeUInt(julianday);
+    this.writeUInt(milliseconds);
+    this.writeBool(datetime.getTimezoneOffset() === 0);
+    return this;
+};
+
+/**
+ * Add a qvariant buffer to the internal buffer list
+ * @param {Number} type Type as defined in {@link module:qtdatastream.Types}
+ * @param {(Number|boolean)} nullFlag must be true or 1 if the following QVariant is null
+ * @returns {Writer}
+ */
+Writer.prototype.writeQVariant = function(type, nullFlag) {
+    this.writeUInt(type);
+    this.writeBool(nullFlag);
+    return this;
+};
+
+module.exports = Writer;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Wed Mar 16 2016 16:16:31 GMT+0100 (CET) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

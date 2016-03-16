@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>reader.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="module-qtdatastream.Socket.html">Socket</a><ul class='methods'><li data-type='method'><a href="module-qtdatastream.Socket.html#updateSocket">updateSocket</a></li><li data-type='method'><a href="module-qtdatastream.Socket.html#write">write</a></li></ul></li><li><a href="module-qtdatastream_reader-Reader.html">Reader</a><ul class='methods'><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#.conv">conv</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getBool">getBool</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getByteArray">getByteArray</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getChar">getChar</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getDateTime">getDateTime</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getInt">getInt</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getInt64">getInt64</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getList">getList</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getMap">getMap</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getQVariant">getQVariant</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getQVariantByType">getQVariantByType</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getQVariantType">getQVariantType</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getShort">getShort</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getString">getString</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getStringList">getStringList</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getTime">getTime</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getUInt">getUInt</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getUInt64">getUInt64</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#parse">parse</a></li></ul></li><li><a href="module-qtdatastream_writer-Writer.html">Writer</a><ul class='methods'><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#.conv">conv</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse">_parse</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_bool">_parse_bool</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_class">_parse_class</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qbytearray">_parse_qbytearray</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qchar">_parse_qchar</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qdatetime">_parse_qdatetime</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qint">_parse_qint</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qint64">_parse_qint64</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qlist">_parse_qlist</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qmap">_parse_qmap</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qshort">_parse_qshort</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qstring">_parse_qstring</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qstringlist">_parse_qstringlist</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_quint">_parse_quint</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_quint64">_parse_quint64</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qusertype">_parse_qusertype</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qvariant">_parse_qvariant</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#getBuffer">getBuffer</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#getRawBuffer">getRawBuffer</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#parse">parse</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#write">write</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeBool">writeBool</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeByteArray">writeByteArray</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeChar">writeChar</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeDateTime">writeDateTime</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeInt">writeInt</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeInt64">writeInt64</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeQVariant">writeQVariant</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeShort">writeShort</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeString">writeString</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeUInt">writeUInt</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeUInt64">writeUInt64</a></li></ul></li><li><a href="module-qtdatastream-QBool.html">QBool</a></li><li><a href="module-qtdatastream-QByteArray.html">QByteArray</a></li><li><a href="module-qtdatastream-QChar.html">QChar</a></li><li><a href="module-qtdatastream-QDateTime.html">QDateTime</a></li><li><a href="module-qtdatastream-QInt.html">QInt</a></li><li><a href="module-qtdatastream-QInt64.html">QInt64</a></li><li><a href="module-qtdatastream-QList.html">QList</a></li><li><a href="module-qtdatastream-QMap.html">QMap</a></li><li><a href="module-qtdatastream-QShort.html">QShort</a></li><li><a href="module-qtdatastream-QString.html">QString</a></li><li><a href="module-qtdatastream-QStringList.html">QStringList</a></li><li><a href="module-qtdatastream-QTime.html">QTime</a></li><li><a href="module-qtdatastream-QUInt.html">QUInt</a></li><li><a href="module-qtdatastream-QUInt64.html">QUInt64</a></li><li><a href="module-qtdatastream-QUserType.html">QUserType</a></li><li><a href="module-qtdatastream-QVariant.html">QVariant</a></li></ul><h3>Modules</h3><ul><li><a href="module-qtdatastream.html">qtdatastream</a><ul class='methods'><li data-type='method'><a href="module-qtdatastream.html#.getUserType">getUserType</a></li><li data-type='method'><a href="module-qtdatastream.html#.isUserTypeComplex">isUserTypeComplex</a></li><li data-type='method'><a href="module-qtdatastream.html#.registerUserType">registerUserType</a></li></ul></li><li><a href="module-qtdatastream_reader.html">qtdatastream/reader</a></li><li><a href="module-qtdatastream_writer.html">qtdatastream/writer</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">reader.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/*
+ * node-qtdatastream
+ * https://github.com/magne4000/node-qtdatastream
+ *
+ * Copyright (c) 2014 Joël Charles
+ * Licensed under the MIT license.
+ */
+
+/** @module qtdatastream/reader */
+
+var qtdatastream = require('./qtdatastream'),
+    util = require('./util'),
+    T = qtdatastream.Types,
+    logger = require('debug')('qtdatastream:reader'),
+    Int64 = require('int64-buffer').Int64BE,
+    UInt64 = require('int64-buffer').Uint64BE,
+    debug = qtdatastream.debug,
+    Iterator = require('./iterator');
+
+/**
+ * @class
+ * @classdesc Class to read and parse a given Qt buffer
+ * @param {Buffer} b Qt formatted buffer
+ * @example
+ * var r = new Reader(buffer);
+ * var parsed = r.parse();
+ * 
+ * // parsed = {
+ * //   "AString": "BString",
+ * //   "CString": ["DString", 1, 4, true],
+ * //   "EString": ""
+ * // };
+ */
+var Reader = function (b) {
+    this.buffer = b.slice(0, 4);
+    this.pos = 0;
+    this.parsed = null;
+    try {
+        this.size = this.getUInt();
+    } catch (e) {
+        logger("Error while fetching buffer size", e.message);
+        this.size = 0;
+    }
+    if (debug) {
+        logger("buffer size : " + this.size);
+    }
+    this.buffer = b.slice(0, this.size+4);
+    if (debug) {
+        logger("buffer length : " + this.buffer.length);
+    }
+    this.remaining = b.slice(this.size+4);
+    if (debug) {
+        logger("remaining length : " + this.remaining.length);
+    }
+};
+
+Reader.prototype.getUserTypeIterator = function(key) {
+    return new Iterator(qtdatastream.getUserType(key), this.getQVariantByType, this);
+};
+
+/**
+ * Converts an UTF-16 buffer to an UTF-8 buffer
+ * @param {Buffer} msg An UTF-16 Buffer
+ * @returns {Buffer} An UTF-8 Buffer
+ */
+Reader.conv = function(msg) {
+    return qtdatastream.toggleEndianness(msg).toString("ucs2");
+};
+
+/**
+ * Parse buffer
+ * @returns {Object} buffer converted to a Javascript object
+ */
+Reader.prototype.parse = function(){
+    this.parsed = this.getQVariant();
+    return this.parsed;
+};
+
+/**
+ * @param {Number} type A QVariant Type as defined in {@link module:qtdatastream.Types}
+ * @param {string} [userType] Can specify userType in case of encapsulated userTypes
+ * @returns {*} Corresponding QVariant result corresponding to the given type
+ */
+Reader.prototype.getQVariantByType = function(type, userType){
+    switch(type) {
+        case T.BOOL:
+            return this.getBool();
+        case T.SHORT:
+            return this.getShort();
+        case T.INT:
+            return this.getInt();
+        case T.UINT:
+            return this.getUInt();
+        case T.INT64:
+            return this.getUInt64();
+        case T.UINT64:
+            return this.getUInt64();
+        case T.MAP:
+            return this.getMap();
+        case T.LIST:
+            return this.getList();
+        case T.STRING:
+            return this.getString();
+        case T.CHAR:
+            return this.getChar();
+        case T.STRINGLIST:
+            return this.getStringList();
+        case T.BYTEARRAY:
+            return this.getByteArray();
+        case T.TIME:
+            return this.getTime();
+        case T.DATETIME:
+            return this.getDateTime();
+        case T.USERTYPE:
+            var userTypeName = "";
+            if (userType) {
+                userTypeName = userType;
+            } else {
+                var t = this.getByteArray();
+                userTypeName = util.str(t);
+            }
+            if (qtdatastream.isUserTypeComplex(userTypeName)) {
+                var iter = this.getUserTypeIterator(userTypeName), ret = {};
+                while(iter.hasNext()){
+                    var item = iter.next();
+                    ret[item.key] = item.value;
+                }
+                return ret;
+            }
+            var qvtype = qtdatastream.getUserType(userTypeName);
+            if (qvtype) {
+                return this.getQVariantByType(qvtype);
+            } else {
+                throw "Unhandled userType " + userTypeName;
+            }
+        default:
+            throw "Unhandled type " + type;
+    }
+};
+
+/**
+ * @returns {number} Current QTime (milliseconds since midnight)
+ */
+Reader.prototype.getTime = function(){
+    return this.getUInt();
+};
+
+/**
+ * @returns {Date} Current QDateTime as string
+ */
+Reader.prototype.getDateTime = function(){
+    var julianDay = this.getUInt();
+    var msecondsSinceMidnight = this.getUInt();
+    var isUTC = this.getBool();
+    var ret = new Date(((Number(julianDay) - 2440588) * 86400000) + msecondsSinceMidnight);
+    // TODO handle timezone
+    return ret;
+};
+
+/**
+ * @returns {*} Corresponding QVariant result corresponding current QVariant type
+ */
+Reader.prototype.getQVariant = function(){
+    var type = this.getQVariantType(),
+        isNull = this.getBool();
+    try {
+        return this.getQVariantByType(type);
+    } catch (e) {
+        logger(e);
+        return null;
+    }
+};
+
+/**
+ * @returns {Number} Current QVariant type as defined in {@link module:qtdatastream.Types}
+ */
+Reader.prototype.getQVariantType = function(){
+    return this.getUInt();
+};
+
+/**
+ * @returns {string} Current string
+ */
+Reader.prototype.getString = function(){
+    var stringSize = this.getUInt();
+    if (stringSize === 0 || stringSize === 0xffffffff) return "";
+    
+    var stringBuffer = this.buffer.slice(this.pos, this.pos+stringSize);
+    var resultingString = Reader.conv(stringBuffer).toString();
+    this.pos += stringSize;
+    return resultingString;
+};
+
+/**
+ * @returns {string} Current char
+ */
+Reader.prototype.getChar = function(){
+    var charBuffer = this.buffer.slice(this.pos, this.pos+2);
+    var resultingChar = Reader.conv(charBuffer).toString();
+    this.pos += 2;
+    return resultingChar;
+};
+
+/**
+ * @returns {Buffer} Current ByteArray
+ */
+Reader.prototype.getByteArray = function(){
+    var arraySize = this.getUInt();
+    if (arraySize === 0 || arraySize === 0xffffffff) return null;
+    var buffer = this.buffer.slice(this.pos, this.pos+arraySize);
+    this.pos += arraySize;
+    return buffer;
+};
+
+/**
+ * @returns {Array} Current list
+ */
+Reader.prototype.getList = function(){
+    var listSize = this.getUInt(), i, list = [], val;
+    for (i=0; i&lt;listSize; i++) {
+        // get value
+        val = this.getQVariant();
+        list.push(val);
+    }
+    return list;
+};
+
+/**
+ * @returns {Array&lt;string>} Current list of string
+ */
+Reader.prototype.getStringList = function(){
+    var listSize = this.getUInt(), i, list = [], val;
+    for (i=0; i&lt;listSize; i++) {
+        // get value
+        val = this.getString();
+        list.push(val);
+    }
+    return list;
+};
+
+/**
+ * @returns {Object} Current map
+ */
+Reader.prototype.getMap = function(){
+    var mapSize = this.getUInt(), i, map = {}, key, val;
+    for (i=0; i&lt;mapSize; i++) {
+        // get key
+        key = this.getString();
+        // get value
+        val = this.getQVariant();
+        map[key] = val;
+    }
+    return map;
+};
+
+/**
+ * @returns {Number} Current short
+ */
+Reader.prototype.getShort = function(){
+    var i = this.buffer.readInt16BE(this.pos);
+    this.pos += 2;
+    return i;
+};
+
+/**
+ * @returns {Number} Current int
+ */
+Reader.prototype.getInt = function(){
+    var i = this.buffer.readInt32BE(this.pos);
+    this.pos += 4;
+    return i;
+};
+
+/**
+ * @returns {Number} Current uint
+ */
+Reader.prototype.getUInt = function(){
+    var i = this.buffer.readUInt32BE(this.pos);
+    this.pos += 4;
+    return i;
+};
+
+/**
+ * @returns {Number} Current int64
+ */
+Reader.prototype.getInt64 = function(){
+    var i = Int64(this.buffer.slice(this.pos, this.pos+8)).toNumber();
+    this.pos += 8;
+    return i;
+};
+
+/**
+ * @returns {Number} Current uint64
+ */
+Reader.prototype.getUInt64 = function(){
+    var i = UInt64(this.buffer.slice(this.pos, this.pos+8)).toNumber();
+    this.pos += 8;
+    return i;
+};
+
+/**
+ * @returns {Number} Current boolean
+ */
+Reader.prototype.getBool = function(){
+    var i = this.buffer.readInt8(this.pos);
+    this.pos += 1;
+    return i;
+};
+
+module.exports = Reader;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Wed Mar 16 2016 16:16:31 GMT+0100 (CET) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>
