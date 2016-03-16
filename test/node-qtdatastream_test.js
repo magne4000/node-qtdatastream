@@ -49,7 +49,7 @@ exports.pingpong = {
     this.date = new Date();
 
     this.streamObj = {
-        "AString": "BString",
+        "AString": "BStringéàñ",
         "CharTest": new QChar("a"),
         "CString": ["DString", 1, 4, true],
         "TestStringList" : new QStringList(["a", "b", "c"]),
@@ -71,7 +71,7 @@ exports.pingpong = {
         "EString": ""
     };
     this.streamObjRet = {
-        "AString": "BString",
+        "AString": "BStringéàñ",
         "CharTest": "a",
         "CString": ["DString", 1, 4, 1],
         "TestStringList" : ["a", "b", "c"],
