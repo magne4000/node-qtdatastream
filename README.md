@@ -3,14 +3,14 @@
 Nodejs lib which can read/write Qt formatted Datastreams.
 
 For the moment the following types are handled for reading and writing:
-  QBool, QUInt, QMap, QList, QString, QVariant, QStringList, QShort, QInt, QByteArray, QUserType, QDateTime, QTime, QChar
+  QBool, QShort, QInt, QInt64, QUInt, QUInt64, QMap, QList, QString, QVariant, QStringList, QByteArray, QUserType, QDateTime, QTime, QChar
 
 ## Getting Started
 Install the module with `npm install node-qtdatastream --production`,
 or `npm install node-qtdatastream` for development purpose.
 
 ## Documentation
-[Technical documentation](http://magne4000.github.io/qtdatastream/)
+[Technical documentation](http://magne4000.github.io/qtdatastream/0.6.0/)
 
 ### Type inference
 Javascript types are automatically converted to Qt Types, and vice versa.
@@ -30,6 +30,8 @@ By Reader:
 * QString -> string
 * QUInt -> number
 * QInt -> number
+* QUInt64 -> number
+* QInt64 -> number
 * QShort -> number
 * QBool -> number
 * QList -> Array
@@ -168,5 +170,5 @@ export DEBUG="qtdatastream:*"
 ```
 
 ## License
-Copyright (c) 2014-2015 Joël Charles  
+Copyright (c) 2014-2016 Joël Charles  
 Licensed under the MIT license.

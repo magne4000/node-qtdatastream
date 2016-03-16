@@ -8,6 +8,8 @@ var qtdatastream = require('../lib/qtdatastream'),
     QInt = qtdatastream.QInt,
     QShort = qtdatastream.QShort,
     QByteArray = qtdatastream.QByteArray,
+    QInt64 = qtdatastream.QInt64,
+    QUInt64 = qtdatastream.QUInt64,
     QUserType = qtdatastream.QUserType;
 
 /*
@@ -52,6 +54,8 @@ exports.pingpong = {
         "CString": ["DString", 1, 4, true],
         "TestStringList" : new QStringList(["a", "b", "c"]),
         "TestInt" : new QInt(2),
+        "TestInt64": new QInt64(2),
+        "TestUInt64": new QUInt64(2),
         "TestByteArray" : new QByteArray("aaa"),
         "TestShort" : new QShort(4),
         "NetworkId": new QUserType("NetworkId", 32),
@@ -72,6 +76,8 @@ exports.pingpong = {
         "CString": ["DString", 1, 4, 1],
         "TestStringList" : ["a", "b", "c"],
         "TestInt" : 2,
+        "TestInt64": 2,
+        "TestUInt64": 2,
         "TestByteArray" : new Buffer("aaa"),
         "TestShort" : 4,
         "NetworkId": 32,
@@ -92,9 +98,9 @@ exports.pingpong = {
         "BacklogManager",
         "",
         "requestBacklog",
-        new qtdatastream.QUserType("NetworkId", 5),
-        new qtdatastream.QUserType("NetworkId", -1),
-        new qtdatastream.QUserType("NetworkId", -1),
+        new QUserType("NetworkId", 5),
+        new QUserType("NetworkId", -1),
+        new QUserType("NetworkId", -1),
     ];
 
     this.slistRet = [
