@@ -11,6 +11,7 @@ var qtdatastream = require('../lib/qtdatastream'),
     QInt64 = qtdatastream.QInt64,
     QUInt64 = qtdatastream.QUInt64,
     QDouble = qtdatastream.QDouble,
+    QInvalid = qtdatastream.QInvalid,
     QUserType = qtdatastream.QUserType;
 
 /*
@@ -70,6 +71,7 @@ exports.pingpong = {
             ni: new QUserType("NetworkId", 4000)
         }),
         "Date": this.date,
+        "Invalid": new QInvalid(),
         "EString": ""
     };
     this.streamObjRet = {
@@ -93,6 +95,7 @@ exports.pingpong = {
             ni: 4000
         },
         "Date": this.date,
+        "Invalid": undefined,
         "EString": ""
     };
 
