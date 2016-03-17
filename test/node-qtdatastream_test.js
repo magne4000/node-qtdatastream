@@ -10,6 +10,7 @@ var qtdatastream = require('../lib/qtdatastream'),
     QByteArray = qtdatastream.QByteArray,
     QInt64 = qtdatastream.QInt64,
     QUInt64 = qtdatastream.QUInt64,
+    QDouble = qtdatastream.QDouble,
     QUserType = qtdatastream.QUserType;
 
 /*
@@ -56,6 +57,7 @@ exports.pingpong = {
         "TestInt" : new QInt(2),
         "TestInt64": new QInt64(2),
         "TestUInt64": new QUInt64(2),
+        "TestDouble": new QDouble(2.225),
         "TestByteArray" : new QByteArray("aaa"),
         "TestShort" : new QShort(4),
         "NetworkId": new QUserType("NetworkId", 32),
@@ -78,6 +80,7 @@ exports.pingpong = {
         "TestInt" : 2,
         "TestInt64": 2,
         "TestUInt64": 2,
+        "TestDouble": 2.225,
         "TestByteArray" : new Buffer("aaa"),
         "TestShort" : 4,
         "NetworkId": 32,
