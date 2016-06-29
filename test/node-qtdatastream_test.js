@@ -48,7 +48,9 @@ exports.pingpong = {
         {name: qtdatastream.Types.BYTEARRAY},
         {ni: "NetworkId"}
     ]);
-    this.date = new Date();
+    this.date1 = new Date('2016-06-29 06:00:00');
+    this.date2 = new Date('2016-06-29 20:00:00');
+    this.date3 = new Date();
 
     this.streamObj = {
         "AString": "BStringéàñ",
@@ -70,7 +72,9 @@ exports.pingpong = {
             name: "BufferInfo2",
             ni: new QUserType("NetworkId", 4000)
         }),
-        "Date": this.date,
+        "Date1": this.date1,
+        "Date2": this.date2,
+        "Date3": this.date3,
         "Invalid": new QInvalid(),
         "EString": ""
     };
@@ -94,7 +98,9 @@ exports.pingpong = {
             name: new Buffer("BufferInfo2"),
             ni: 4000
         },
-        "Date": this.date,
+        "Date1": this.date1,
+        "Date2": this.date2,
+        "Date3": this.date3,
         "Invalid": undefined,
         "EString": ""
     };
