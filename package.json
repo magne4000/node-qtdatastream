@@ -10,7 +10,7 @@
     "buffer"
   ],
   "description": "Nodejs lib which can read/write Qt formatted Datastreams",
-  "version": "0.6.6",
+  "version": "0.6.7",
   "homepage": "https://github.com/magne4000/node-qtdatastream",
   "author": {
     "name": "Joël Charles",
