@@ -1,3 +1,11 @@
+/*
+ * node-qtdatastream
+ * https://github.com/magne4000/node-qtdatastream
+ *
+ * Copyright (c) 2016 Joël Charles
+ * Licensed under the MIT license.
+ */
+
 'use strict';
 
 var qtdatastream = require('../lib/qtdatastream'),
