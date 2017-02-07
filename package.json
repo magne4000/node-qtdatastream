@@ -10,7 +10,7 @@
     "buffer"
   ],
   "description": "Nodejs lib which can read/write Qt formatted Datastreams",
-  "version": "0.6.8",
+  "version": "0.7.0",
   "homepage": "https://github.com/magne4000/node-qtdatastream",
   "author": {
     "name": "Joël Charles",
@@ -25,21 +25,21 @@
   },
   "license": "MIT",
   "engines": {
-    "node": ">= 0.12"
+    "node": ">= 6"
   },
   "scripts": {
     "test": "grunt nodeunit"
   },
   "devDependencies": {
-    "grunt": "~0.4.5",
-    "grunt-contrib-nodeunit": "~0.4.1",
-    "grunt-contrib-watch": "~0.6.1",
-    "grunt-jsdoc": "^1.1.0",
-    "jsdoc": "^3.4.0",
-    "minami": "^1.1.1"
+    "grunt": "~1.0.1",
+    "grunt-contrib-nodeunit": "~1.0.0",
+    "grunt-contrib-watch": "~1.0.0",
+    "grunt-jsdoc": "^2.1.0",
+    "jsdoc": "^3.4.3",
+    "loke-jsdoc-theme": "^2.1.0"
   },
   "dependencies": {
-    "debug": "^2.2.0",
-    "int64-buffer": "^0.1.4"
+    "debug": "^2.6.0",
+    "int64-buffer": "^0.1.9"
   }
 }

@@ -18,10 +18,10 @@ module.exports = function(grunt) {
     jsdoc: {
       dist: {
         src: ['lib/*.js', 'package.json', 'README.md'],
-        dest: 'doc/',
         options: {
-            template: 'node_modules/minami',
-            configure: 'jsdoc.conf.json'
+          template: 'node_modules/loke-jsdoc-theme',
+          configure: 'jsdoc.conf.json',
+          destination: 'doc'
         }
       }
     },
