@@ -1,0 +1,3500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Reader - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav class="nav">
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-qtdatastream.html">qtdatastream</a><ul class='methods'><li data-type='method'><a href="module-qtdatastream.html#.getUserType">getUserType</a></li><li data-type='method'><a href="module-qtdatastream.html#.isUserTypeComplex">isUserTypeComplex</a></li><li data-type='method'><a href="module-qtdatastream.html#.registerUserType">registerUserType</a></li></ul></li><li><a href="module-qtdatastream_reader.html">qtdatastream/reader</a></li><li><a href="module-qtdatastream_writer.html">qtdatastream/writer</a></li></ul><h3>Classes</h3><ul><li><a href="module-qtdatastream.Socket.html">Socket</a><ul class='methods'><li data-type='method'><a href="module-qtdatastream.Socket.html#updateSocket">updateSocket</a></li><li data-type='method'><a href="module-qtdatastream.Socket.html#write">write</a></li></ul></li><li><a href="module-qtdatastream_reader-Reader.html">Reader</a><ul class='methods'><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#.conv">conv</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getBool">getBool</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getByteArray">getByteArray</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getChar">getChar</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getDateTime">getDateTime</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getDouble">getDouble</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getInt">getInt</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getInt64">getInt64</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getList">getList</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getMap">getMap</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getQVariant">getQVariant</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getQVariantByType">getQVariantByType</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getQVariantType">getQVariantType</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getShort">getShort</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getString">getString</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getStringList">getStringList</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getTime">getTime</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getUInt">getUInt</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getUInt64">getUInt64</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#parse">parse</a></li></ul></li><li><a href="module-qtdatastream_writer-Writer.html">Writer</a><ul class='methods'><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#.conv">conv</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse">_parse</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_bool">_parse_bool</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_class">_parse_class</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qbytearray">_parse_qbytearray</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qchar">_parse_qchar</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qdatetime">_parse_qdatetime</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qdouble">_parse_qdouble</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qint">_parse_qint</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qint64">_parse_qint64</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qinvalid">_parse_qinvalid</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qlist">_parse_qlist</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qmap">_parse_qmap</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qshort">_parse_qshort</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qstring">_parse_qstring</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qstringlist">_parse_qstringlist</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_quint">_parse_quint</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_quint64">_parse_quint64</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qusertype">_parse_qusertype</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qvariant">_parse_qvariant</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#getBuffer">getBuffer</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#getRawBuffer">getRawBuffer</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#parse">parse</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#write">write</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeBool">writeBool</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeByteArray">writeByteArray</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeChar">writeChar</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeDateTime">writeDateTime</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeDouble">writeDouble</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeInt">writeInt</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeInt64">writeInt64</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeQVariant">writeQVariant</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeShort">writeShort</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeString">writeString</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeUInt">writeUInt</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeUInt64">writeUInt64</a></li></ul></li><li><a href="module-qtdatastream-QBool.html">QBool</a></li><li><a href="module-qtdatastream-QByteArray.html">QByteArray</a></li><li><a href="module-qtdatastream-QChar.html">QChar</a></li><li><a href="module-qtdatastream-QDateTime.html">QDateTime</a></li><li><a href="module-qtdatastream-QDouble.html">QDouble</a></li><li><a href="module-qtdatastream-QInt.html">QInt</a></li><li><a href="module-qtdatastream-QInt64.html">QInt64</a></li><li><a href="module-qtdatastream-QInvalid.html">QInvalid</a></li><li><a href="module-qtdatastream-QList.html">QList</a></li><li><a href="module-qtdatastream-QMap.html">QMap</a></li><li><a href="module-qtdatastream-QShort.html">QShort</a></li><li><a href="module-qtdatastream-QString.html">QString</a></li><li><a href="module-qtdatastream-QStringList.html">QStringList</a></li><li><a href="module-qtdatastream-QTime.html">QTime</a></li><li><a href="module-qtdatastream-QUInt.html">QUInt</a></li><li><a href="module-qtdatastream-QUInt64.html">QUInt64</a></li><li><a href="module-qtdatastream-QUserType.html">QUserType</a></li><li><a href="module-qtdatastream-QVariant.html">QVariant</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">Reader</h1>
+    
+
+    <!--container.tmpl-->
+
+
+
+
+
+<section>
+
+
+
+<header data-tmpl="container.tmpl">
+    
+        <h2>
+            <span class="ancestors"><a href="module-qtdatastream_reader.html">qtdatastream/reader</a>~</span>
+        
+        Reader
+        </h2>
+        
+            <div class="lead"><p>Class to read and parse a given Qt buffer</p></div>
+        
+    
+
+    
+      <div class="bs-callout bs-callout-default">
+        <h5>Members</h5>
+        <br />
+        <dl class="dl-horizontal methods-members">
+        <dt>Methods</dt><dd><ul>
+            <li><a href="#conv">conv</a></li>
+            
+            <li><a href="#getBool">getBool</a></li>
+            
+            <li><a href="#getByteArray">getByteArray</a></li>
+            
+            <li><a href="#getChar">getChar</a></li>
+            
+            <li><a href="#getDateTime">getDateTime</a></li>
+            
+            <li><a href="#getDouble">getDouble</a></li>
+            
+            <li><a href="#getInt">getInt</a></li>
+            
+            <li><a href="#getInt64">getInt64</a></li>
+            
+            <li><a href="#getList">getList</a></li>
+            
+            <li><a href="#getMap">getMap</a></li>
+            
+            <li><a href="#getQVariant">getQVariant</a></li>
+            
+            <li><a href="#getQVariantByType">getQVariantByType</a></li>
+            
+            <li><a href="#getQVariantType">getQVariantType</a></li>
+            
+            <li><a href="#getShort">getShort</a></li>
+            
+            <li><a href="#getString">getString</a></li>
+            
+            <li><a href="#getStringList">getStringList</a></li>
+            
+            <li><a href="#getTime">getTime</a></li>
+            
+            <li><a href="#getUInt">getUInt</a></li>
+            
+            <li><a href="#getUInt64">getUInt64</a></li>
+            
+            <li><a href="#parse">parse</a></li>
+            </ul></dd></dl></div>
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        <!--method.tmpl-->
+<div class="method-details">
+
+
+
+
+
+    
+    <h3 class="constructor">Constructor</h3>
+    
+
+    
+      <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="reader.js.html">reader.js</a>:<a href="reader.js.html#line34">34</a>
+  </code>
+</div>
+
+    
+
+    <h4 class="name" id="Reader">
+      <a href="#params-Reader"><span class="type-signature"></span>new Reader</a><span class="signature">(b)</span><span class="type-signature"></span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>var r = new Reader(buffer);
+var parsed = r.parse();
+
+// parsed = {
+//   "AString": "BString",
+//   "CString": ["DString", 1, 4, true],
+//   "EString": ""
+// };</code></pre>
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-Reader">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-Reader" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>b</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Buffer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Qt formatted buffer</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * @class\n * @classdesc Class to read and parse a given Qt buffer\n * @param {Buffer} b Qt formatted buffer\n * @example\n * var r = new Reader(buffer);\n * var parsed = r.parse();\n * \n * // parsed = {\n * //   \"AString\": \"BString\",\n * //   \"CString\": [\"DString\", 1, 4, true],\n * //   \"EString\": \"\"\n * // };\n */","meta":{"range":[824,1401],"filename":"reader.js","lineno":34,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100002142","name":"Reader","type":"FunctionExpression"},"vars":{"this.buffer":"module:qtdatastream/reader~Reader#buffer","this.pos":"module:qtdatastream/reader~Reader#pos","this.parsed":"module:qtdatastream/reader~Reader#parsed","this.size":"module:qtdatastream/reader~Reader#size","this.remaining":"module:qtdatastream/reader~Reader#remaining"},"shortpath":"reader.js"},"kind":"class","classdesc":"<p>Class to read and parse a given Qt buffer</p>","params":[{"type":{"names":["Buffer"]},"description":"<p>Qt formatted buffer</p>","name":"b"}],"examples":[{"caption":"","code":"var r = new Reader(buffer);\nvar parsed = r.parse();\n\n// parsed = {\n//   \"AString\": \"BString\",\n//   \"CString\": [\"DString\", 1, 4, true],\n//   \"EString\": \"\"\n// };"}],"name":"Reader","longname":"module:qtdatastream/reader~Reader","scope":"inner","memberof":"module:qtdatastream/reader","___id":"T000003R000003","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"Reader","signature":"<span class=\"signature\">(b)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"module-qtdatastream_reader.html\">qtdatastream/reader</a>~"]}
+</pre>
+-->
+</div>
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="reader.js.html">reader.js</a>:<a href="reader.js.html#line66">66</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id=".conv">
+      <a href="#params-conv"><span class="type-signature">(static) </span>conv</a><span class="signature">(msg)</span><span class="type-signature"> &rarr; {Buffer}</span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>Converts an UTF-16 buffer to an UTF-8 buffer</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-conv">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-conv" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>msg</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Buffer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>An UTF-16 Buffer</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
+
+        
+<div class="param-desc">
+    <p>An UTF-8 Buffer</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Buffer</span>
+
+
+    </dd>
+</dl>
+
+    
+</div>
+  
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * Converts an UTF-16 buffer to an UTF-8 buffer\n * @param {Buffer} msg An UTF-16 Buffer\n * @returns {Buffer} An UTF-8 Buffer\n */","meta":{"range":[1682,1777],"filename":"reader.js","lineno":66,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100002284","name":"Reader.conv","type":"FunctionExpression","paramnames":["msg"]},"shortpath":"reader.js"},"description":"<p>Converts an UTF-16 buffer to an UTF-8 buffer</p>","params":[{"type":{"names":["Buffer"]},"description":"<p>An UTF-16 Buffer</p>","name":"msg"}],"returns":[{"type":{"names":["Buffer"]},"description":"<p>An UTF-8 Buffer</p>"}],"name":"conv","longname":"module:qtdatastream/reader~Reader.conv","kind":"function","memberof":"module:qtdatastream/reader~Reader","scope":"static","___id":"T000002R000220","___s":true,"attribs":"<span class=\"type-signature\">(static) </span>","id":".conv","signature":"<span class=\"signature\">(msg)</span><span class=\"type-signature\"> &rarr; {Buffer}</span>","ancestors":["<a href=\"module-qtdatastream_reader.html\">qtdatastream/reader</a>","<a href=\"module-qtdatastream_reader-Reader.html\">~Reader</a>."]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="reader.js.html">reader.js</a>:<a href="reader.js.html#line315">315</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="getBool">
+      <a href="#params-getBool"><span class="type-signature"></span>getBool</a><span class="signature">()</span><span class="type-signature"> &rarr; {Number}</span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-getBool">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
+
+        
+<div class="param-desc">
+    <p>Current boolean</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Number</span>
+
+
+    </dd>
+</dl>
+
+    
+</div>
+  
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * @returns {Number} Current boolean\n */","meta":{"range":[8019,8136],"filename":"reader.js","lineno":315,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100003169","name":"Reader.prototype.getBool","type":"FunctionExpression","paramnames":[]},"vars":{"i":"module:qtdatastream/reader~Reader#getBool~i","this.pos":"module:qtdatastream/reader~Reader#pos"},"shortpath":"reader.js"},"returns":[{"type":{"names":["Number"]},"description":"<p>Current boolean</p>"}],"name":"getBool","longname":"module:qtdatastream/reader~Reader#getBool","kind":"function","memberof":"module:qtdatastream/reader~Reader","scope":"instance","___id":"T000002R000298","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"getBool","signature":"<span class=\"signature\">()</span><span class=\"type-signature\"> &rarr; {Number}</span>","ancestors":["<a href=\"module-qtdatastream_reader.html\">qtdatastream/reader</a>","<a href=\"module-qtdatastream_reader-Reader.html\">~Reader</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="reader.js.html">reader.js</a>:<a href="reader.js.html#line211">211</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="getByteArray">
+      <a href="#params-getByteArray"><span class="type-signature"></span>getByteArray</a><span class="signature">()</span><span class="type-signature"> &rarr; {Buffer}</span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-getByteArray">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
+
+        
+<div class="param-desc">
+    <p>Current ByteArray</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Buffer</span>
+
+
+    </dd>
+</dl>
+
+    
+</div>
+  
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * @returns {Buffer} Current ByteArray\n */","meta":{"range":[5819,6078],"filename":"reader.js","lineno":211,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100002791","name":"Reader.prototype.getByteArray","type":"FunctionExpression","paramnames":[]},"vars":{"arraySize":"module:qtdatastream/reader~Reader#getByteArray~arraySize","buffer":"module:qtdatastream/reader~Reader#getByteArray~buffer","this.pos":"module:qtdatastream/reader~Reader#pos"},"shortpath":"reader.js"},"returns":[{"type":{"names":["Buffer"]},"description":"<p>Current ByteArray</p>"}],"name":"getByteArray","longname":"module:qtdatastream/reader~Reader#getByteArray","kind":"function","memberof":"module:qtdatastream/reader~Reader","scope":"instance","___id":"T000002R000252","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"getByteArray","signature":"<span class=\"signature\">()</span><span class=\"type-signature\"> &rarr; {Buffer}</span>","ancestors":["<a href=\"module-qtdatastream_reader.html\">qtdatastream/reader</a>","<a href=\"module-qtdatastream_reader-Reader.html\">~Reader</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="reader.js.html">reader.js</a>:<a href="reader.js.html#line201">201</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="getChar">
+      <a href="#params-getChar"><span class="type-signature"></span>getChar</a><span class="signature">()</span><span class="type-signature"> &rarr; {string}</span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-getChar">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
+
+        
+<div class="param-desc">
+    <p>Current char</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+</div>
+  
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * @returns {string} Current char\n */","meta":{"range":[5573,5769],"filename":"reader.js","lineno":201,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100002749","name":"Reader.prototype.getChar","type":"FunctionExpression","paramnames":[]},"vars":{"charBuffer":"module:qtdatastream/reader~Reader#getChar~charBuffer","resultingChar":"module:qtdatastream/reader~Reader#getChar~resultingChar","this.pos":"module:qtdatastream/reader~Reader#pos"},"shortpath":"reader.js"},"returns":[{"type":{"names":["string"]},"description":"<p>Current char</p>"}],"name":"getChar","longname":"module:qtdatastream/reader~Reader#getChar","kind":"function","memberof":"module:qtdatastream/reader~Reader","scope":"instance","___id":"T000002R000248","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"getChar","signature":"<span class=\"signature\">()</span><span class=\"type-signature\"> &rarr; {string}</span>","ancestors":["<a href=\"module-qtdatastream_reader.html\">qtdatastream/reader</a>","<a href=\"module-qtdatastream_reader-Reader.html\">~Reader</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="reader.js.html">reader.js</a>:<a href="reader.js.html#line155">155</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="getDateTime">
+      <a href="#params-getDateTime"><span class="type-signature"></span>getDateTime</a><span class="signature">()</span><span class="type-signature"> &rarr; {Date}</span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-getDateTime">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
+
+        
+<div class="param-desc">
+    <p>Current QDateTime as string</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Date</span>
+
+
+    </dd>
+</dl>
+
+    
+</div>
+  
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * @returns {Date} Current QDateTime as string\n */","meta":{"range":[4340,4644],"filename":"reader.js","lineno":155,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100002593","name":"Reader.prototype.getDateTime","type":"FunctionExpression","paramnames":[]},"vars":{"julianDay":"module:qtdatastream/reader~Reader#getDateTime~julianDay","msecondsSinceMidnight":"module:qtdatastream/reader~Reader#getDateTime~msecondsSinceMidnight","isUTC":"module:qtdatastream/reader~Reader#getDateTime~isUTC","dateAtMidnight":"module:qtdatastream/reader~Reader#getDateTime~dateAtMidnight"},"shortpath":"reader.js"},"returns":[{"type":{"names":["Date"]},"description":"<p>Current QDateTime as string</p>"}],"name":"getDateTime","longname":"module:qtdatastream/reader~Reader#getDateTime","kind":"function","memberof":"module:qtdatastream/reader~Reader","scope":"instance","___id":"T000002R000234","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"getDateTime","signature":"<span class=\"signature\">()</span><span class=\"type-signature\"> &rarr; {Date}</span>","ancestors":["<a href=\"module-qtdatastream_reader.html\">qtdatastream/reader</a>","<a href=\"module-qtdatastream_reader-Reader.html\">~Reader</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="reader.js.html">reader.js</a>:<a href="reader.js.html#line306">306</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="getDouble">
+      <a href="#params-getDouble"><span class="type-signature"></span>getDouble</a><span class="signature">()</span><span class="type-signature"> &rarr; {Number}</span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-getDouble">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
+
+        
+<div class="param-desc">
+    <p>Current double</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Number</span>
+
+
+    </dd>
+</dl>
+
+    
+</div>
+  
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * @returns {Number} Current double\n */","meta":{"range":[7848,7971],"filename":"reader.js","lineno":306,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100003140","name":"Reader.prototype.getDouble","type":"FunctionExpression","paramnames":[]},"vars":{"i":"module:qtdatastream/reader~Reader#getDouble~i","this.pos":"module:qtdatastream/reader~Reader#pos"},"shortpath":"reader.js"},"returns":[{"type":{"names":["Number"]},"description":"<p>Current double</p>"}],"name":"getDouble","longname":"module:qtdatastream/reader~Reader#getDouble","kind":"function","memberof":"module:qtdatastream/reader~Reader","scope":"instance","___id":"T000002R000295","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"getDouble","signature":"<span class=\"signature\">()</span><span class=\"type-signature\"> &rarr; {Number}</span>","ancestors":["<a href=\"module-qtdatastream_reader.html\">qtdatastream/reader</a>","<a href=\"module-qtdatastream_reader-Reader.html\">~Reader</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="reader.js.html">reader.js</a>:<a href="reader.js.html#line270">270</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="getInt">
+      <a href="#params-getInt"><span class="type-signature"></span>getInt</a><span class="signature">()</span><span class="type-signature"> &rarr; {Number}</span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-getInt">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
+
+        
+<div class="param-desc">
+    <p>Current int</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Number</span>
+
+
+    </dd>
+</dl>
+
+    
+</div>
+  
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * @returns {Number} Current int\n */","meta":{"range":[7167,7286],"filename":"reader.js","lineno":270,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100003020","name":"Reader.prototype.getInt","type":"FunctionExpression","paramnames":[]},"vars":{"i":"module:qtdatastream/reader~Reader#getInt~i","this.pos":"module:qtdatastream/reader~Reader#pos"},"shortpath":"reader.js"},"returns":[{"type":{"names":["Number"]},"description":"<p>Current int</p>"}],"name":"getInt","longname":"module:qtdatastream/reader~Reader#getInt","kind":"function","memberof":"module:qtdatastream/reader~Reader","scope":"instance","___id":"T000002R000283","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"getInt","signature":"<span class=\"signature\">()</span><span class=\"type-signature\"> &rarr; {Number}</span>","ancestors":["<a href=\"module-qtdatastream_reader.html\">qtdatastream/reader</a>","<a href=\"module-qtdatastream_reader-Reader.html\">~Reader</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="reader.js.html">reader.js</a>:<a href="reader.js.html#line288">288</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="getInt64">
+      <a href="#params-getInt64"><span class="type-signature"></span>getInt64</a><span class="signature">()</span><span class="type-signature"> &rarr; {Number}</span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-getInt64">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
+
+        
+<div class="param-desc">
+    <p>Current int64</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Number</span>
+
+
+    </dd>
+</dl>
+
+    
+</div>
+  
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * @returns {Number} Current int64\n */","meta":{"range":[7498,7625],"filename":"reader.js","lineno":288,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100003078","name":"Reader.prototype.getInt64","type":"FunctionExpression","paramnames":[]},"vars":{"i":"module:qtdatastream/reader~Reader#getInt64~i","this.pos":"module:qtdatastream/reader~Reader#pos"},"shortpath":"reader.js"},"returns":[{"type":{"names":["Number"]},"description":"<p>Current int64</p>"}],"name":"getInt64","longname":"module:qtdatastream/reader~Reader#getInt64","kind":"function","memberof":"module:qtdatastream/reader~Reader","scope":"instance","___id":"T000002R000289","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"getInt64","signature":"<span class=\"signature\">()</span><span class=\"type-signature\"> &rarr; {Number}</span>","ancestors":["<a href=\"module-qtdatastream_reader.html\">qtdatastream/reader</a>","<a href=\"module-qtdatastream_reader-Reader.html\">~Reader</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="reader.js.html">reader.js</a>:<a href="reader.js.html#line222">222</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="getList">
+      <a href="#params-getList"><span class="type-signature"></span>getList</a><span class="signature">()</span><span class="type-signature"> &rarr; {Array}</span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-getList">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
+
+        
+<div class="param-desc">
+    <p>Current list</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array</span>
+
+
+    </dd>
+</dl>
+
+    
+</div>
+  
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * @returns {Array} Current list\n */","meta":{"range":[6122,6344],"filename":"reader.js","lineno":222,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100002842","name":"Reader.prototype.getList","type":"FunctionExpression","paramnames":[]},"vars":{"listSize":"module:qtdatastream/reader~Reader#getList~listSize","i":"module:qtdatastream/reader~i","list":"module:qtdatastream/reader~Reader#getList~list","val":"module:qtdatastream/reader~Reader#getList~val","list[undefined]":"module:qtdatastream/reader~Reader#getList~list.undefined]"},"shortpath":"reader.js"},"returns":[{"type":{"names":["Array"]},"description":"<p>Current list</p>"}],"name":"getList","longname":"module:qtdatastream/reader~Reader#getList","kind":"function","memberof":"module:qtdatastream/reader~Reader","scope":"instance","___id":"T000002R000256","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"getList","signature":"<span class=\"signature\">()</span><span class=\"type-signature\"> &rarr; {Array}</span>","ancestors":["<a href=\"module-qtdatastream_reader.html\">qtdatastream/reader</a>","<a href=\"module-qtdatastream_reader-Reader.html\">~Reader</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="reader.js.html">reader.js</a>:<a href="reader.js.html#line246">246</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="getMap">
+      <a href="#params-getMap"><span class="type-signature"></span>getMap</a><span class="signature">()</span><span class="type-signature"> &rarr; {Object}</span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-getMap">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
+
+        
+<div class="param-desc">
+    <p>Current map</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+    </dd>
+</dl>
+
+    
+</div>
+  
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * @returns {Object} Current map\n */","meta":{"range":[6676,6956],"filename":"reader.js","lineno":246,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100002934","name":"Reader.prototype.getMap","type":"FunctionExpression","paramnames":[]},"vars":{"mapSize":"module:qtdatastream/reader~Reader#getMap~mapSize","i":"module:qtdatastream/reader~i","map":"module:qtdatastream/reader~Reader#getMap~map","key":"module:qtdatastream/reader~key","val":"module:qtdatastream/reader~val","map[undefined]":"module:qtdatastream/reader~Reader#getMap~map.undefined]"},"shortpath":"reader.js"},"returns":[{"type":{"names":["Object"]},"description":"<p>Current map</p>"}],"name":"getMap","longname":"module:qtdatastream/reader~Reader#getMap","kind":"function","memberof":"module:qtdatastream/reader~Reader","scope":"instance","___id":"T000002R000270","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"getMap","signature":"<span class=\"signature\">()</span><span class=\"type-signature\"> &rarr; {Object}</span>","ancestors":["<a href=\"module-qtdatastream_reader.html\">qtdatastream/reader</a>","<a href=\"module-qtdatastream_reader-Reader.html\">~Reader</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="reader.js.html">reader.js</a>:<a href="reader.js.html#line167">167</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="getQVariant">
+      <a href="#params-getQVariant"><span class="type-signature"></span>getQVariant</a><span class="signature">()</span><span class="type-signature"> &rarr; {*}</span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-getQVariant">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
+
+        
+<div class="param-desc">
+    <p>Corresponding QVariant result corresponding current QVariant type</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">*</span>
+
+
+    </dd>
+</dl>
+
+    
+</div>
+  
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * @returns {*} Corresponding QVariant result corresponding current QVariant type\n */","meta":{"range":[4737,4972],"filename":"reader.js","lineno":167,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100002639","name":"Reader.prototype.getQVariant","type":"FunctionExpression","paramnames":[]},"vars":{"type":"module:qtdatastream/reader~Reader#getQVariant~type","isNull":"module:qtdatastream/reader~Reader#getQVariant~isNull"},"shortpath":"reader.js"},"returns":[{"type":{"names":["*"]},"description":"<p>Corresponding QVariant result corresponding current QVariant type</p>"}],"name":"getQVariant","longname":"module:qtdatastream/reader~Reader#getQVariant","kind":"function","memberof":"module:qtdatastream/reader~Reader","scope":"instance","___id":"T000002R000239","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"getQVariant","signature":"<span class=\"signature\">()</span><span class=\"type-signature\"> &rarr; {*}</span>","ancestors":["<a href=\"module-qtdatastream_reader.html\">qtdatastream/reader</a>","<a href=\"module-qtdatastream_reader-Reader.html\">~Reader</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="reader.js.html">reader.js</a>:<a href="reader.js.html#line84">84</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="getQVariantByType">
+      <a href="#params-getQVariantByType"><span class="type-signature"></span>getQVariantByType</a><span class="signature">(type, userType<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {*}</span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-getQVariantByType">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-getQVariantByType" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>type</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>A QVariant Type as defined in <a href="module-qtdatastream.html#.Types"><code>module:qtdatastream.Types</code></a></p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>userType</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Can specify userType in case of encapsulated userTypes</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
+
+        
+<div class="param-desc">
+    <p>Corresponding QVariant result corresponding to the given type</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">*</span>
+
+
+    </dd>
+</dl>
+
+    
+</div>
+  
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * @param {Number} type A QVariant Type as defined in <a href="module-qtdatastream.html#.Types"><code>module:qtdatastream.Types</code></a>\n * @param {string} [userType] Can specify userType in case of encapsulated userTypes\n * @returns {*} Corresponding QVariant result corresponding to the given type\n */","meta":{"range":[2227,4139],"filename":"reader.js","lineno":84,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100002324","name":"Reader.prototype.getQVariantByType","type":"FunctionExpression","paramnames":["type","userType"]},"vars":{"userTypeName":"module:qtdatastream/reader~userTypeName","t":"module:qtdatastream/reader~Reader#getQVariantByType~t","iter":"module:qtdatastream/reader~Reader#getQVariantByType~iter","ret":"module:qtdatastream/reader~Reader#getQVariantByType~ret","item":"module:qtdatastream/reader~Reader#getQVariantByType~item","ret[undefined]":"module:qtdatastream/reader~Reader#getQVariantByType~ret.undefined]","qvtype":"module:qtdatastream/reader~Reader#getQVariantByType~qvtype"},"shortpath":"reader.js"},"params":[{"type":{"names":["Number"]},"description":"<p>A QVariant Type as defined in <a href="module-qtdatastream.html#.Types"><code>module:qtdatastream.Types</code></a></p>","name":"type"},{"type":{"names":["string"]},"optional":true,"description":"<p>Can specify userType in case of encapsulated userTypes</p>","name":"userType"}],"returns":[{"type":{"names":["*"]},"description":"<p>Corresponding QVariant result corresponding to the given type</p>"}],"name":"getQVariantByType","longname":"module:qtdatastream/reader~Reader#getQVariantByType","kind":"function","memberof":"module:qtdatastream/reader~Reader","scope":"instance","___id":"T000002R000223","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"getQVariantByType","signature":"<span class=\"signature\">(type, userType<span class=\"signature-attributes\">opt</span>)</span><span class=\"type-signature\"> &rarr; {*}</span>","ancestors":["<a href=\"module-qtdatastream_reader.html\">qtdatastream/reader</a>","<a href=\"module-qtdatastream_reader-Reader.html\">~Reader</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="reader.js.html">reader.js</a>:<a href="reader.js.html#line181">181</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="getQVariantType">
+      <a href="#params-getQVariantType"><span class="type-signature"></span>getQVariantType</a><span class="signature">()</span><span class="type-signature"> &rarr; {Number}</span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-getQVariantType">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
+
+        
+<div class="param-desc">
+    <p>Current QVariant type as defined in <a href="module-qtdatastream.html#.Types"><code>module:qtdatastream.Types</code></a></p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Number</span>
+
+
+    </dd>
+</dl>
+
+    
+</div>
+  
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * @returns {Number} Current QVariant type as defined in <a href="module-qtdatastream.html#.Types"><code>module:qtdatastream.Types</code></a>\n */","meta":{"range":[5074,5149],"filename":"reader.js","lineno":181,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100002676","name":"Reader.prototype.getQVariantType","type":"FunctionExpression","paramnames":[]},"shortpath":"reader.js"},"returns":[{"type":{"names":["Number"]},"description":"<p>Current QVariant type as defined in <a href="module-qtdatastream.html#.Types"><code>module:qtdatastream.Types</code></a></p>"}],"name":"getQVariantType","longname":"module:qtdatastream/reader~Reader#getQVariantType","kind":"function","memberof":"module:qtdatastream/reader~Reader","scope":"instance","___id":"T000002R000242","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"getQVariantType","signature":"<span class=\"signature\">()</span><span class=\"type-signature\"> &rarr; {Number}</span>","ancestors":["<a href=\"module-qtdatastream_reader.html\">qtdatastream/reader</a>","<a href=\"module-qtdatastream_reader-Reader.html\">~Reader</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="reader.js.html">reader.js</a>:<a href="reader.js.html#line261">261</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="getShort">
+      <a href="#params-getShort"><span class="type-signature"></span>getShort</a><span class="signature">()</span><span class="type-signature"> &rarr; {Number}</span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-getShort">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
+
+        
+<div class="param-desc">
+    <p>Current short</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Number</span>
+
+
+    </dd>
+</dl>
+
+    
+</div>
+  
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * @returns {Number} Current short\n */","meta":{"range":[7002,7123],"filename":"reader.js","lineno":261,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100002991","name":"Reader.prototype.getShort","type":"FunctionExpression","paramnames":[]},"vars":{"i":"module:qtdatastream/reader~Reader#getShort~i","this.pos":"module:qtdatastream/reader~Reader#pos"},"shortpath":"reader.js"},"returns":[{"type":{"names":["Number"]},"description":"<p>Current short</p>"}],"name":"getShort","longname":"module:qtdatastream/reader~Reader#getShort","kind":"function","memberof":"module:qtdatastream/reader~Reader","scope":"instance","___id":"T000002R000280","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"getShort","signature":"<span class=\"signature\">()</span><span class=\"type-signature\"> &rarr; {Number}</span>","ancestors":["<a href=\"module-qtdatastream_reader.html\">qtdatastream/reader</a>","<a href=\"module-qtdatastream_reader-Reader.html\">~Reader</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="reader.js.html">reader.js</a>:<a href="reader.js.html#line188">188</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="getString">
+      <a href="#params-getString"><span class="type-signature"></span>getString</a><span class="signature">()</span><span class="type-signature"> &rarr; {string}</span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-getString">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
+
+        
+<div class="param-desc">
+    <p>Current string</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+</div>
+  
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * @returns {string} Current string\n */","meta":{"range":[5196,5528],"filename":"reader.js","lineno":188,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100002690","name":"Reader.prototype.getString","type":"FunctionExpression","paramnames":[]},"vars":{"stringSize":"module:qtdatastream/reader~Reader#getString~stringSize","stringBuffer":"module:qtdatastream/reader~Reader#getString~stringBuffer","resultingString":"module:qtdatastream/reader~Reader#getString~resultingString","this.pos":"module:qtdatastream/reader~Reader#pos"},"shortpath":"reader.js"},"returns":[{"type":{"names":["string"]},"description":"<p>Current string</p>"}],"name":"getString","longname":"module:qtdatastream/reader~Reader#getString","kind":"function","memberof":"module:qtdatastream/reader~Reader","scope":"instance","___id":"T000002R000243","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"getString","signature":"<span class=\"signature\">()</span><span class=\"type-signature\"> &rarr; {string}</span>","ancestors":["<a href=\"module-qtdatastream_reader.html\">qtdatastream/reader</a>","<a href=\"module-qtdatastream_reader-Reader.html\">~Reader</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="reader.js.html">reader.js</a>:<a href="reader.js.html#line234">234</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="getStringList">
+      <a href="#params-getStringList"><span class="type-signature"></span>getStringList</a><span class="signature">()</span><span class="type-signature"> &rarr; {Array.&lt;string>}</span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-getStringList">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
+
+        
+<div class="param-desc">
+    <p>Current list of string</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;string></span>
+
+
+    </dd>
+</dl>
+
+    
+</div>
+  
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * @returns {Array<string>} Current list of string\n */","meta":{"range":[6406,6632],"filename":"reader.js","lineno":234,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100002888","name":"Reader.prototype.getStringList","type":"FunctionExpression","paramnames":[]},"vars":{"listSize":"module:qtdatastream/reader~Reader#getStringList~listSize","i":"module:qtdatastream/reader~i","list":"module:qtdatastream/reader~Reader#getStringList~list","val":"module:qtdatastream/reader~Reader#getStringList~val","list[undefined]":"module:qtdatastream/reader~Reader#getStringList~list.undefined]"},"shortpath":"reader.js"},"returns":[{"type":{"names":["Array.<string>"]},"description":"<p>Current list of string</p>"}],"name":"getStringList","longname":"module:qtdatastream/reader~Reader#getStringList","kind":"function","memberof":"module:qtdatastream/reader~Reader","scope":"instance","___id":"T000002R000263","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"getStringList","signature":"<span class=\"signature\">()</span><span class=\"type-signature\"> &rarr; {Array.&lt;string>}</span>","ancestors":["<a href=\"module-qtdatastream_reader.html\">qtdatastream/reader</a>","<a href=\"module-qtdatastream_reader-Reader.html\">~Reader</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="reader.js.html">reader.js</a>:<a href="reader.js.html#line148">148</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="getTime">
+      <a href="#params-getTime"><span class="type-signature"></span>getTime</a><span class="signature">()</span><span class="type-signature"> &rarr; {number}</span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-getTime">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
+
+        
+<div class="param-desc">
+    <p>Current QTime (milliseconds since midnight)</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+    </dd>
+</dl>
+
+    
+</div>
+  
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * @returns {number} Current QTime (milliseconds since midnight)\n */","meta":{"range":[4215,4282],"filename":"reader.js","lineno":148,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100002579","name":"Reader.prototype.getTime","type":"FunctionExpression","paramnames":[]},"shortpath":"reader.js"},"returns":[{"type":{"names":["number"]},"description":"<p>Current QTime (milliseconds since midnight)</p>"}],"name":"getTime","longname":"module:qtdatastream/reader~Reader#getTime","kind":"function","memberof":"module:qtdatastream/reader~Reader","scope":"instance","___id":"T000002R000233","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"getTime","signature":"<span class=\"signature\">()</span><span class=\"type-signature\"> &rarr; {number}</span>","ancestors":["<a href=\"module-qtdatastream_reader.html\">qtdatastream/reader</a>","<a href=\"module-qtdatastream_reader-Reader.html\">~Reader</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="reader.js.html">reader.js</a>:<a href="reader.js.html#line279">279</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="getUInt">
+      <a href="#params-getUInt"><span class="type-signature"></span>getUInt</a><span class="signature">()</span><span class="type-signature"> &rarr; {Number}</span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-getUInt">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
+
+        
+<div class="param-desc">
+    <p>Current uint</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Number</span>
+
+
+    </dd>
+</dl>
+
+    
+</div>
+  
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * @returns {Number} Current uint\n */","meta":{"range":[7331,7452],"filename":"reader.js","lineno":279,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100003049","name":"Reader.prototype.getUInt","type":"FunctionExpression","paramnames":[]},"vars":{"i":"module:qtdatastream/reader~Reader#getUInt~i","this.pos":"module:qtdatastream/reader~Reader#pos"},"shortpath":"reader.js"},"returns":[{"type":{"names":["Number"]},"description":"<p>Current uint</p>"}],"name":"getUInt","longname":"module:qtdatastream/reader~Reader#getUInt","kind":"function","memberof":"module:qtdatastream/reader~Reader","scope":"instance","___id":"T000002R000286","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"getUInt","signature":"<span class=\"signature\">()</span><span class=\"type-signature\"> &rarr; {Number}</span>","ancestors":["<a href=\"module-qtdatastream_reader.html\">qtdatastream/reader</a>","<a href=\"module-qtdatastream_reader-Reader.html\">~Reader</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="reader.js.html">reader.js</a>:<a href="reader.js.html#line297">297</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="getUInt64">
+      <a href="#params-getUInt64"><span class="type-signature"></span>getUInt64</a><span class="signature">()</span><span class="type-signature"> &rarr; {Number}</span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-getUInt64">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
+
+        
+<div class="param-desc">
+    <p>Current uint64</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Number</span>
+
+
+    </dd>
+</dl>
+
+    
+</div>
+  
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * @returns {Number} Current uint64\n */","meta":{"range":[7672,7801],"filename":"reader.js","lineno":297,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100003109","name":"Reader.prototype.getUInt64","type":"FunctionExpression","paramnames":[]},"vars":{"i":"module:qtdatastream/reader~Reader#getUInt64~i","this.pos":"module:qtdatastream/reader~Reader#pos"},"shortpath":"reader.js"},"returns":[{"type":{"names":["Number"]},"description":"<p>Current uint64</p>"}],"name":"getUInt64","longname":"module:qtdatastream/reader~Reader#getUInt64","kind":"function","memberof":"module:qtdatastream/reader~Reader","scope":"instance","___id":"T000002R000292","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"getUInt64","signature":"<span class=\"signature\">()</span><span class=\"type-signature\"> &rarr; {Number}</span>","ancestors":["<a href=\"module-qtdatastream_reader.html\">qtdatastream/reader</a>","<a href=\"module-qtdatastream_reader-Reader.html\">~Reader</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="reader.js.html">reader.js</a>:<a href="reader.js.html#line74">74</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="parse">
+      <a href="#params-parse"><span class="type-signature"></span>parse</a><span class="signature">()</span><span class="type-signature"> &rarr; {Object}</span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>Parse buffer</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-parse">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
+
+        
+<div class="param-desc">
+    <p>buffer converted to a Javascript object</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Object</span>
+
+
+    </dd>
+</dl>
+
+    
+</div>
+  
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * Parse buffer\n * @returns {Object} buffer converted to a Javascript object\n */","meta":{"range":[1865,1965],"filename":"reader.js","lineno":74,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100002302","name":"Reader.prototype.parse","type":"FunctionExpression","paramnames":[]},"vars":{"this.parsed":"module:qtdatastream/reader~Reader#parsed"},"shortpath":"reader.js"},"description":"<p>Parse buffer</p>","returns":[{"type":{"names":["Object"]},"description":"<p>buffer converted to a Javascript object</p>"}],"name":"parse","longname":"module:qtdatastream/reader~Reader#parse","kind":"function","memberof":"module:qtdatastream/reader~Reader","scope":"instance","___id":"T000002R000221","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"parse","signature":"<span class=\"signature\">()</span><span class=\"type-signature\"> &rarr; {Object}</span>","ancestors":["<a href=\"module-qtdatastream_reader.html\">qtdatastream/reader</a>","<a href=\"module-qtdatastream_reader-Reader.html\">~Reader</a>#"]}
+</pre>
+-->
+</div>
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Tue Feb 07 2017 10:40:24 GMT+0100 (CET) using the LOKE theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>
