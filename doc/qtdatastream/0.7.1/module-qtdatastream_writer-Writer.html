@@ -1,0 +1,7114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Writer - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav class="nav">
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-qtdatastream.html">qtdatastream</a><ul class='methods'><li data-type='method'><a href="module-qtdatastream.html#.getUserType">getUserType</a></li><li data-type='method'><a href="module-qtdatastream.html#.isUserTypeComplex">isUserTypeComplex</a></li><li data-type='method'><a href="module-qtdatastream.html#.registerUserType">registerUserType</a></li></ul></li><li><a href="module-qtdatastream_reader.html">qtdatastream/reader</a></li><li><a href="module-qtdatastream_writer.html">qtdatastream/writer</a></li></ul><h3>Classes</h3><ul><li><a href="module-qtdatastream.Socket.html">Socket</a><ul class='methods'><li data-type='method'><a href="module-qtdatastream.Socket.html#updateSocket">updateSocket</a></li><li data-type='method'><a href="module-qtdatastream.Socket.html#write">write</a></li></ul></li><li><a href="module-qtdatastream_reader-Reader.html">Reader</a><ul class='methods'><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#.conv">conv</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getBool">getBool</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getByteArray">getByteArray</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getChar">getChar</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getDateTime">getDateTime</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getDouble">getDouble</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getInt">getInt</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getInt64">getInt64</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getList">getList</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getMap">getMap</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getQVariant">getQVariant</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getQVariantByType">getQVariantByType</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getQVariantType">getQVariantType</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getShort">getShort</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getString">getString</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getStringList">getStringList</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getTime">getTime</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getUInt">getUInt</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#getUInt64">getUInt64</a></li><li data-type='method'><a href="module-qtdatastream_reader-Reader.html#parse">parse</a></li></ul></li><li><a href="module-qtdatastream_writer-Writer.html">Writer</a><ul class='methods'><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#.conv">conv</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse">_parse</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_bool">_parse_bool</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_class">_parse_class</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qbytearray">_parse_qbytearray</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qchar">_parse_qchar</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qdatetime">_parse_qdatetime</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qdouble">_parse_qdouble</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qint">_parse_qint</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qint64">_parse_qint64</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qinvalid">_parse_qinvalid</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qlist">_parse_qlist</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qmap">_parse_qmap</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qshort">_parse_qshort</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qstring">_parse_qstring</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qstringlist">_parse_qstringlist</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_quint">_parse_quint</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_quint64">_parse_quint64</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qusertype">_parse_qusertype</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#_parse_qvariant">_parse_qvariant</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#getBuffer">getBuffer</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#getRawBuffer">getRawBuffer</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#parse">parse</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#write">write</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeBool">writeBool</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeByteArray">writeByteArray</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeChar">writeChar</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeDateTime">writeDateTime</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeDouble">writeDouble</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeInt">writeInt</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeInt64">writeInt64</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeQVariant">writeQVariant</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeShort">writeShort</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeString">writeString</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeUInt">writeUInt</a></li><li data-type='method'><a href="module-qtdatastream_writer-Writer.html#writeUInt64">writeUInt64</a></li></ul></li><li><a href="module-qtdatastream-QBool.html">QBool</a></li><li><a href="module-qtdatastream-QByteArray.html">QByteArray</a></li><li><a href="module-qtdatastream-QChar.html">QChar</a></li><li><a href="module-qtdatastream-QDateTime.html">QDateTime</a></li><li><a href="module-qtdatastream-QDouble.html">QDouble</a></li><li><a href="module-qtdatastream-QInt.html">QInt</a></li><li><a href="module-qtdatastream-QInt64.html">QInt64</a></li><li><a href="module-qtdatastream-QInvalid.html">QInvalid</a></li><li><a href="module-qtdatastream-QList.html">QList</a></li><li><a href="module-qtdatastream-QMap.html">QMap</a></li><li><a href="module-qtdatastream-QShort.html">QShort</a></li><li><a href="module-qtdatastream-QString.html">QString</a></li><li><a href="module-qtdatastream-QStringList.html">QStringList</a></li><li><a href="module-qtdatastream-QTime.html">QTime</a></li><li><a href="module-qtdatastream-QUInt.html">QUInt</a></li><li><a href="module-qtdatastream-QUInt64.html">QUInt64</a></li><li><a href="module-qtdatastream-QUserType.html">QUserType</a></li><li><a href="module-qtdatastream-QVariant.html">QVariant</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">Writer</h1>
+    
+
+    <!--container.tmpl-->
+
+
+
+
+
+<section>
+
+
+
+<header data-tmpl="container.tmpl">
+    
+        <h2>
+            <span class="ancestors"><a href="module-qtdatastream_writer.html">qtdatastream/writer</a>~</span>
+        
+        Writer
+        </h2>
+        
+            <div class="lead"><p>Class to generate a buffer from a Javascript object</p></div>
+        
+    
+
+    
+      <div class="bs-callout bs-callout-default">
+        <h5>Members</h5>
+        <br />
+        <dl class="dl-horizontal methods-members">
+        <dt>Methods</dt><dd><ul>
+            <li><a href="#conv">conv</a></li>
+            
+            <li><a href="#_parse">_parse</a></li>
+            
+            <li><a href="#_parse_bool">_parse_bool</a></li>
+            
+            <li><a href="#_parse_class">_parse_class</a></li>
+            
+            <li><a href="#_parse_qbytearray">_parse_qbytearray</a></li>
+            
+            <li><a href="#_parse_qchar">_parse_qchar</a></li>
+            
+            <li><a href="#_parse_qdatetime">_parse_qdatetime</a></li>
+            
+            <li><a href="#_parse_qdouble">_parse_qdouble</a></li>
+            
+            <li><a href="#_parse_qint">_parse_qint</a></li>
+            
+            <li><a href="#_parse_qint64">_parse_qint64</a></li>
+            
+            <li><a href="#_parse_qinvalid">_parse_qinvalid</a></li>
+            
+            <li><a href="#_parse_qlist">_parse_qlist</a></li>
+            
+            <li><a href="#_parse_qmap">_parse_qmap</a></li>
+            
+            <li><a href="#_parse_qshort">_parse_qshort</a></li>
+            
+            <li><a href="#_parse_qstring">_parse_qstring</a></li>
+            
+            <li><a href="#_parse_qstringlist">_parse_qstringlist</a></li>
+            
+            <li><a href="#_parse_quint">_parse_quint</a></li>
+            
+            <li><a href="#_parse_quint64">_parse_quint64</a></li>
+            
+            <li><a href="#_parse_qusertype">_parse_qusertype</a></li>
+            
+            <li><a href="#_parse_qvariant">_parse_qvariant</a></li>
+            
+            <li><a href="#getBuffer">getBuffer</a></li>
+            
+            <li><a href="#getRawBuffer">getRawBuffer</a></li>
+            
+            <li><a href="#parse">parse</a></li>
+            
+            <li><a href="#write">write</a></li>
+            
+            <li><a href="#writeBool">writeBool</a></li>
+            
+            <li><a href="#writeByteArray">writeByteArray</a></li>
+            
+            <li><a href="#writeChar">writeChar</a></li>
+            
+            <li><a href="#writeDateTime">writeDateTime</a></li>
+            
+            <li><a href="#writeDouble">writeDouble</a></li>
+            
+            <li><a href="#writeInt">writeInt</a></li>
+            
+            <li><a href="#writeInt64">writeInt64</a></li>
+            
+            <li><a href="#writeQVariant">writeQVariant</a></li>
+            
+            <li><a href="#writeShort">writeShort</a></li>
+            
+            <li><a href="#writeString">writeString</a></li>
+            
+            <li><a href="#writeUInt">writeUInt</a></li>
+            
+            <li><a href="#writeUInt64">writeUInt64</a></li>
+            </ul></dd></dl></div>
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        <!--method.tmpl-->
+<div class="method-details">
+
+
+
+
+
+    
+    <h3 class="constructor">Constructor</h3>
+    
+
+    
+      <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="writer.js.html">writer.js</a>:<a href="writer.js.html#line44">44</a>
+  </code>
+</div>
+
+    
+
+    <h4 class="name" id="Writer">
+      <a href="#params-Writer"><span class="type-signature"></span>new Writer</a><span class="signature">(obj)</span><span class="type-signature"></span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>var w = new Writer(obj);
+var buffer = w.getBuffer(); //Buffer ready to be sent to a socket !</code></pre>
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-Writer">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-Writer" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Javascript object</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * @class\n * @classdesc Class to generate a buffer from a Javascript object\n * @param {Object} obj Javascript object\n * @example\n * var w = new Writer(obj);\n * var buffer = w.getBuffer(); //Buffer ready to be sent to a socket !\n */","meta":{"range":[1301,1390],"filename":"writer.js","lineno":44,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100003484","name":"Writer","type":"FunctionExpression"},"vars":{"this.bufs":"module:qtdatastream/writer~Writer#bufs","this.type":"module:qtdatastream/writer~Writer#type"},"shortpath":"writer.js"},"kind":"class","classdesc":"<p>Class to generate a buffer from a Javascript object</p>","params":[{"type":{"names":["Object"]},"description":"<p>Javascript object</p>","name":"obj"}],"examples":[{"caption":"","code":"var w = new Writer(obj);\nvar buffer = w.getBuffer(); //Buffer ready to be sent to a socket !"}],"name":"Writer","longname":"module:qtdatastream/writer~Writer","scope":"inner","memberof":"module:qtdatastream/writer","___id":"T000003R000004","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"Writer","signature":"<span class=\"signature\">(obj)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"module-qtdatastream_writer.html\">qtdatastream/writer</a>~"]}
+</pre>
+-->
+</div>
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="writer.js.html">writer.js</a>:<a href="writer.js.html#line59">59</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id=".conv">
+      <a href="#params-conv"><span class="type-signature">(static) </span>conv</a><span class="signature">(msg)</span><span class="type-signature"> &rarr; {Buffer}</span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>Converts an UTF-8 string to an UTF-16 buffer</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-conv">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-conv" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>msg</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Buffer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>An UTF-8 string</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
+
+        
+<div class="param-desc">
+    <p>An UTF-16 Buffer</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Buffer</span>
+
+
+    </dd>
+</dl>
+
+    
+</div>
+  
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * Converts an UTF-8 string to an UTF-16 buffer\n * @param {Buffer} msg An UTF-8 string\n * @returns {Buffer} An UTF-16 Buffer\n */","meta":{"range":[1641,1739],"filename":"writer.js","lineno":59,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100003526","name":"Writer.conv","type":"FunctionExpression","paramnames":["msg"]},"shortpath":"writer.js"},"description":"<p>Converts an UTF-8 string to an UTF-16 buffer</p>","params":[{"type":{"names":["Buffer"]},"description":"<p>An UTF-8 string</p>","name":"msg"}],"returns":[{"type":{"names":["Buffer"]},"description":"<p>An UTF-16 Buffer</p>"}],"name":"conv","longname":"module:qtdatastream/writer~Writer.conv","kind":"function","memberof":"module:qtdatastream/writer~Writer","scope":"static","___id":"T000002R000340","___s":true,"attribs":"<span class=\"type-signature\">(static) </span>","id":".conv","signature":"<span class=\"signature\">(msg)</span><span class=\"type-signature\"> &rarr; {Buffer}</span>","ancestors":["<a href=\"module-qtdatastream_writer.html\">qtdatastream/writer</a>","<a href=\"module-qtdatastream_writer-Writer.html\">~Writer</a>."]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="writer.js.html">writer.js</a>:<a href="writer.js.html#line109">109</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="_parse">
+      <a href="#params-_parse"><span class="type-signature">(protected) </span>_parse</a><span class="signature">(obj)</span><span class="type-signature"> &rarr; {Number}</span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>Parses next element of the buffer</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-_parse">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-_parse" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
+
+        
+<div class="param-desc">
+    <p>Type as defined in <a href="module-qtdatastream.html#.Types"><code>module:qtdatastream.Types</code></a></p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Number</span>
+
+
+    </dd>
+</dl>
+
+    
+</div>
+  
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * Parses next element of the buffer\n * @protected\n * @param {*} obj\n * @returns {Number} Type as defined in <a href="module-qtdatastream.html#.Types"><code>module:qtdatastream.Types</code></a>\n */","meta":{"range":[3055,5904],"filename":"writer.js","lineno":109,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100003678","name":"Writer.prototype._parse","type":"FunctionExpression","paramnames":["obj"]},"vars":{"typeofobj":"module:qtdatastream/writer~Writer#_parse~typeofobj","type":"module:qtdatastream/writer~Writer#_parse~type"},"shortpath":"writer.js"},"description":"<p>Parses next element of the buffer</p>","access":"protected","params":[{"type":{"names":["*"]},"name":"obj"}],"returns":[{"type":{"names":["Number"]},"description":"<p>Type as defined in <a href="module-qtdatastream.html#.Types"><code>module:qtdatastream.Types</code></a></p>"}],"name":"_parse","longname":"module:qtdatastream/writer~Writer#_parse","kind":"function","memberof":"module:qtdatastream/writer~Writer","scope":"instance","___id":"T000002R000349","___s":true,"attribs":"<span class=\"type-signature\">(protected) </span>","id":"_parse","signature":"<span class=\"signature\">(obj)</span><span class=\"type-signature\"> &rarr; {Number}</span>","ancestors":["<a href=\"module-qtdatastream_writer.html\">qtdatastream/writer</a>","<a href=\"module-qtdatastream_writer-Writer.html\">~Writer</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="writer.js.html">writer.js</a>:<a href="writer.js.html#line264">264</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="_parse_bool">
+      <a href="#params-_parse_bool"><span class="type-signature">(protected) </span>_parse_bool</a><span class="signature">(obj)</span><span class="type-signature"></span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-_parse_bool">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-_parse_bool" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">QBool</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * @param {QBool} obj\n * @protected\n */","meta":{"range":[7042,7130],"filename":"writer.js","lineno":264,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100004224","name":"Writer.prototype._parse_bool","type":"FunctionExpression","paramnames":["obj"]},"shortpath":"writer.js"},"params":[{"type":{"names":["QBool"]},"name":"obj"}],"access":"protected","name":"_parse_bool","longname":"module:qtdatastream/writer~Writer#_parse_bool","kind":"function","memberof":"module:qtdatastream/writer~Writer","scope":"instance","___id":"T000002R000360","___s":true,"attribs":"<span class=\"type-signature\">(protected) </span>","id":"_parse_bool","signature":"<span class=\"signature\">(obj)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"module-qtdatastream_writer.html\">qtdatastream/writer</a>","<a href=\"module-qtdatastream_writer-Writer.html\">~Writer</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="writer.js.html">writer.js</a>:<a href="writer.js.html#line331">331</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="_parse_class">
+      <a href="#params-_parse_class"><span class="type-signature">(protected) </span>_parse_class</a><span class="signature">(obj, key, newclass)</span><span class="type-signature"></span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>If obj[key] is not of class newclass, instanciate it.
+Then call _parse().</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-_parse_class">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-_parse_class" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>key</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>newclass</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * If obj[key] is not of class newclass, instanciate it.\n * Then call _parse().\n * @param {*} obj\n * @param {*} key\n * @param {*} newclass\n * @protected\n */","meta":{"range":[8579,8789],"filename":"writer.js","lineno":331,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100004441","name":"Writer.prototype._parse_class","type":"FunctionExpression","paramnames":["obj","key","newclass"]},"shortpath":"writer.js"},"description":"<p>If obj[key] is not of class newclass, instanciate it.\nThen call _parse().</p>","params":[{"type":{"names":["*"]},"name":"obj"},{"type":{"names":["*"]},"name":"key"},{"type":{"names":["*"]},"name":"newclass"}],"access":"protected","name":"_parse_class","longname":"module:qtdatastream/writer~Writer#_parse_class","kind":"function","memberof":"module:qtdatastream/writer~Writer","scope":"instance","___id":"T000002R000369","___s":true,"attribs":"<span class=\"type-signature\">(protected) </span>","id":"_parse_class","signature":"<span class=\"signature\">(obj, key, newclass)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"module-qtdatastream_writer.html\">qtdatastream/writer</a>","<a href=\"module-qtdatastream_writer-Writer.html\">~Writer</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="writer.js.html">writer.js</a>:<a href="writer.js.html#line292">292</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="_parse_qbytearray">
+      <a href="#params-_parse_qbytearray"><span class="type-signature">(protected) </span>_parse_qbytearray</a><span class="signature">(obj)</span><span class="type-signature"></span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-_parse_qbytearray">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-_parse_qbytearray" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">QByteArray</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * @param {QByteArray} obj\n * @protected\n */","meta":{"range":[7461,7560],"filename":"writer.js","lineno":292,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100004281","name":"Writer.prototype._parse_qbytearray","type":"FunctionExpression","paramnames":["obj"]},"shortpath":"writer.js"},"params":[{"type":{"names":["QByteArray"]},"name":"obj"}],"access":"protected","name":"_parse_qbytearray","longname":"module:qtdatastream/writer~Writer#_parse_qbytearray","kind":"function","memberof":"module:qtdatastream/writer~Writer","scope":"instance","___id":"T000002R000363","___s":true,"attribs":"<span class=\"type-signature\">(protected) </span>","id":"_parse_qbytearray","signature":"<span class=\"signature\">(obj)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"module-qtdatastream_writer.html\">qtdatastream/writer</a>","<a href=\"module-qtdatastream_writer-Writer.html\">~Writer</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="writer.js.html">writer.js</a>:<a href="writer.js.html#line283">283</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="_parse_qchar">
+      <a href="#params-_parse_qchar"><span class="type-signature">(protected) </span>_parse_qchar</a><span class="signature">(obj)</span><span class="type-signature"></span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-_parse_qchar">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-_parse_qchar" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">QChar</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * @param {QChar} obj\n * @protected\n */","meta":{"range":[7320,7409],"filename":"writer.js","lineno":283,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100004262","name":"Writer.prototype._parse_qchar","type":"FunctionExpression","paramnames":["obj"]},"shortpath":"writer.js"},"params":[{"type":{"names":["QChar"]},"name":"obj"}],"access":"protected","name":"_parse_qchar","longname":"module:qtdatastream/writer~Writer#_parse_qchar","kind":"function","memberof":"module:qtdatastream/writer~Writer","scope":"instance","___id":"T000002R000362","___s":true,"attribs":"<span class=\"type-signature\">(protected) </span>","id":"_parse_qchar","signature":"<span class=\"signature\">(obj)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"module-qtdatastream_writer.html\">qtdatastream/writer</a>","<a href=\"module-qtdatastream_writer-Writer.html\">~Writer</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="writer.js.html">writer.js</a>:<a href="writer.js.html#line201">201</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="_parse_qdatetime">
+      <a href="#params-_parse_qdatetime"><span class="type-signature">(protected) </span>_parse_qdatetime</a><span class="signature">(obj)</span><span class="type-signature"></span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-_parse_qdatetime">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-_parse_qdatetime" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">QDateTime</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * @param {QDateTime} obj\n * @protected\n */","meta":{"range":[6067,6164],"filename":"writer.js","lineno":201,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100004091","name":"Writer.prototype._parse_qdatetime","type":"FunctionExpression","paramnames":["obj"]},"shortpath":"writer.js"},"params":[{"type":{"names":["QDateTime"]},"name":"obj"}],"access":"protected","name":"_parse_qdatetime","longname":"module:qtdatastream/writer~Writer#_parse_qdatetime","kind":"function","memberof":"module:qtdatastream/writer~Writer","scope":"instance","___id":"T000002R000353","___s":true,"attribs":"<span class=\"type-signature\">(protected) </span>","id":"_parse_qdatetime","signature":"<span class=\"signature\">(obj)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"module-qtdatastream_writer.html\">qtdatastream/writer</a>","<a href=\"module-qtdatastream_writer-Writer.html\">~Writer</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="writer.js.html">writer.js</a>:<a href="writer.js.html#line255">255</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="_parse_qdouble">
+      <a href="#params-_parse_qdouble"><span class="type-signature">(protected) </span>_parse_qdouble</a><span class="signature">(obj)</span><span class="type-signature"></span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-_parse_qdouble">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-_parse_qdouble" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">QDouble</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * @param {QDouble} obj\n * @protected\n */","meta":{"range":[6902,6995],"filename":"writer.js","lineno":255,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100004205","name":"Writer.prototype._parse_qdouble","type":"FunctionExpression","paramnames":["obj"]},"shortpath":"writer.js"},"params":[{"type":{"names":["QDouble"]},"name":"obj"}],"access":"protected","name":"_parse_qdouble","longname":"module:qtdatastream/writer~Writer#_parse_qdouble","kind":"function","memberof":"module:qtdatastream/writer~Writer","scope":"instance","___id":"T000002R000359","___s":true,"attribs":"<span class=\"type-signature\">(protected) </span>","id":"_parse_qdouble","signature":"<span class=\"signature\">(obj)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"module-qtdatastream_writer.html\">qtdatastream/writer</a>","<a href=\"module-qtdatastream_writer-Writer.html\">~Writer</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="writer.js.html">writer.js</a>:<a href="writer.js.html#line219">219</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="_parse_qint">
+      <a href="#params-_parse_qint"><span class="type-signature">(protected) </span>_parse_qint</a><span class="signature">(obj)</span><span class="type-signature"></span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-_parse_qint">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-_parse_qint" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">QInt</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * @param {QInt} obj\n * @protected\n */","meta":{"range":[6349,6436],"filename":"writer.js","lineno":219,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100004129","name":"Writer.prototype._parse_qint","type":"FunctionExpression","paramnames":["obj"]},"shortpath":"writer.js"},"params":[{"type":{"names":["QInt"]},"name":"obj"}],"access":"protected","name":"_parse_qint","longname":"module:qtdatastream/writer~Writer#_parse_qint","kind":"function","memberof":"module:qtdatastream/writer~Writer","scope":"instance","___id":"T000002R000355","___s":true,"attribs":"<span class=\"type-signature\">(protected) </span>","id":"_parse_qint","signature":"<span class=\"signature\">(obj)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"module-qtdatastream_writer.html\">qtdatastream/writer</a>","<a href=\"module-qtdatastream_writer-Writer.html\">~Writer</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="writer.js.html">writer.js</a>:<a href="writer.js.html#line237">237</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="_parse_qint64">
+      <a href="#params-_parse_qint64"><span class="type-signature">(protected) </span>_parse_qint64</a><span class="signature">(obj)</span><span class="type-signature"></span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-_parse_qint64">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-_parse_qint64" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">QInt64</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * @param {QInt64} obj\n * @protected\n */","meta":{"range":[6620,6711],"filename":"writer.js","lineno":237,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100004167","name":"Writer.prototype._parse_qint64","type":"FunctionExpression","paramnames":["obj"]},"shortpath":"writer.js"},"params":[{"type":{"names":["QInt64"]},"name":"obj"}],"access":"protected","name":"_parse_qint64","longname":"module:qtdatastream/writer~Writer#_parse_qint64","kind":"function","memberof":"module:qtdatastream/writer~Writer","scope":"instance","___id":"T000002R000357","___s":true,"attribs":"<span class=\"type-signature\">(protected) </span>","id":"_parse_qint64","signature":"<span class=\"signature\">(obj)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"module-qtdatastream_writer.html\">qtdatastream/writer</a>","<a href=\"module-qtdatastream_writer-Writer.html\">~Writer</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="writer.js.html">writer.js</a>:<a href="writer.js.html#line192">192</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="_parse_qinvalid">
+      <a href="#params-_parse_qinvalid"><span class="type-signature">(protected) </span>_parse_qinvalid</a><span class="signature">()</span><span class="type-signature"></span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-_parse_qinvalid">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * @protected\n */","meta":{"range":[5929,6016],"filename":"writer.js","lineno":192,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100004081","name":"Writer.prototype._parse_qinvalid","type":"FunctionExpression","paramnames":[]},"shortpath":"writer.js"},"access":"protected","name":"_parse_qinvalid","longname":"module:qtdatastream/writer~Writer#_parse_qinvalid","kind":"function","memberof":"module:qtdatastream/writer~Writer","scope":"instance","___id":"T000002R000352","___s":true,"attribs":"<span class=\"type-signature\">(protected) </span>","id":"_parse_qinvalid","signature":"<span class=\"signature\">()</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"module-qtdatastream_writer.html\">qtdatastream/writer</a>","<a href=\"module-qtdatastream_writer-Writer.html\">~Writer</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="writer.js.html">writer.js</a>:<a href="writer.js.html#line362">362</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="_parse_qlist">
+      <a href="#params-_parse_qlist"><span class="type-signature">(protected) </span>_parse_qlist</a><span class="signature">(obj)</span><span class="type-signature"></span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-_parse_qlist">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-_parse_qlist" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">QList</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * @param {QList} obj\n * @protected\n */","meta":{"range":[9273,9652],"filename":"writer.js","lineno":362,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100004548","name":"Writer.prototype._parse_qlist","type":"FunctionExpression","paramnames":["obj"]},"vars":{"size":"module:qtdatastream/writer~Writer#_parse_qlist~size","key":"module:qtdatastream/writer~Writer#_parse_qlist~key"},"shortpath":"writer.js"},"params":[{"type":{"names":["QList"]},"name":"obj"}],"access":"protected","name":"_parse_qlist","longname":"module:qtdatastream/writer~Writer#_parse_qlist","kind":"function","memberof":"module:qtdatastream/writer~Writer","scope":"instance","___id":"T000002R000373","___s":true,"attribs":"<span class=\"type-signature\">(protected) </span>","id":"_parse_qlist","signature":"<span class=\"signature\">(obj)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"module-qtdatastream_writer.html\">qtdatastream/writer</a>","<a href=\"module-qtdatastream_writer-Writer.html\">~Writer</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="writer.js.html">writer.js</a>:<a href="writer.js.html#line381">381</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="_parse_qmap">
+      <a href="#params-_parse_qmap"><span class="type-signature">(protected) </span>_parse_qmap</a><span class="signature">(obj)</span><span class="type-signature"></span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-_parse_qmap">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-_parse_qmap" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">QMap</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * @param {QMap} obj\n * @protected\n */","meta":{"range":[9698,10124],"filename":"writer.js","lineno":381,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100004611","name":"Writer.prototype._parse_qmap","type":"FunctionExpression","paramnames":["obj"]},"vars":{"size":"module:qtdatastream/writer~Writer#_parse_qmap~size","key":"module:qtdatastream/writer~Writer#_parse_qmap~key"},"shortpath":"writer.js"},"params":[{"type":{"names":["QMap"]},"name":"obj"}],"access":"protected","name":"_parse_qmap","longname":"module:qtdatastream/writer~Writer#_parse_qmap","kind":"function","memberof":"module:qtdatastream/writer~Writer","scope":"instance","___id":"T000002R000376","___s":true,"attribs":"<span class=\"type-signature\">(protected) </span>","id":"_parse_qmap","signature":"<span class=\"signature\">(obj)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"module-qtdatastream_writer.html\">qtdatastream/writer</a>","<a href=\"module-qtdatastream_writer-Writer.html\">~Writer</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="writer.js.html">writer.js</a>:<a href="writer.js.html#line210">210</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="_parse_qshort">
+      <a href="#params-_parse_qshort"><span class="type-signature">(protected) </span>_parse_qshort</a><span class="signature">(obj)</span><span class="type-signature"></span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-_parse_qshort">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-_parse_qshort" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">QShort</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * @param {QShort} obj\n * @protected\n */","meta":{"range":[6212,6303],"filename":"writer.js","lineno":210,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100004110","name":"Writer.prototype._parse_qshort","type":"FunctionExpression","paramnames":["obj"]},"shortpath":"writer.js"},"params":[{"type":{"names":["QShort"]},"name":"obj"}],"access":"protected","name":"_parse_qshort","longname":"module:qtdatastream/writer~Writer#_parse_qshort","kind":"function","memberof":"module:qtdatastream/writer~Writer","scope":"instance","___id":"T000002R000354","___s":true,"attribs":"<span class=\"type-signature\">(protected) </span>","id":"_parse_qshort","signature":"<span class=\"signature\">(obj)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"module-qtdatastream_writer.html\">qtdatastream/writer</a>","<a href=\"module-qtdatastream_writer-Writer.html\">~Writer</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="writer.js.html">writer.js</a>:<a href="writer.js.html#line273">273</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="_parse_qstring">
+      <a href="#params-_parse_qstring"><span class="type-signature">(protected) </span>_parse_qstring</a><span class="signature">(obj)</span><span class="type-signature"></span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-_parse_qstring">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-_parse_qstring" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">QString</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * @param {QString} obj\n * @protected\n */","meta":{"range":[7179,7272],"filename":"writer.js","lineno":273,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100004243","name":"Writer.prototype._parse_qstring","type":"FunctionExpression","paramnames":["obj"]},"shortpath":"writer.js"},"params":[{"type":{"names":["QString"]},"name":"obj"}],"access":"protected","name":"_parse_qstring","longname":"module:qtdatastream/writer~Writer#_parse_qstring","kind":"function","memberof":"module:qtdatastream/writer~Writer","scope":"instance","___id":"T000002R000361","___s":true,"attribs":"<span class=\"type-signature\">(protected) </span>","id":"_parse_qstring","signature":"<span class=\"signature\">(obj)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"module-qtdatastream_writer.html\">qtdatastream/writer</a>","<a href=\"module-qtdatastream_writer-Writer.html\">~Writer</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="writer.js.html">writer.js</a>:<a href="writer.js.html#line343">343</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="_parse_qstringlist">
+      <a href="#params-_parse_qstringlist"><span class="type-signature">(protected) </span>_parse_qstringlist</a><span class="signature">(obj)</span><span class="type-signature"></span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-_parse_qstringlist">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-_parse_qstringlist" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">QStringList</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * @param {QStringList} obj\n * @protected\n */","meta":{"range":[8842,9226],"filename":"writer.js","lineno":343,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100004485","name":"Writer.prototype._parse_qstringlist","type":"FunctionExpression","paramnames":["obj"]},"vars":{"size":"module:qtdatastream/writer~Writer#_parse_qstringlist~size","key":"module:qtdatastream/writer~Writer#_parse_qstringlist~key"},"shortpath":"writer.js"},"params":[{"type":{"names":["QStringList"]},"name":"obj"}],"access":"protected","name":"_parse_qstringlist","longname":"module:qtdatastream/writer~Writer#_parse_qstringlist","kind":"function","memberof":"module:qtdatastream/writer~Writer","scope":"instance","___id":"T000002R000370","___s":true,"attribs":"<span class=\"type-signature\">(protected) </span>","id":"_parse_qstringlist","signature":"<span class=\"signature\">(obj)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"module-qtdatastream_writer.html\">qtdatastream/writer</a>","<a href=\"module-qtdatastream_writer-Writer.html\">~Writer</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="writer.js.html">writer.js</a>:<a href="writer.js.html#line228">228</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="_parse_quint">
+      <a href="#params-_parse_quint"><span class="type-signature">(protected) </span>_parse_quint</a><span class="signature">(obj)</span><span class="type-signature"></span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-_parse_quint">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-_parse_quint" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">QUInt</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * @param {QUInt} obj\n * @protected\n */","meta":{"range":[6483,6572],"filename":"writer.js","lineno":228,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100004148","name":"Writer.prototype._parse_quint","type":"FunctionExpression","paramnames":["obj"]},"shortpath":"writer.js"},"params":[{"type":{"names":["QUInt"]},"name":"obj"}],"access":"protected","name":"_parse_quint","longname":"module:qtdatastream/writer~Writer#_parse_quint","kind":"function","memberof":"module:qtdatastream/writer~Writer","scope":"instance","___id":"T000002R000356","___s":true,"attribs":"<span class=\"type-signature\">(protected) </span>","id":"_parse_quint","signature":"<span class=\"signature\">(obj)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"module-qtdatastream_writer.html\">qtdatastream/writer</a>","<a href=\"module-qtdatastream_writer-Writer.html\">~Writer</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="writer.js.html">writer.js</a>:<a href="writer.js.html#line246">246</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="_parse_quint64">
+      <a href="#params-_parse_quint64"><span class="type-signature">(protected) </span>_parse_quint64</a><span class="signature">(obj)</span><span class="type-signature"></span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-_parse_quint64">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-_parse_quint64" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">QUInt64</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * @param {QUInt64} obj\n * @protected\n */","meta":{"range":[6760,6853],"filename":"writer.js","lineno":246,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100004186","name":"Writer.prototype._parse_quint64","type":"FunctionExpression","paramnames":["obj"]},"shortpath":"writer.js"},"params":[{"type":{"names":["QUInt64"]},"name":"obj"}],"access":"protected","name":"_parse_quint64","longname":"module:qtdatastream/writer~Writer#_parse_quint64","kind":"function","memberof":"module:qtdatastream/writer~Writer","scope":"instance","___id":"T000002R000358","___s":true,"attribs":"<span class=\"type-signature\">(protected) </span>","id":"_parse_quint64","signature":"<span class=\"signature\">(obj)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"module-qtdatastream_writer.html\">qtdatastream/writer</a>","<a href=\"module-qtdatastream_writer-Writer.html\">~Writer</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="writer.js.html">writer.js</a>:<a href="writer.js.html#line301">301</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="_parse_qusertype">
+      <a href="#params-_parse_qusertype"><span class="type-signature">(protected) </span>_parse_qusertype</a><span class="signature">(obj)</span><span class="type-signature"></span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-_parse_qusertype">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-_parse_qusertype" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">QUserType</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * @param {QUserType} obj\n * @protected\n */","meta":{"range":[7611,8415],"filename":"writer.js","lineno":301,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100004300","name":"Writer.prototype._parse_qusertype","type":"FunctionExpression","paramnames":["obj"]},"vars":{"name":"module:qtdatastream/writer~Writer#_parse_qusertype~name","iter":"module:qtdatastream/writer~Writer#_parse_qusertype~iter","item":"module:qtdatastream/writer~Writer#_parse_qusertype~item","type":"module:qtdatastream/writer~Writer#_parse_qusertype~type"},"shortpath":"writer.js"},"params":[{"type":{"names":["QUserType"]},"name":"obj"}],"access":"protected","name":"_parse_qusertype","longname":"module:qtdatastream/writer~Writer#_parse_qusertype","kind":"function","memberof":"module:qtdatastream/writer~Writer","scope":"instance","___id":"T000002R000364","___s":true,"attribs":"<span class=\"type-signature\">(protected) </span>","id":"_parse_qusertype","signature":"<span class=\"signature\">(obj)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"module-qtdatastream_writer.html\">qtdatastream/writer</a>","<a href=\"module-qtdatastream_writer-Writer.html\">~Writer</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="writer.js.html">writer.js</a>:<a href="writer.js.html#line402">402</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="_parse_qvariant">
+      <a href="#params-_parse_qvariant"><span class="type-signature">(protected) </span>_parse_qvariant</a><span class="signature">(obj)</span><span class="type-signature"></span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-_parse_qvariant">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-_parse_qvariant" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">QVariant</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * @param {QVariant} obj\n * @protected\n */","meta":{"range":[10174,10501],"filename":"writer.js","lineno":402,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100004680","name":"Writer.prototype._parse_qvariant","type":"FunctionExpression","paramnames":["obj"]},"vars":{"isNull":"module:qtdatastream/writer~isNull"},"shortpath":"writer.js"},"params":[{"type":{"names":["QVariant"]},"name":"obj"}],"access":"protected","name":"_parse_qvariant","longname":"module:qtdatastream/writer~Writer#_parse_qvariant","kind":"function","memberof":"module:qtdatastream/writer~Writer","scope":"instance","___id":"T000002R000379","___s":true,"attribs":"<span class=\"type-signature\">(protected) </span>","id":"_parse_qvariant","signature":"<span class=\"signature\">(obj)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"module-qtdatastream_writer.html\">qtdatastream/writer</a>","<a href=\"module-qtdatastream_writer-Writer.html\">~Writer</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="writer.js.html">writer.js</a>:<a href="writer.js.html#line76">76</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="getBuffer">
+      <a href="#params-getBuffer"><span class="type-signature"></span>getBuffer</a><span class="signature">()</span><span class="type-signature"> &rarr; {Buffer}</span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>Get the buffer representation of the object.
+It is prefixed by the packet size as defined in Qt framework.</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-getBuffer">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
+
+        
+<div class="param-desc">
+    <p>A Qt styled buffer ready to be sent through a socket</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Buffer</span>
+
+
+    </dd>
+</dl>
+
+    
+</div>
+  
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * Get the buffer representation of the object.\n * It is prefixed by the packet size as defined in Qt framework.\n * @returns {Buffer} A Qt styled buffer ready to be sent through a socket\n */","meta":{"range":[2104,2694],"filename":"writer.js","lineno":76,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100003560","name":"Writer.prototype.getBuffer","type":"FunctionExpression","paramnames":[]},"vars":{"tempBuf":"module:qtdatastream/writer~Writer#getBuffer~tempBuf","bqvariant":"module:qtdatastream/writer~Writer#getBuffer~bqvariant","bqvariantisnull":"module:qtdatastream/writer~Writer#getBuffer~bqvariantisnull","bsize":"module:qtdatastream/writer~Writer#getBuffer~bsize"},"shortpath":"writer.js"},"description":"<p>Get the buffer representation of the object.\nIt is prefixed by the packet size as defined in Qt framework.</p>","returns":[{"type":{"names":["Buffer"]},"description":"<p>A Qt styled buffer ready to be sent through a socket</p>"}],"name":"getBuffer","longname":"module:qtdatastream/writer~Writer#getBuffer","kind":"function","memberof":"module:qtdatastream/writer~Writer","scope":"instance","___id":"T000002R000342","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"getBuffer","signature":"<span class=\"signature\">()</span><span class=\"type-signature\"> &rarr; {Buffer}</span>","ancestors":["<a href=\"module-qtdatastream_writer.html\">qtdatastream/writer</a>","<a href=\"module-qtdatastream_writer-Writer.html\">~Writer</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="writer.js.html">writer.js</a>:<a href="writer.js.html#line67">67</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="getRawBuffer">
+      <a href="#params-getRawBuffer"><span class="type-signature"></span>getRawBuffer</a><span class="signature">()</span><span class="type-signature"> &rarr; {Buffer}</span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>Get the buffer without prefixing it by its size.</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-getRawBuffer">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Buffer</span>
+
+
+    </dd>
+</dl>
+
+    
+</div>
+  
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * Get the buffer without prefixing it by its size.\n * @returns {Buffer}\n */","meta":{"range":[1823,1906],"filename":"writer.js","lineno":67,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100003543","name":"Writer.prototype.getRawBuffer","type":"FunctionExpression","paramnames":[]},"shortpath":"writer.js"},"description":"<p>Get the buffer without prefixing it by its size.</p>","returns":[{"type":{"names":["Buffer"]}}],"name":"getRawBuffer","longname":"module:qtdatastream/writer~Writer#getRawBuffer","kind":"function","memberof":"module:qtdatastream/writer~Writer","scope":"instance","___id":"T000002R000341","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"getRawBuffer","signature":"<span class=\"signature\">()</span><span class=\"type-signature\"> &rarr; {Buffer}</span>","ancestors":["<a href=\"module-qtdatastream_writer.html\">qtdatastream/writer</a>","<a href=\"module-qtdatastream_writer-Writer.html\">~Writer</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="writer.js.html">writer.js</a>:<a href="writer.js.html#line99">99</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="parse">
+      <a href="#params-parse"><span class="type-signature"></span>parse</a><span class="signature">(obj)</span><span class="type-signature"></span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>Should not be called directly, it is better to call new Writer(...)
+with the object as parameter</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-parse">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-parse" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * Should not be called directly, it is better to call new Writer(...)\n * with the object as parameter\n * @param {*} obj\n */","meta":{"range":[2826,2901],"filename":"writer.js","lineno":99,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100003658","name":"Writer.prototype.parse","type":"FunctionExpression","paramnames":["obj"]},"vars":{"this.type":"module:qtdatastream/writer~Writer#type"},"shortpath":"writer.js"},"description":"<p>Should not be called directly, it is better to call new Writer(...)\nwith the object as parameter</p>","params":[{"type":{"names":["*"]},"name":"obj"}],"name":"parse","longname":"module:qtdatastream/writer~Writer#parse","kind":"function","memberof":"module:qtdatastream/writer~Writer","scope":"instance","___id":"T000002R000347","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"parse","signature":"<span class=\"signature\">(obj)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"module-qtdatastream_writer.html\">qtdatastream/writer</a>","<a href=\"module-qtdatastream_writer-Writer.html\">~Writer</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="writer.js.html">writer.js</a>:<a href="writer.js.html#line419">419</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="write">
+      <a href="#params-write"><span class="type-signature"></span>write</a><span class="signature">(b)</span><span class="type-signature"> &rarr; {Writer}</span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>Add specified buffer to the internal buffer list</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-write">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-write" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>b</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Buffer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Writer</span>
+
+
+    </dd>
+</dl>
+
+    
+</div>
+  
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * Add specified buffer to the internal buffer list\n * @param {Buffer} b\n * @returns {Writer}\n */","meta":{"range":[10606,10685],"filename":"writer.js","lineno":419,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100004747","name":"Writer.prototype.write","type":"FunctionExpression","paramnames":["b"]},"shortpath":"writer.js"},"description":"<p>Add specified buffer to the internal buffer list</p>","params":[{"type":{"names":["Buffer"]},"name":"b"}],"returns":[{"type":{"names":["Writer"]}}],"name":"write","longname":"module:qtdatastream/writer~Writer#write","kind":"function","memberof":"module:qtdatastream/writer~Writer","scope":"instance","___id":"T000002R000382","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"write","signature":"<span class=\"signature\">(b)</span><span class=\"type-signature\"> &rarr; {Writer}</span>","ancestors":["<a href=\"module-qtdatastream_writer.html\">qtdatastream/writer</a>","<a href=\"module-qtdatastream_writer-Writer.html\">~Writer</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="writer.js.html">writer.js</a>:<a href="writer.js.html#line429">429</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="writeBool">
+      <a href="#params-writeBool"><span class="type-signature"></span>writeBool</a><span class="signature">(bool)</span><span class="type-signature"> &rarr; {Writer}</span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>Add a boolean buffer to the internal buffer list</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-writeBool">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-writeBool" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>bool</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+|
+
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Writer</span>
+
+
+    </dd>
+</dl>
+
+    
+</div>
+  
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * Add a boolean buffer to the internal buffer list\n * @param {(Number|boolean)} bool\n * @returns {Writer}\n */","meta":{"range":[10803,10938],"filename":"writer.js","lineno":429,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100004767","name":"Writer.prototype.writeBool","type":"FunctionExpression","paramnames":["bool"]},"vars":{"b":"module:qtdatastream/writer~Writer#writeBool~b"},"shortpath":"writer.js"},"description":"<p>Add a boolean buffer to the internal buffer list</p>","params":[{"type":{"names":["Number","boolean"]},"name":"bool"}],"returns":[{"type":{"names":["Writer"]}}],"name":"writeBool","longname":"module:qtdatastream/writer~Writer#writeBool","kind":"function","memberof":"module:qtdatastream/writer~Writer","scope":"instance","___id":"T000002R000383","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"writeBool","signature":"<span class=\"signature\">(bool)</span><span class=\"type-signature\"> &rarr; {Writer}</span>","ancestors":["<a href=\"module-qtdatastream_writer.html\">qtdatastream/writer</a>","<a href=\"module-qtdatastream_writer-Writer.html\">~Writer</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="writer.js.html">writer.js</a>:<a href="writer.js.html#line469">469</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="writeByteArray">
+      <a href="#params-writeByteArray"><span class="type-signature"></span>writeByteArray</a><span class="signature">(arr)</span><span class="type-signature"> &rarr; {Writer}</span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>Add a byteArray buffer to the internal buffer list</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-writeByteArray">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-writeByteArray" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>arr</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+|
+
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Writer</span>
+
+
+    </dd>
+</dl>
+
+    
+</div>
+  
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * Add a byteArray buffer to the internal buffer list\n * @param {(Array|string)} arr\n * @returns {Writer}\n */","meta":{"range":[11652,11888],"filename":"writer.js","lineno":469,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100004870","name":"Writer.prototype.writeByteArray","type":"FunctionExpression","paramnames":["arr"]},"vars":{"b":"module:qtdatastream/writer~Writer#writeByteArray~b"},"shortpath":"writer.js"},"description":"<p>Add a byteArray buffer to the internal buffer list</p>","params":[{"type":{"names":["Array","string"]},"name":"arr"}],"returns":[{"type":{"names":["Writer"]}}],"name":"writeByteArray","longname":"module:qtdatastream/writer~Writer#writeByteArray","kind":"function","memberof":"module:qtdatastream/writer~Writer","scope":"instance","___id":"T000002R000389","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"writeByteArray","signature":"<span class=\"signature\">(arr)</span><span class=\"type-signature\"> &rarr; {Writer}</span>","ancestors":["<a href=\"module-qtdatastream_writer.html\">qtdatastream/writer</a>","<a href=\"module-qtdatastream_writer-Writer.html\">~Writer</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="writer.js.html">writer.js</a>:<a href="writer.js.html#line458">458</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="writeChar">
+      <a href="#params-writeChar"><span class="type-signature"></span>writeChar</a><span class="signature">(str)</span><span class="type-signature"> &rarr; {Writer}</span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>Add a char buffer to the internal buffer list</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-writeChar">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-writeChar" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Writer</span>
+
+
+    </dd>
+</dl>
+
+    
+</div>
+  
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * Add a char buffer to the internal buffer list\n * @param {string} str\n * @returns {Writer}\n */","meta":{"range":[11423,11535],"filename":"writer.js","lineno":458,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100004844","name":"Writer.prototype.writeChar","type":"FunctionExpression","paramnames":["str"]},"vars":{"b":"module:qtdatastream/writer~Writer#writeChar~b"},"shortpath":"writer.js"},"description":"<p>Add a char buffer to the internal buffer list</p>","params":[{"type":{"names":["string"]},"name":"str"}],"returns":[{"type":{"names":["Writer"]}}],"name":"writeChar","longname":"module:qtdatastream/writer~Writer#writeChar","kind":"function","memberof":"module:qtdatastream/writer~Writer","scope":"instance","___id":"T000002R000387","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"writeChar","signature":"<span class=\"signature\">(str)</span><span class=\"type-signature\"> &rarr; {Writer}</span>","ancestors":["<a href=\"module-qtdatastream_writer.html\">qtdatastream/writer</a>","<a href=\"module-qtdatastream_writer-Writer.html\">~Writer</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="writer.js.html">writer.js</a>:<a href="writer.js.html#line556">556</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="writeDateTime">
+      <a href="#params-writeDateTime"><span class="type-signature"></span>writeDateTime</a><span class="signature">(i)</span><span class="type-signature"> &rarr; {Writer}</span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>Add a QDateTime buffer to the internal buffer list.</p>
+<p><uint32 julian day><uint32 milliseconds since midnight><bool isUTC></p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-writeDateTime">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-writeDateTime" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>i</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Date</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Writer</span>
+
+
+    </dd>
+</dl>
+
+    
+</div>
+  
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * Add a QDateTime buffer to the internal buffer list.\n * <uint32 julian day><uint32 milliseconds since midnight><bool isUTC>\n * @param {Date} i\n * @returns {Writer}\n */","meta":{"range":[13472,13813],"filename":"writer.js","lineno":556,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100005096","name":"Writer.prototype.writeDateTime","type":"FunctionExpression","paramnames":["datetime"]},"vars":{"milliseconds":"module:qtdatastream/writer~Writer#writeDateTime~milliseconds","julianday":"module:qtdatastream/writer~Writer#writeDateTime~julianday"},"shortpath":"writer.js"},"description":"<p>Add a QDateTime buffer to the internal buffer list.</p>\n<p><uint32 julian day><uint32 milliseconds since midnight><bool isUTC></p>","params":[{"type":{"names":["Date"]},"name":"i"}],"returns":[{"type":{"names":["Writer"]}}],"name":"writeDateTime","longname":"module:qtdatastream/writer~Writer#writeDateTime","kind":"function","memberof":"module:qtdatastream/writer~Writer","scope":"instance","___id":"T000002R000403","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"writeDateTime","signature":"<span class=\"signature\">(i)</span><span class=\"type-signature\"> &rarr; {Writer}</span>","ancestors":["<a href=\"module-qtdatastream_writer.html\">qtdatastream/writer</a>","<a href=\"module-qtdatastream_writer-Writer.html\">~Writer</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="writer.js.html">writer.js</a>:<a href="writer.js.html#line531">531</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="writeDouble">
+      <a href="#params-writeDouble"><span class="type-signature"></span>writeDouble</a><span class="signature">(i)</span><span class="type-signature"> &rarr; {Writer}</span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>Add a double buffer to the internal buffer list</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-writeDouble">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-writeDouble" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>i</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Writer</span>
+
+
+    </dd>
+</dl>
+
+    
+</div>
+  
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * Add a double buffer to the internal buffer list\n * @param {Number} i\n * @returns {Writer}\n */","meta":{"range":[12910,13051],"filename":"writer.js","lineno":531,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100005032","name":"Writer.prototype.writeDouble","type":"FunctionExpression","paramnames":["i"]},"vars":{"b":"module:qtdatastream/writer~Writer#writeDouble~b"},"shortpath":"writer.js"},"description":"<p>Add a double buffer to the internal buffer list</p>","params":[{"type":{"names":["Number"]},"name":"i"}],"returns":[{"type":{"names":["Writer"]}}],"name":"writeDouble","longname":"module:qtdatastream/writer~Writer#writeDouble","kind":"function","memberof":"module:qtdatastream/writer~Writer","scope":"instance","___id":"T000002R000399","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"writeDouble","signature":"<span class=\"signature\">(i)</span><span class=\"type-signature\"> &rarr; {Writer}</span>","ancestors":["<a href=\"module-qtdatastream_writer.html\">qtdatastream/writer</a>","<a href=\"module-qtdatastream_writer-Writer.html\">~Writer</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="writer.js.html">writer.js</a>:<a href="writer.js.html#line485">485</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="writeInt">
+      <a href="#params-writeInt"><span class="type-signature"></span>writeInt</a><span class="signature">(i)</span><span class="type-signature"> &rarr; {Writer}</span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>Add a int32 buffer to the internal buffer list</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-writeInt">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-writeInt" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>i</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Writer</span>
+
+
+    </dd>
+</dl>
+
+    
+</div>
+  
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * Add a int32 buffer to the internal buffer list\n * @param {Number} i\n * @returns {Writer}\n */","meta":{"range":[11991,12128],"filename":"writer.js","lineno":485,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100004914","name":"Writer.prototype.writeInt","type":"FunctionExpression","paramnames":["i"]},"vars":{"b":"module:qtdatastream/writer~Writer#writeInt~b"},"shortpath":"writer.js"},"description":"<p>Add a int32 buffer to the internal buffer list</p>","params":[{"type":{"names":["Number"]},"name":"i"}],"returns":[{"type":{"names":["Writer"]}}],"name":"writeInt","longname":"module:qtdatastream/writer~Writer#writeInt","kind":"function","memberof":"module:qtdatastream/writer~Writer","scope":"instance","___id":"T000002R000391","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"writeInt","signature":"<span class=\"signature\">(i)</span><span class=\"type-signature\"> &rarr; {Writer}</span>","ancestors":["<a href=\"module-qtdatastream_writer.html\">qtdatastream/writer</a>","<a href=\"module-qtdatastream_writer-Writer.html\">~Writer</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="writer.js.html">writer.js</a>:<a href="writer.js.html#line509">509</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="writeInt64">
+      <a href="#params-writeInt64"><span class="type-signature"></span>writeInt64</a><span class="signature">(i)</span><span class="type-signature"> &rarr; {Writer}</span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>Add a int64 buffer to the internal buffer list</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-writeInt64">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-writeInt64" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>i</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Writer</span>
+
+
+    </dd>
+</dl>
+
+    
+</div>
+  
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * Add a int64 buffer to the internal buffer list\n * @param {Number} i\n * @returns {Writer}\n */","meta":{"range":[12474,12587],"filename":"writer.js","lineno":509,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100004978","name":"Writer.prototype.writeInt64","type":"FunctionExpression","paramnames":["i"]},"vars":{"b":"module:qtdatastream/writer~Writer#writeInt64~b"},"shortpath":"writer.js"},"description":"<p>Add a int64 buffer to the internal buffer list</p>","params":[{"type":{"names":["Number"]},"name":"i"}],"returns":[{"type":{"names":["Writer"]}}],"name":"writeInt64","longname":"module:qtdatastream/writer~Writer#writeInt64","kind":"function","memberof":"module:qtdatastream/writer~Writer","scope":"instance","___id":"T000002R000395","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"writeInt64","signature":"<span class=\"signature\">(i)</span><span class=\"type-signature\"> &rarr; {Writer}</span>","ancestors":["<a href=\"module-qtdatastream_writer.html\">qtdatastream/writer</a>","<a href=\"module-qtdatastream_writer-Writer.html\">~Writer</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="writer.js.html">writer.js</a>:<a href="writer.js.html#line571">571</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="writeQVariant">
+      <a href="#params-writeQVariant"><span class="type-signature"></span>writeQVariant</a><span class="signature">(type, nullFlag)</span><span class="type-signature"> &rarr; {Writer}</span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>Add a qvariant buffer to the internal buffer list</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-writeQVariant">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-writeQVariant" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>type</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Type as defined in <a href="module-qtdatastream.html#.Types"><code>module:qtdatastream.Types</code></a></p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>nullFlag</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+|
+
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>must be true or 1 if the following QVariant is null</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Writer</span>
+
+
+    </dd>
+</dl>
+
+    
+</div>
+  
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * Add a qvariant buffer to the internal buffer list\n * @param {Number} type Type as defined in <a href="module-qtdatastream.html#.Types"><code>module:qtdatastream.Types</code></a>\n * @param {(Number|boolean)} nullFlag must be true or 1 if the following QVariant is null\n * @returns {Writer}\n */","meta":{"range":[14065,14199],"filename":"writer.js","lineno":571,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100005155","name":"Writer.prototype.writeQVariant","type":"FunctionExpression","paramnames":["type","nullFlag"]},"shortpath":"writer.js"},"description":"<p>Add a qvariant buffer to the internal buffer list</p>","params":[{"type":{"names":["Number"]},"description":"<p>Type as defined in <a href="module-qtdatastream.html#.Types"><code>module:qtdatastream.Types</code></a></p>","name":"type"},{"type":{"names":["Number","boolean"]},"description":"<p>must be true or 1 if the following QVariant is null</p>","name":"nullFlag"}],"returns":[{"type":{"names":["Writer"]}}],"name":"writeQVariant","longname":"module:qtdatastream/writer~Writer#writeQVariant","kind":"function","memberof":"module:qtdatastream/writer~Writer","scope":"instance","___id":"T000002R000406","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"writeQVariant","signature":"<span class=\"signature\">(type, nullFlag)</span><span class=\"type-signature\"> &rarr; {Writer}</span>","ancestors":["<a href=\"module-qtdatastream_writer.html\">qtdatastream/writer</a>","<a href=\"module-qtdatastream_writer-Writer.html\">~Writer</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="writer.js.html">writer.js</a>:<a href="writer.js.html#line543">543</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="writeShort">
+      <a href="#params-writeShort"><span class="type-signature"></span>writeShort</a><span class="signature">(i)</span><span class="type-signature"> &rarr; {Writer}</span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>Add a uint16 buffer to the internal buffer list</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-writeShort">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-writeShort" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>i</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Writer</span>
+
+
+    </dd>
+</dl>
+
+    
+</div>
+  
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * Add a uint16 buffer to the internal buffer list\n * @param {Number} i\n * @returns {Writer}\n */","meta":{"range":[13155,13295],"filename":"writer.js","lineno":543,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100005064","name":"Writer.prototype.writeShort","type":"FunctionExpression","paramnames":["i"]},"vars":{"b":"module:qtdatastream/writer~Writer#writeShort~b"},"shortpath":"writer.js"},"description":"<p>Add a uint16 buffer to the internal buffer list</p>","params":[{"type":{"names":["Number"]},"name":"i"}],"returns":[{"type":{"names":["Writer"]}}],"name":"writeShort","longname":"module:qtdatastream/writer~Writer#writeShort","kind":"function","memberof":"module:qtdatastream/writer~Writer","scope":"instance","___id":"T000002R000401","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"writeShort","signature":"<span class=\"signature\">(i)</span><span class=\"type-signature\"> &rarr; {Writer}</span>","ancestors":["<a href=\"module-qtdatastream_writer.html\">qtdatastream/writer</a>","<a href=\"module-qtdatastream_writer-Writer.html\">~Writer</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="writer.js.html">writer.js</a>:<a href="writer.js.html#line441">441</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="writeString">
+      <a href="#params-writeString"><span class="type-signature"></span>writeString</a><span class="signature">(str)</span><span class="type-signature"> &rarr; {Writer}</span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>Add a string buffer to the internal buffer list</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-writeString">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-writeString" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Writer</span>
+
+
+    </dd>
+</dl>
+
+    
+</div>
+  
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * Add a string buffer to the internal buffer list\n * @param {string} str\n * @returns {Writer}\n */","meta":{"range":[11044,11319],"filename":"writer.js","lineno":441,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100004798","name":"Writer.prototype.writeString","type":"FunctionExpression","paramnames":["str"]},"vars":{"b":"module:qtdatastream/writer~Writer#writeString~b"},"shortpath":"writer.js"},"description":"<p>Add a string buffer to the internal buffer list</p>","params":[{"type":{"names":["string"]},"name":"str"}],"returns":[{"type":{"names":["Writer"]}}],"name":"writeString","longname":"module:qtdatastream/writer~Writer#writeString","kind":"function","memberof":"module:qtdatastream/writer~Writer","scope":"instance","___id":"T000002R000385","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"writeString","signature":"<span class=\"signature\">(str)</span><span class=\"type-signature\"> &rarr; {Writer}</span>","ancestors":["<a href=\"module-qtdatastream_writer.html\">qtdatastream/writer</a>","<a href=\"module-qtdatastream_writer-Writer.html\">~Writer</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="writer.js.html">writer.js</a>:<a href="writer.js.html#line497">497</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="writeUInt">
+      <a href="#params-writeUInt"><span class="type-signature"></span>writeUInt</a><span class="signature">(i)</span><span class="type-signature"> &rarr; {Writer}</span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>Add a uint32 buffer to the internal buffer list</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-writeUInt">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-writeUInt" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>i</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Writer</span>
+
+
+    </dd>
+</dl>
+
+    
+</div>
+  
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * Add a uint32 buffer to the internal buffer list\n * @param {Number} i\n * @returns {Writer}\n */","meta":{"range":[12232,12371],"filename":"writer.js","lineno":497,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100004946","name":"Writer.prototype.writeUInt","type":"FunctionExpression","paramnames":["i"]},"vars":{"b":"module:qtdatastream/writer~Writer#writeUInt~b"},"shortpath":"writer.js"},"description":"<p>Add a uint32 buffer to the internal buffer list</p>","params":[{"type":{"names":["Number"]},"name":"i"}],"returns":[{"type":{"names":["Writer"]}}],"name":"writeUInt","longname":"module:qtdatastream/writer~Writer#writeUInt","kind":"function","memberof":"module:qtdatastream/writer~Writer","scope":"instance","___id":"T000002R000393","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"writeUInt","signature":"<span class=\"signature\">(i)</span><span class=\"type-signature\"> &rarr; {Writer}</span>","ancestors":["<a href=\"module-qtdatastream_writer.html\">qtdatastream/writer</a>","<a href=\"module-qtdatastream_writer-Writer.html\">~Writer</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="writer.js.html">writer.js</a>:<a href="writer.js.html#line520">520</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="writeUInt64">
+      <a href="#params-writeUInt64"><span class="type-signature"></span>writeUInt64</a><span class="signature">(i)</span><span class="type-signature"> &rarr; {Writer}</span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>Add a uint64 buffer to the internal buffer list</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-writeUInt64">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-writeUInt64" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>i</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="bs-callout bs-callout-success">
+    <h5>Returns </h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Writer</span>
+
+
+    </dd>
+</dl>
+
+    
+</div>
+  
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * Add a uint64 buffer to the internal buffer list\n * @param {Number} i\n * @returns {Writer}\n */","meta":{"range":[12691,12806],"filename":"writer.js","lineno":520,"path":"/home/magne/workspace/node-qtdatastream/lib","code":{"id":"astnode100005005","name":"Writer.prototype.writeUInt64","type":"FunctionExpression","paramnames":["i"]},"vars":{"b":"module:qtdatastream/writer~Writer#writeUInt64~b"},"shortpath":"writer.js"},"description":"<p>Add a uint64 buffer to the internal buffer list</p>","params":[{"type":{"names":["Number"]},"name":"i"}],"returns":[{"type":{"names":["Writer"]}}],"name":"writeUInt64","longname":"module:qtdatastream/writer~Writer#writeUInt64","kind":"function","memberof":"module:qtdatastream/writer~Writer","scope":"instance","___id":"T000002R000397","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"writeUInt64","signature":"<span class=\"signature\">(i)</span><span class=\"type-signature\"> &rarr; {Writer}</span>","ancestors":["<a href=\"module-qtdatastream_writer.html\">qtdatastream/writer</a>","<a href=\"module-qtdatastream_writer-Writer.html\">~Writer</a>#"]}
+</pre>
+-->
+</div>
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Tue Feb 14 2017 10:17:32 GMT+0100 (CET) using the LOKE theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>
