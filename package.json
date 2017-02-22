@@ -9,13 +9,19 @@
     "qvariant",
     "buffer"
   ],
-  "description": "Nodejs lib which can read/write Qt formatted Datastreams",
-  "version": "0.7.1",
+  "description": "A library to read/write Qt formatted Datastreams",
+  "version": "1.0.0",
   "homepage": "https://github.com/magne4000/node-qtdatastream",
   "author": {
     "name": "Joël Charles",
     "email": "joel.charles91@gmail.com"
   },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "lib",
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/magne4000/node-qtdatastream.git"
@@ -28,18 +34,30 @@
     "node": ">= 6"
   },
   "scripts": {
-    "test": "grunt nodeunit"
+    "test": "grunt nodeunit",
+    "build": "grunt default"
   },
   "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-eslint": "^6.1.2",
+    "babel-loader": "^6.3.2",
+    "babel-preset-env": "^1.1.8",
+    "babel-preset-es2015": "^6.22.0",
+    "clean-webpack-plugin": "^0.1.15",
+    "docdash": "^0.4.0",
+    "eslint": "^3.16.0",
     "grunt": "~1.0.1",
     "grunt-contrib-nodeunit": "~1.0.0",
-    "grunt-contrib-watch": "~1.0.0",
+    "grunt-eslint": "^19.0.0",
     "grunt-jsdoc": "^2.1.0",
+    "grunt-webpack": "^2.0.1",
     "jsdoc": "^3.4.3",
-    "loke-jsdoc-theme": "^2.1.0"
+    "jsdoc-escape-at": "^1.0.1",
+    "webpack": "^2.2.1",
+    "webpack-node-externals": "^1.5.4"
   },
   "dependencies": {
-    "debug": "^2.6.0",
+    "debug": "^2.6.1",
     "int64-buffer": "^0.1.9"
   }
 }

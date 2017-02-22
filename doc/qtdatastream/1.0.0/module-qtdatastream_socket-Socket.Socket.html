@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Socket - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav class="nav">
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-qtdatastream_socket.html">qtdatastream/socket</a></li></ul><h3>Classes</h3><ul><li><a href="module-qtdatastream_socket.Socket.html">Socket</a></li><li><a href="module-qtdatastream_socket-Socket.Socket.html">Socket</a></li><li><a href="QVariant.html">QVariant</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">Socket</h1>
+    
+
+    <!--container.tmpl-->
+
+
+
+
+
+<section>
+
+
+
+<header data-tmpl="container.tmpl">
+    
+        <h2>
+        Socket
+        </h2>
+        
+    
+
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        <!--method.tmpl-->
+<div class="method-details">
+
+
+
+
+
+    
+
+    
+      <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="socket.js.html">socket.js</a>:<a href="socket.js.html#line40">40</a>
+  </code>
+</div>
+
+    
+
+    <h4 class="name" id="Socket">
+      <a href="#params-Socket"><span class="type-signature"></span>new Socket</a><span class="signature">(socket)</span><span class="type-signature"></span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>Create new Qt Socket wrapper</p>
+</div>
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>// socket can be a net.Socket or a websocket
+const qtsocket = new Socket(socket);
+qtsocket.on('read', (data) => {
+  console.log(data);
+});
+qtsocket.write('Hello');</code></pre>
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-Socket">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-Socket" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>socket</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">net.Duplex</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Underlying socket</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n   * Create new Qt Socket wrapper\n   * @param {net.Duplex} socket Underlying socket\n   * @example\n   * // socket can be a net.Socket or a websocket\n   * const qtsocket = new Socket(socket);\n   * qtsocket.on('read', (data) => {\n   *   console.log(data);\n   * });\n   * qtsocket.write('Hello');\n   */","meta":{"range":[1065,1415],"filename":"socket.js","lineno":40,"path":"/home/magne/workspace/node-qtdatastream/src","code":{"id":"astnode100000064","name":"Socket","type":"MethodDefinition","paramnames":["socket"]},"vars":{"":null},"shortpath":"socket.js"},"description":"<p>Create new Qt Socket wrapper</p>","params":[{"type":{"names":["net.Duplex"]},"description":"<p>Underlying socket</p>","name":"socket"}],"examples":[{"caption":"","code":"// socket can be a net.Socket or a websocket\nconst qtsocket = new Socket(socket);\nqtsocket.on('read', (data) => {\n  console.log(data);\n});\nqtsocket.write('Hello');"}],"name":"Socket","longname":"module:qtdatastream/socket~Socket.Socket","kind":"class","memberof":"module:qtdatastream/socket~Socket","scope":"static","___id":"T000003R000003","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"Socket","signature":"<span class=\"signature\">(socket)</span><span class=\"type-signature\"></span>","ancestors":[]}
+</pre>
+-->
+</div>
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Tue Feb 21 2017 16:42:07 GMT+0100 (CET) using the LOKE theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Socket - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav class="nav">
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-qtdatastream_socket.html">qtdatastream/socket</a></li></ul><h3>Classes</h3><ul><li><a href="module-qtdatastream_socket-Socket.html">Socket</a><ul class='methods'><li data-type='method'><a href="module-qtdatastream_socket-Socket.html#detachSocket">detachSocket</a></li><li data-type='method'><a href="module-qtdatastream_socket-Socket.html#setSocket">setSocket</a></li><li data-type='method'><a href="module-qtdatastream_socket-Socket.html#write">write</a></li></ul></li><li><a href="QVariant.html">QVariant</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">Socket</h1>
+    
+
+    <!--container.tmpl-->
+
+
+
+
+
+<section>
+
+
+
+<header data-tmpl="container.tmpl">
+    
+        <h2>
+            <span class="ancestors"><a href="module-qtdatastream_socket.html">qtdatastream/socket</a>~</span>
+        
+        Socket
+        </h2>
+        
+            <div class="lead"><p>Qt compliant Socket overload.
+<code>data</code> event is triggered only when full buffer is parsed.
+<code>error</code>, <code>close</code> and <code>end</code> event are not altered.</p></div>
+        
+    
+
+    
+      <div class="bs-callout bs-callout-default">
+        <h5>Members</h5>
+        <br />
+        <dl class="dl-horizontal methods-members">
+        <dt>Methods</dt><dd><ul>
+            <li><a href="#detachSocket">detachSocket</a></li>
+            
+            <li><a href="#setSocket">setSocket</a></li>
+            
+            <li><a href="#write">write</a></li>
+            </ul></dd></dl></div>
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        <!--method.tmpl-->
+<div class="method-details">
+
+
+
+
+
+    
+    <h3 class="constructor">Constructor</h3>
+    
+
+    
+      <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="socket.js.html">socket.js</a>:<a href="socket.js.html#line35">35</a>
+  </code>
+</div>
+
+    
+
+    <h4 class="name" id="Socket">
+      <a href="#params-Socket"><span class="type-signature"></span>new Socket</a><span class="signature">(socket)</span><span class="type-signature"></span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>// socket can be a net.Socket or a websocket
+const qtsocket = new Socket(socket);
+qtsocket.on('read', (data) => {
+  console.log(data);
+});
+qtsocket.write('Hello');</code></pre>
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-Socket">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-Socket" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>socket</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">net.Duplex</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Underlying socket</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n * Qt compliant Socket overload.\n * `data` event is triggered only when full buffer is parsed.\n * `error`, `close` and `end` event are not altered.\n * @extends events.EventEmitter\n * @param {net.Duplex} socket Underlying socket\n * @example\n * // socket can be a net.Socket or a websocket\n * const qtsocket = new Socket(socket);\n * qtsocket.on('read', (data) => {\n *   console.log(data);\n * });\n * qtsocket.write('Hello');\n */","meta":{"range":[950,2552],"filename":"socket.js","lineno":35,"path":"/home/magne/workspace/node-qtdatastream/src","code":{"id":"astnode100000057","name":"Socket","type":"ClassDeclaration","paramnames":["socket"]},"shortpath":"socket.js"},"classdesc":"<p>Qt compliant Socket overload.\n<code>data</code> event is triggered only when full buffer is parsed.\n<code>error</code>, <code>close</code> and <code>end</code> event are not altered.</p>","augments":["events.EventEmitter"],"params":[{"type":{"names":["net.Duplex"]},"description":"<p>Underlying socket</p>","name":"socket"}],"examples":[{"caption":"","code":"// socket can be a net.Socket or a websocket\nconst qtsocket = new Socket(socket);\nqtsocket.on('read', (data) => {\n  console.log(data);\n});\nqtsocket.write('Hello');"}],"name":"Socket","longname":"module:qtdatastream/socket~Socket","kind":"class","scope":"inner","memberof":"module:qtdatastream/socket","___id":"T000003R000002","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"Socket","signature":"<span class=\"signature\">(socket)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"module-qtdatastream_socket.html\">qtdatastream/socket</a>~"]}
+</pre>
+-->
+</div>
+
+    
+    </div>
+
+    
+        <h3 class="subsection-title">Extends</h3>
+
+        
+
+
+    <ul>
+        <li>events.EventEmitter</li>
+    </ul>
+
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="socket.js.html">socket.js</a>:<a href="socket.js.html#line61">61</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="detachSocket">
+      <a href="#params-detachSocket"><span class="type-signature"></span>detachSocket</a><span class="signature">()</span><span class="type-signature"></span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>Detach underlying socket</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-detachSocket">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n   * Detach underlying socket\n   */","meta":{"range":[1533,1789],"filename":"socket.js","lineno":61,"path":"/home/magne/workspace/node-qtdatastream/src","code":{"id":"astnode100000145","name":"Socket#detachSocket","type":"MethodDefinition","paramnames":[]},"vars":{"":null},"shortpath":"socket.js"},"description":"<p>Detach underlying socket</p>","name":"detachSocket","longname":"module:qtdatastream/socket~Socket#detachSocket","kind":"function","memberof":"module:qtdatastream/socket~Socket","scope":"instance","params":[],"___id":"T000002R000015","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"detachSocket","signature":"<span class=\"signature\">()</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"module-qtdatastream_socket.html\">qtdatastream/socket</a>","<a href=\"module-qtdatastream_socket-Socket.html\">~Socket</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="socket.js.html">socket.js</a>:<a href="socket.js.html#line77">77</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="setSocket">
+      <a href="#params-setSocket"><span class="type-signature"></span>setSocket</a><span class="signature">(socket)</span><span class="type-signature"></span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>Update the socket (for example to promote it to SSL stream)</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-setSocket">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-setSocket" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>socket</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Stream</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>object implementing Stream interface</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n   * Update the socket (for example to promote it to SSL stream)\n   * @param {Stream} socket object implementing Stream interface\n   */","meta":{"range":[1935,2550],"filename":"socket.js","lineno":77,"path":"/home/magne/workspace/node-qtdatastream/src","code":{"id":"astnode100000191","name":"Socket#setSocket","type":"MethodDefinition","paramnames":["socket"]},"vars":{"":null},"shortpath":"socket.js"},"description":"<p>Update the socket (for example to promote it to SSL stream)</p>","params":[{"type":{"names":["Stream"]},"description":"<p>object implementing Stream interface</p>","name":"socket"}],"name":"setSocket","longname":"module:qtdatastream/socket~Socket#setSocket","kind":"function","memberof":"module:qtdatastream/socket~Socket","scope":"instance","___id":"T000002R000018","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"setSocket","signature":"<span class=\"signature\">(socket)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"module-qtdatastream_socket.html\">qtdatastream/socket</a>","<a href=\"module-qtdatastream_socket-Socket.html\">~Socket</a>#"]}
+</pre>
+-->
+</div>
+
+        
+            <!--method.tmpl-->
+<div class="method-details">
+
+
+
+  <!--source-link.tmpl-->
+
+
+<div class="pull-right source-link-container">
+  <code class="source-link" data-tmpl="method-tmpl(1)">
+    <i class="fa fa-file-o"></i>
+    <a href="socket.js.html">socket.js</a>:<a href="socket.js.html#line54">54</a>
+  </code>
+</div>
+
+
+
+
+    
+
+    
+
+    <h4 class="name" id="write">
+      <a href="#params-write"><span class="type-signature"></span>write</a><span class="signature">(data)</span><span class="type-signature"></span>
+
+    </h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="description">
+    <p>Transforms and write data to underlying socket</p>
+</div>
+
+
+
+
+
+
+
+
+<div class="collapse_" id="methodCollapse-write">
+
+  
+
+  
+
+<!-- details.tmpl -->
+
+
+
+
+
+
+
+
+<dl class="dl-horizontal">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+  <div id="params-write" class="bs-callout bs-callout-primary">
+    <h5>Parameters</h5>
+    <!--params.tmpl-->
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!--
+<pre>
+{"comment":"/**\n   * Transforms and write data to underlying socket\n   * @param {*} data\n   */","meta":{"range":[1435,1487],"filename":"socket.js","lineno":54,"path":"/home/magne/workspace/node-qtdatastream/src","code":{"id":"astnode100000132","name":"Socket#write","type":"MethodDefinition","paramnames":["data"]},"vars":{"":null},"shortpath":"socket.js"},"description":"<p>Transforms and write data to underlying socket</p>","params":[{"type":{"names":["*"]},"name":"data"}],"name":"write","longname":"module:qtdatastream/socket~Socket#write","kind":"function","memberof":"module:qtdatastream/socket~Socket","scope":"instance","___id":"T000002R000014","___s":true,"attribs":"<span class=\"type-signature\"></span>","id":"write","signature":"<span class=\"signature\">(data)</span><span class=\"type-signature\"></span>","ancestors":["<a href=\"module-qtdatastream_socket.html\">qtdatastream/socket</a>","<a href=\"module-qtdatastream_socket-Socket.html\">~Socket</a>#"]}
+</pre>
+-->
+</div>
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Tue Feb 21 2017 16:48:20 GMT+0100 (CET) using the LOKE theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>
