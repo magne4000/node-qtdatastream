@@ -22,12 +22,26 @@ Javascript types can be automatically converted to Qt Types, and here is the def
 | javascript | QClass                                 |
 |------------|----------------------------------------|
 | string     | QString                                |
-| number     | QUInt                                  |
+| number     | QUInt (this can be overloaded)         |
 | boolean    | QBool                                  |
 | Array      | QList&lt;QVariant&lt;?&gt;&gt;         |
 | Date       | QDateTime                              |
 | Map        | QMap&lt;QString, QVariant&lt;?&gt;&gt; |
 | Object     | QMap&lt;QString, QVariant&lt;?&gt;&gt; |
+
+You can always force any type to be coerced to any Qt type
+```javascript
+const { QByteArray } = require('qtdatastream').types;
+const s = "hello"; // If given to the written, it will be coerced to QString
+const qbytearray = QByteArray.from(s); // This will write the same string but as a QByteArray
+```
+
+NB: you can change default behavior for number
+```javascript
+const { QVariant, Types } = require('qtdatastream').types;
+const n = 1; // Would be written as QUInt
+QVariant.coerceNumbersTo(Types.DOUBLE); // Will now write it as QDouble
+```
 
 #### QClass to javascript
 Qt Types are also converted to native javascript type automatically upon reading

@@ -13,7 +13,7 @@ module.exports = {
         "strict": "off",
 
         "indent": ["warn", 2],
-        "quotes": ["warn", "single"],
+        "quotes": ["warn", "single", { "allowTemplateLiterals": true }],
         "semi": ["warn", "always"],
         "eqeqeq": ["warn", "always"],
         "no-else-return": "warn",

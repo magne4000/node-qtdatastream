@@ -943,6 +943,26 @@ qtype(Types.USERTYPE)(QUserType);
  */
 class QVariant extends QClass {
   /**
+   * By default, numbers are coerced to QUInt (unsigned 32bit ints).
+   * This method allows to change this default behavior to coerce numbers
+   * to any other QClass by default
+   * @function coerceNumbersTo
+   * @memberof module:qtdatastream/types.QVariant
+   * @static
+   * @param {Types} type
+   * @example
+   * const { QVariant, Types } = require('qtdatastream').types;
+   * QVariant.coerceNumbersTo(Types.DOUBLE);
+   */
+  static coerceNumbersTo(type) {
+    const qclass = QClass.types.get(type);
+    if (qclass === undefined) {
+      throw new Error(`undefined type ${type}`);
+    }
+    QVariant.coerceNumbersClass = qclass;
+  }
+
+  /**
    * @function read
    * @memberof module:qtdatastream/types.QVariant
    * @static
@@ -964,31 +984,32 @@ class QVariant extends QClass {
   toBuffer() {
     const isNull = (this.obj === undefined || this.obj === null);
     const typeofobj = typeof this.obj;
-    let type;
+    let qclass;
     if (this.obj === undefined) {
-      type = Types.INVALID;
+      qclass = QInvalid;
     } else if (this.obj instanceof QUserType) {
-      type = Types.USERTYPE;
+      qclass = QUserType;
+    } else if (this.obj instanceof QVariant) {
+      throw new Error(`Can't nest QVariant`);
     } else if (this.obj instanceof QClass) {
-      type = this.obj.constructor.qtype;
+      qclass = this.obj.constructor;
     } else if (typeofobj === 'string') {
-      type = Types.STRING;
+      qclass = QString;
     } else if (typeofobj === 'number') {
-      type = Types.UINT;
+      qclass = QVariant.coerceNumbersClass;
     } else if (typeofobj === 'boolean') {
-      type = Types.BOOL;
+      qclass = QBool;
     } else if (this.obj instanceof Date) {
-      type = Types.DATETIME;
+      qclass = QDateTime;
     } else if (this.obj instanceof Array) {
-      type = Types.LIST;
+      qclass = QList;
     } else {
-      type = Types.MAP;
+      qclass = QMap;
     }
-    const qclass = QClass.types.get(type);
     if (!qclass) {
-      throw new Error(`Undefined type ${type} from QVariant`);
+      throw new Error(`Undefined class ${qclass} from QVariant`);
     }
-    const bufqvarianttype = QUInt.from(type).toBuffer();
+    const bufqvarianttype = QUInt.from(qclass.qtype).toBuffer();
     const bufqvariantisnull = QBool.from(isNull).toBuffer();
     const bufs = [ bufqvarianttype, bufqvariantisnull ];
     if (!isNull) {
@@ -1006,6 +1027,7 @@ class QVariant extends QClass {
    * @returns {QVariant}
    */
 }
+QVariant.coerceNumbersClass = QUInt;
 
 module.exports = {
   qtype,
