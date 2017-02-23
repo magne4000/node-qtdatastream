@@ -1,0 +1,11 @@
+language: node_js
+notifications:
+  irc: "chat.freenode.net#qtdatastream"
+node_js:
+  - "6"
+  - "7"
+branches:
+  only:
+  - es2015
+before_script:
+  - npm install grunt-cli -g
