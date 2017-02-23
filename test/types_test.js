@@ -6,7 +6,7 @@
  * Licensed under the MIT license.
  */
 
-const { types, buffer } = require('../lib/qtdatastream');
+const { types, buffer } = require('../index');
 
 class TestData {
   constructor(aclass, original, buffer) {

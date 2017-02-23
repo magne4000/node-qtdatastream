@@ -8,17 +8,18 @@
 
 /** @module qtdatastream/types */
 
-import { Int64BE, Uint64BE } from 'int64-buffer';
-import { dateToJulianDay, julianDayToDate, str as bstr } from './util';
+const { Int64BE, Uint64BE } = require('int64-buffer');
+const { dateToJulianDay, julianDayToDate, str: bstr } = require('./util');
 
 /**
  * Abstract class that all Qt types must implement.
  * Subclasses are used to dictate how a value is represented
  * as a Buffer, and vice-versa.
  * @abstract
+ * @static
  * @param {*} obj underlying data that will be used by toBuffer() method
  */
-export class QClass {
+class QClass {
   constructor(obj) {
     this.obj = obj;
   }
@@ -50,7 +51,7 @@ export class QClass {
  * class QUInt extends QClass {}
  * qtype(Types.QUInt)(QUInt);
  */
-export function qtype(qvarianttype) {
+function qtype(qvarianttype) {
   return function(target) {
     if (!QClass.types) {
       QClass.types = new Map;
@@ -65,12 +66,13 @@ export function qtype(qvarianttype) {
 /**
  * Qt types contants
  * @readonly
+ * @static
  * @enum {number}
  * @name Types
  * @see {@link http://doc.qt.io/qt-4.8/qvariant.html#Type-enum|enum QVariant::Type}
  * @see {@link http://doc.qt.io/qt-4.8/datastreamformat.html|Serializing Qt Data Types}
  */
-export const Types = {
+const Types = {
   INVALID: 0,
   BOOL: 1,
   INT: 2,
@@ -92,9 +94,10 @@ export const Types = {
 
 /**
  * @extends module:qtdatastream/types.QClass
+ * @static
  * @param {*} obj
  */
-export class QInvalid extends QClass {
+class QInvalid extends QClass {
   /**
    * @function read
    * @memberof module:qtdatastream/types.QInvalid
@@ -129,9 +132,10 @@ qtype(Types.INVALID)(QInvalid);
 
 /**
  * @extends module:qtdatastream/types.QClass
+ * @static
  * @param {*} obj
  */
-export class QBool extends QClass {
+class QBool extends QClass {
   /**
    * @function read
    * @memberof module:qtdatastream/types.QBool
@@ -168,9 +172,10 @@ qtype(Types.BOOL)(QBool);
 
 /**
  * @extends module:qtdatastream/types.QClass
+ * @static
  * @param {*} obj
  */
-export class QShort extends QClass {
+class QShort extends QClass {
   /**
    * @function read
    * @memberof module:qtdatastream/types.QShort
@@ -207,9 +212,10 @@ qtype(Types.SHORT)(QShort);
 
 /**
  * @extends module:qtdatastream/types.QClass
+ * @static
  * @param {*} obj
  */
-export class QInt extends QClass {
+class QInt extends QClass {
   /**
    * @function read
    * @memberof module:qtdatastream/types.QInt
@@ -246,9 +252,10 @@ qtype(Types.INT)(QInt);
 
 /**
  * @extends module:qtdatastream/types.QClass
+ * @static
  * @param {*} obj
  */
-export class QUInt extends QClass {
+class QUInt extends QClass {
   /**
    * @function read
    * @memberof module:qtdatastream/types.QUInt
@@ -285,9 +292,10 @@ qtype(Types.UINT)(QUInt);
 
 /**
  * @extends module:qtdatastream/types.QClass
+ * @static
  * @param {*} obj
  */
-export class QInt64 extends QClass {
+class QInt64 extends QClass {
   /**
    * @function read
    * @memberof module:qtdatastream/types.QInt64
@@ -322,9 +330,10 @@ qtype(Types.INT64)(QInt64);
 
 /**
  * @extends module:qtdatastream/types.QClass
+ * @static
  * @param {*} obj
  */
-export class QUInt64 extends QClass {
+class QUInt64 extends QClass {
   /**
    * @function read
    * @memberof module:qtdatastream/types.QUInt64
@@ -359,9 +368,10 @@ qtype(Types.UINT64)(QUInt64);
 
 /**
  * @extends module:qtdatastream/types.QClass
+ * @static
  * @param {*} obj
  */
-export class QDouble extends QClass {
+class QDouble extends QClass {
   /**
    * @function read
    * @memberof module:qtdatastream/types.QDouble
@@ -398,9 +408,10 @@ qtype(Types.DOUBLE)(QDouble);
 
 /**
  * @extends module:qtdatastream/types.QClass
+ * @static
  * @param {*} obj
  */
-export class QChar extends QClass {
+class QChar extends QClass {
   constructor(obj){
     if (typeof obj !== 'string') throw new Error(`${obj} is not a string`);
     if (obj.length !== 1) throw new Error(`${obj} length must equal 1`);
@@ -442,18 +453,20 @@ qtype(Types.CHAR)(QChar);
 
 /**
  * @extends module:qtdatastream/types.QUInt
+ * @static
  * @param {*} obj
  * @see {@link module:qtdatastream/types.QUInt}
  */
-export class QTime extends QUInt {}
+class QTime extends QUInt {}
 qtype(Types.TIME)(QTime);
 
 
 /**
  * @extends module:qtdatastream/types.QClass
+ * @static
  * @param {*} obj
  */
-export class QByteArray extends QClass {
+class QByteArray extends QClass {
   /**
    * Use {@link module:qtdatastream/util.str} to convert the returned Buffer
    * to a string.
@@ -498,9 +511,10 @@ qtype(Types.BYTEARRAY)(QByteArray);
 
 /**
  * @extends module:qtdatastream/types.QClass
+ * @static
  * @param {*} obj
  */
-export class QString extends QClass {
+class QString extends QClass {
   /**
    * @function read
    * @memberof module:qtdatastream/types.QString
@@ -545,9 +559,10 @@ qtype(Types.STRING)(QString);
 
 /**
  * @extends module:qtdatastream/types.QClass
+ * @static
  * @param {*} obj
  */
-export class QList extends QClass {
+class QList extends QClass {
   /**
    * @function read
    * @memberof module:qtdatastream/types.QList
@@ -593,9 +608,10 @@ qtype(Types.LIST)(QList);
 
 /**
  * @extends module:qtdatastream/types.QClass
+ * @static
  * @param {*} obj
  */
-export class QStringList extends QClass {
+class QStringList extends QClass {
   /**
    * @function read
    * @memberof module:qtdatastream/types.QStringList
@@ -641,9 +657,10 @@ qtype(Types.STRINGLIST)(QStringList);
 
 /**
  * @extends module:qtdatastream/types.QClass
+ * @static
  * @param {*} obj
  */
-export class QDateTime extends QClass {
+class QDateTime extends QClass {
   /**
    * @function read
    * @memberof module:qtdatastream/types.QDateTime
@@ -689,9 +706,10 @@ qtype(Types.DATETIME)(QDateTime);
 
 /**
  * @extends module:qtdatastream/types.QClass
+ * @static
  * @param {*} obj
  */
-export class QMap extends QClass {
+class QMap extends QClass {
   /**
    * @function read
    * @memberof module:qtdatastream/types.QMap
@@ -756,9 +774,10 @@ qtype(Types.MAP)(QMap);
 
 /**
  * @extends module:qtdatastream/types.QClass
+ * @static
  * @param {*} obj
  */
-export class QUserType extends QClass {
+class QUserType extends QClass {
   constructor(name, obj) {
     if (!obj) {
       obj = name;
@@ -919,9 +938,10 @@ qtype(Types.USERTYPE)(QUserType);
 
 /**
  * @extends module:qtdatastream/types.QClass
+ * @static
  * @param {*} obj
  */
-export class QVariant extends QClass {
+class QVariant extends QClass {
   /**
    * @function read
    * @memberof module:qtdatastream/types.QVariant
@@ -986,3 +1006,27 @@ export class QVariant extends QClass {
    * @returns {QVariant}
    */
 }
+
+module.exports = {
+  qtype,
+  Types,
+  QClass,
+  QInvalid,
+  QBool,
+  QShort,
+  QInt,
+  QUInt,
+  QInt64,
+  QUInt64,
+  QDouble,
+  QChar,
+  QTime,
+  QByteArray,
+  QString,
+  QList,
+  QStringList,
+  QDateTime,
+  QMap,
+  QUserType,
+  QVariant
+};

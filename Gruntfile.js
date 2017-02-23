@@ -1,7 +1,5 @@
 'use strict';
 
-var webpack = require('./webpack.config.js');
-
 module.exports = function(grunt) {
 
   // Project configuration.
@@ -29,10 +27,6 @@ module.exports = function(grunt) {
           destination: 'doc'
         }
       }
-    },
-    webpack: {
-      web: webpack({BUILD_ENV: 'PROD', TARGET_ENV: 'WEB'}),
-      node: webpack({BUILD_ENV: 'DEV', TARGET_ENV: 'NODE'})
     }
   });
 
@@ -40,9 +34,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-nodeunit');
   grunt.loadNpmTasks('grunt-jsdoc');
   grunt.loadNpmTasks('grunt-eslint');
-  grunt.loadNpmTasks('grunt-webpack');
 
   // Default task.
-  grunt.registerTask('default', ['eslint', 'webpack:node', 'nodeunit', 'webpack:web', 'jsdoc']);
+  grunt.registerTask('default', ['eslint', 'nodeunit', 'jsdoc']);
 
 };

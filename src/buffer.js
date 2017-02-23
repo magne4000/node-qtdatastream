@@ -6,13 +6,15 @@
  * Licensed under the MIT license.
  */
 
-import { Int64BE, Uint64BE } from 'int64-buffer';
+/** @module qtdatastream/buffer */
+
+const { Int64BE, Uint64BE } = require('int64-buffer');
 
 /**
  * Wraps a buffer with an internal read pointer for sequential reads
  * @param {Buffer} buffer
  */
-export class ReadBuffer {
+class ReadBuffer {
   constructor(buffer) {
     this.buffer = buffer;
     this.read_offset = 0;
@@ -77,3 +79,7 @@ export class ReadBuffer {
     return result;
   }
 }
+
+module.exports = {
+  ReadBuffer
+};

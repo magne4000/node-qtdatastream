@@ -10,20 +10,22 @@
 
 /**
  * Apply `toString()` method on Buffer and remove NUL end char
+ * @static
  * @param {Buffer} obj
  * @returns {string}
  */
-export function str(obj) {
+function str(obj) {
   const str = obj.toString();
   return str.replace('\0', '');
 }
 
 /**
  * Convert a Date object to a Julian day representation
+ * @static
  * @param {Date} d
  * @returns {number}
  */
-export function dateToJulianDay(d) {
+function dateToJulianDay(d) {
   const year = d.getFullYear();
   const month = d.getMonth() + 1;
   const day = d.getDate();
@@ -36,10 +38,11 @@ export function dateToJulianDay(d) {
 
 /**
  * Convert a Julian day representation to a Date object
+ * @static
  * @param {number} i
  * @returns {Date}
  */
-export function julianDayToDate(i) {
+function julianDayToDate(i) {
   const y = 4716;
   const v = 3;
   const j = 1401;
@@ -61,3 +64,9 @@ export function julianDayToDate(i) {
   const Y = Math.floor(e / p) - y + Math.floor((n + m - M) / n);
   return new Date(Y, M-1, D);
 }
+
+module.exports = {
+  str,
+  dateToJulianDay,
+  julianDayToDate
+};

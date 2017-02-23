@@ -6,7 +6,7 @@
  * Licensed under the MIT license.
  */
 
-const { transform } = require('../lib/qtdatastream');
+const { transform } = require('../index');
 
 function equalBuffers(test, x, y) {
   if (x.compare(y) === 0) {

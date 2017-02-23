@@ -8,12 +8,12 @@
 
 /** @module qtdatastream/transform */
 
-import { Transform } from 'stream';
-
-import { ReadBuffer } from './buffer';
-import * as types from './types';
-
+const { Transform } = require('stream');
 const debuglib = require('debug');
+
+const { ReadBuffer } = require('./buffer');
+const types = require('./types');
+
 const loggerr = debuglib('qtdatastream:transform:read');
 const debug = debuglib.enabled('qtdatastream:*');
 
@@ -32,6 +32,7 @@ const debug = debuglib.enabled('qtdatastream:*');
 
 /**
  * Transform Qt buffers into JS objects
+ * @static
  * @extends stream.Transform
  * @fires ReadTransform#data
  * @example
@@ -46,7 +47,7 @@ const debug = debuglib.enabled('qtdatastream:*');
  * // Write a QDataStream
  * reader.write(Buffer.from([ 0x00, 0x00, 0x00, 0x09, 0x00, 0x00, 0x00, 0x03, 0x00, 0x00, 0x00, 0x00, 0x01 ]));
  */
-export class ReadTransform extends Transform {
+class ReadTransform extends Transform {
   constructor() {
     super(Object.assign({ readableObjectMode: true, writableObjectMode: false }));
     this.packet_no = 0;
@@ -146,6 +147,7 @@ export class ReadTransform extends Transform {
 
 /**
  * Transform JS types/objects into Qt buffers
+ * @static
  * @extends stream.Transform
  * @fires WriteTransform#data
  * @example
@@ -160,7 +162,7 @@ export class ReadTransform extends Transform {
  * // Write an int
  * writer.write(1);
  */
-export class WriteTransform extends Transform {
+class WriteTransform extends Transform {
   constructor() {
     super(Object.assign({ readableObjectMode: false, writableObjectMode: true }));
   }
@@ -183,3 +185,8 @@ export class WriteTransform extends Transform {
     callback(null, buffer);
   }
 }
+
+module.exports = {
+  ReadTransform,
+  WriteTransform
+};

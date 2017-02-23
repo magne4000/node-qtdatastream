@@ -23,6 +23,7 @@ if (debug && !debuglib.enabled('qtdatastream:*')) {
  * `data` event is triggered only when full buffer is parsed.
  * `error`, `close` and `end` event are not altered.
  * @extends events.EventEmitter
+ * @static
  * @param {*} socket Underlying socket
  * @example
  * const { Socket } = require('qtdatastream').socket;
@@ -34,7 +35,7 @@ if (debug && !debuglib.enabled('qtdatastream:*')) {
  * });
  * qtsocket.write('Hello');
  */
-export class Socket extends events.EventEmitter {
+class Socket extends events.EventEmitter {
 
   constructor(socket) {
     super();
@@ -114,3 +115,7 @@ export class Socket extends events.EventEmitter {
     });
   }
 }
+
+module.exports = {
+  Socket
+};

@@ -6,7 +6,7 @@
  * Licensed under the MIT license.
  */
 
-const { socket } = require('../lib/qtdatastream');
+const { socket } = require('../index');
 const stream = require('stream');
 
 function equalBuffers(test, x, y) {

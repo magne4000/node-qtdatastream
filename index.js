@@ -1,5 +1,7 @@
-exports.util = require('./src/util');
-exports.types = require('./src/types');
-exports.buffer = require('./src/buffer');
-exports.socket = require('./src/socket');
-exports.transform = require('./src/transform');
+module.exports = {
+  util: require('./src/util'),
+  types: require('./src/types'),
+  buffer: require('./src/buffer'),
+  socket: require('./src/socket'),
+  transform: require('./src/transform')
+};
