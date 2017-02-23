@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/magne4000/node-qtdatastream.svg?branch=master)](https://travis-ci.org/magne4000/node-qtdatastream)
 # node-qtdatastream
 
 Nodejs lib which can read/write Qt formatted Datastreams.
