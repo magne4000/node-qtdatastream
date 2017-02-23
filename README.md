@@ -32,7 +32,7 @@ Javascript types can be automatically converted to Qt Types, and here is the def
 You can always force any type to be coerced to any Qt type
 ```javascript
 const { QByteArray } = require('qtdatastream').types;
-const s = "hello"; // If given to the written, it will be coerced to QString
+const s = "hello"; // If given to the writer, it will be coerced to QString
 const qbytearray = QByteArray.from(s); // This will write the same string but as a QByteArray
 ```
 
@@ -40,7 +40,7 @@ NB: you can change default behavior for number
 ```javascript
 const { QVariant, Types } = require('qtdatastream').types;
 const n = 1; // Would be written as QUInt
-QVariant.coerceNumbersTo(Types.DOUBLE); // Will now write it as QDouble
+QVariant.coerceNumbersTo(Types.DOUBLE); // Will now write any number as QDouble
 ```
 
 #### QClass to javascript
