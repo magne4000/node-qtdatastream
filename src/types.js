@@ -33,7 +33,7 @@ class QClass {
    * @returns {QClass}
    */
   static from(subject) {
-    if (subject instanceof QClass) {
+    if (subject instanceof this) {
       return subject;
     }
     return new this(subject);
@@ -586,10 +586,10 @@ class QList extends QClass {
    */
   toBuffer() {
     const bufs = [];
-        // nb of elements in the list
+    // nb of elements in the list
     bufs.push(QUInt.from(this.obj.length).toBuffer());
     for (let el of this.obj) {
-            // Values are QVariant
+      // Values are QVariant
       bufs.push(QVariant.from(el).toBuffer());
     }
     return Buffer.concat(bufs);
@@ -785,6 +785,13 @@ class QUserType extends QClass {
     }
     super(obj);
     this.name = name;
+  }
+
+  static from(subject) {
+    if (subject instanceof QUserType) {
+      return subject;
+    }
+    return new this(subject);
   }
 
   /**

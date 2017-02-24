@@ -14,7 +14,7 @@ const debuglib = require('debug');
 const { ReadBuffer } = require('./buffer');
 const types = require('./types');
 
-const loggerr = debuglib('qtdatastream:transform:read');
+const loggerr = debuglib('qtdatastream:transform');
 const debug = debuglib.enabled('qtdatastream:*');
 
 /**

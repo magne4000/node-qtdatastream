@@ -11,7 +11,7 @@
 const events = require('events');
 const debuglib = require('debug');
 const transform = require('./transform');
-const logger = debuglib('qtdatastream:main');
+const logger = debuglib('qtdatastream:socket');
 let debug = Boolean(process.env.QTDSDEBUG) || debuglib.enabled('qtdatastream:*');
 
 if (debug && !debuglib.enabled('qtdatastream:*')) {
@@ -95,7 +95,7 @@ class Socket extends events.EventEmitter {
 
     this.socket.on('error', (e) => {
       if (debug) {
-        logger('ERROR');
+        logger('ERROR', e);
       }
       this.emit('error', e);
     });
