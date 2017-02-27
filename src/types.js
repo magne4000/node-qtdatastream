@@ -978,8 +978,8 @@ class QVariant extends QClass {
    */
   static read(buffer){
     const type = QUInt.read(buffer);
-    const isNull = QBool.read(buffer);
-    return isNull ? undefined : QClass.types.get(type).read(buffer);
+    const _isNull = QBool.read(buffer);
+    return QClass.types.get(type).read(buffer);
   }
 
   /**

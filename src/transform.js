@@ -67,7 +67,7 @@ class ReadTransform extends Transform {
       if (totallength < 4) return Infinity;
       final_buffer = Buffer.concat(bufferlist.slice(0, i), totallength);
     }
-    return final_buffer.readUInt32BE();
+    return final_buffer.readUInt32BE(0);
   }
 
   chunkify() {
