@@ -114,7 +114,7 @@ class Socket extends events.EventEmitter {
       this.emit('end');
     });
   }
-  
+
   /**
    * @see {@link module:qtdatastream/socket.Socket#setSocket}
    * @deprecated

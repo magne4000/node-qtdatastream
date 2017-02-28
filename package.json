@@ -1,6 +1,6 @@
 {
   "name": "qtdatastream",
-  "main": "./lib/qtdatastream",
+  "main": "./index",
   "keywords": [
     "qtdatastream",
     "qt",
@@ -38,6 +38,7 @@
     "build": "grunt default"
   },
   "devDependencies": {
+    "babel-eslint": "^7.1.1",
     "docdash": "^0.4.0",
     "eslint": "^3.16.0",
     "grunt": "~1.0.1",
