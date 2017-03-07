@@ -602,7 +602,12 @@ class QString extends QClass {
     if (this.obj === null) {
       return QUInt.from(0xffffffff).toBuffer();
     }
-    const bufstring = Buffer.from(this.obj, 'ucs2');
+    let bufstring;
+    if (typeof this.obj === 'number') {
+      bufstring = Buffer.from(String(this.obj), 'ucs2');
+    } else {
+      bufstring = Buffer.from(this.obj, 'ucs2');
+    }
     bufstring.swap16();
     const buflength = QUInt.from(bufstring.length).toBuffer();
     return Buffer.concat([ buflength, bufstring ]);
