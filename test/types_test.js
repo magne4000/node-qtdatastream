@@ -147,8 +147,8 @@ exports.qmap = {
 exports.qusertype_simple = {
   setUp: function(done) {
     types.QUserType.register('NetworkId', types.Types.INT);
-
-    this.networkId = new types.QVariant(new types.QUserType('NetworkId', 4000));
+    this.networkId1 = new types.QVariant(new types.QUserType('NetworkId', 4000));
+    this.networkId2 = new types.QVariant(types.QUserType.get('NetworkId').from(4000));
     this.networkIdBuffer = Buffer.from([
       // QVariant
       0x00, 0x00, 0x00, 0x7f, // QVariant type
@@ -165,7 +165,10 @@ exports.qusertype_simple = {
     done();
   },
   'no args': function(test) {
-    const buf = new buffer.ReadBuffer(this.networkId.toBuffer());
+    let buf = new buffer.ReadBuffer(this.networkId1.toBuffer());
+    equalBuffers(test, this.networkIdBuffer, buf.buffer);
+    
+    buf = new buffer.ReadBuffer(this.networkId2.toBuffer());
     equalBuffers(test, this.networkIdBuffer, buf.buffer);
 
     const ori = types.QVariant.read(buf);

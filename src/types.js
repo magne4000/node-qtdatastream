@@ -21,7 +21,7 @@ const { dateToJulianDay, julianDayToDate, str: bstr } = require('./util');
  */
 class QClass {
   constructor(obj) {
-    this.obj = obj;
+    this.obj = (this.obj !== undefined && typeof this.obj.export === 'function') ? obj.export() : obj;
   }
 
   /**
@@ -91,6 +91,68 @@ const Types = {
   USERTYPE: 127,
   SHORT: 133
 };
+
+/**
+ * Abstract class that custom classes should implement
+ * in order to use @exportas decorator.
+ * @abstract
+ * @static
+ */
+class Exportable {
+
+  ["export"]() {
+    const subject = this.__exportas ? this._mapping() : this;
+    return (this.__usertype ? QUserType.get(this.__usertype) : QMap).from(subject);
+  }
+
+  _mapping() {
+    const ret = {};
+    const keys = Object.keys(this.__exportas);
+    for (let key of keys) {
+      Object.defineProperty(ret, key, {
+        enumerable: true,
+        configurable: false,
+        writable: false,
+        value: this.__exportas[key](this)
+      });
+    }
+    return ret;
+  }
+}
+
+function usertype(susertype) {
+  return function(target) {
+    Object.defineProperty(target, '__usertype', {
+      enumerable: false,
+      configurable: false,
+      writable: false,
+      value: susertype
+    });
+  };
+}
+
+function exportas(qclass, exportkey) {
+  return function(target, key, descriptor) {
+    if (!('set' in descriptor)) {
+      descriptor.writable = true;
+    }
+    if (!target.hasOwnProperty('__exportas')) {
+      Object.defineProperty(target, '__exportas', {
+        enumerable: false,
+        configurable: false,
+        writable: false,
+        value: {}
+      });
+    }
+    Object.defineProperty(target.__exportas, key, {
+      enumerable: false,
+      configurable: false,
+      writable: false,
+      value: (context) => qclass.from(context[exportkey || key])
+    });
+    return descriptor;
+  };
+}
 
 /**
  * @extends module:qtdatastream/types.QClass
@@ -413,9 +475,9 @@ qtype(Types.DOUBLE)(QDouble);
  */
 class QChar extends QClass {
   constructor(obj){
-    if (typeof obj !== 'string') throw new Error(`${obj} is not a string`);
-    if (obj.length !== 1) throw new Error(`${obj} length must equal 1`);
     super(obj);
+    if (typeof this.obj !== 'string') throw new Error(`${this.obj} is not a string`);
+    if (this.obj.length !== 1) throw new Error(`${this.obj} length must equal 1`);
   }
 
   /**
@@ -779,10 +841,6 @@ qtype(Types.MAP)(QMap);
  */
 class QUserType extends QClass {
   constructor(name, obj) {
-    if (!obj) {
-      obj = name;
-      name = undefined;
-    }
     super(obj);
     this.name = name;
   }
@@ -799,10 +857,11 @@ class QUserType extends QClass {
    * @memberof module:qtdatastream/types.QUserType
    * @static
    * @protected
+   * @param {String} name
    * @param {*} value
    * @returns {QUserType} a new class that extends QUserType
    */
-  static createComplexUserType(value) {
+  static createComplexUserType(name, value) {
     const compiled = [];
     let key, keys, type;
     for (type of value) {
@@ -822,6 +881,10 @@ class QUserType extends QClass {
     }
 
     return class extends QUserType {
+      constructor(obj) {
+        super(name, obj);
+      }
+
       static read(buffer) {
         const obj = {};
         for (let elt of compiled) {
@@ -835,8 +898,8 @@ class QUserType extends QClass {
         return obj;
       }
 
-      toBuffer() {
-        const bufs = [];
+      toBuffer(skipname = false) {
+        const bufs = [ this._getNameBuffer(skipname) ];
         for (let elt of compiled) {
           bufs.push(elt.quserclass.from(this.obj[elt.key]).toBuffer(true));
         }
@@ -850,22 +913,28 @@ class QUserType extends QClass {
    * @memberof module:qtdatastream/types.QUserType
    * @static
    * @protected
+   * @param {String} name
    * @param {*} value
    * @returns {QUserType} a new class that extends QUserType
    */
-  static createUserType(value) {
+  static createUserType(name, value) {
     if (Array.isArray(value)) {
-      return QUserType.createComplexUserType(value);
+      return QUserType.createComplexUserType(name, value);
     }
     const qclass = QClass.types.get(value);
 
     return class extends QUserType {
+      constructor(obj) {
+        super(name, obj);
+      }
+
       static read(buffer) {
         return qclass.read(buffer);
       }
 
-      toBuffer() {
-        return qclass.from(this.obj).toBuffer();
+      toBuffer(skipname = false) {
+        const bufs = [ this._getNameBuffer(skipname), qclass.from(this.obj).toBuffer(true) ];
+        return Buffer.concat(bufs);
       }
     };
   }
@@ -891,7 +960,18 @@ class QUserType extends QClass {
     if (!QUserType.usertypes) {
       QUserType.usertypes = new Map;
     }
-    QUserType.usertypes.set(name, QUserType.createUserType(value));
+    QUserType.usertypes.set(name, QUserType.createUserType(name, value));
+  }
+
+  /**
+   * Get a previously registered usertype
+   * @function get
+   * @memberof module:qtdatastream/types.QUserType
+   * @static
+   * @param {string} name
+   */
+  static get(name) {
+    return QUserType.usertypes.get(name);
   }
 
   /**
@@ -914,6 +994,16 @@ class QUserType extends QClass {
     return usertype.read(buffer);
   }
 
+  _getNameBuffer(skipname) {
+    if (!this.name) {
+      throw new Error('Abstract QUserType cannot be converted to a buffer');
+    }
+    if (!skipname) {
+      return QByteArray.from(this.name).toBuffer();
+    }
+    return Buffer.alloc(0);
+  }
+
   /**
    * @function toBuffer
    * @memberof module:qtdatastream/types.QUserType
@@ -921,14 +1011,7 @@ class QUserType extends QClass {
    * @returns {Buffer}
    */
   toBuffer(skipname = false) {
-    if (!this.name) {
-      throw new Error('Abstract QUserType cannot be converted to a buffer');
-    }
-    const bufs = [];
-    if (!skipname) {
-      bufs.push(QByteArray.from(this.name).toBuffer());
-    }
-    bufs.push(QUserType.usertypes.get(this.name).from(this.obj).toBuffer());
+    const bufs = [ this._getNameBuffer(skipname), QUserType.usertypes.get(this.name).from(this.obj).toBuffer(true) ];
     return Buffer.concat(bufs);
   }
 
@@ -1057,5 +1140,8 @@ module.exports = {
   QDateTime,
   QMap,
   QUserType,
-  QVariant
+  QVariant,
+  Exportable,
+  exportas,
+  usertype
 };

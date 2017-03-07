@@ -14,7 +14,8 @@ const debuglib = require('debug');
 const { ReadBuffer } = require('./buffer');
 const types = require('./types');
 
-const loggerr = debuglib('qtdatastream:transform');
+const loggerr = debuglib('qtdatastream:transform:read');
+const loggerw = debuglib('qtdatastream:transform:write');
 const debug = debuglib.enabled('qtdatastream:*');
 
 /**
@@ -175,12 +176,13 @@ class WriteTransform extends Transform {
    */
   static getBuffer(data){
     const buffer = types.QVariant.from(data).toBuffer();
-        // Calculate size
+    // Calculate size
     const totalSizeBuffer = types.QUInt.from(buffer.length).toBuffer();
     return Buffer.concat([ totalSizeBuffer, buffer ]);
   }
 
   _transform(data, encoding, callback) {
+    loggerw(data);
     const buffer = WriteTransform.getBuffer(data);
     callback(null, buffer);
   }
