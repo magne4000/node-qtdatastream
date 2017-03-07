@@ -167,7 +167,7 @@ exports.qusertype_simple = {
   'no args': function(test) {
     let buf = new buffer.ReadBuffer(this.networkId1.toBuffer());
     equalBuffers(test, this.networkIdBuffer, buf.buffer);
-    
+
     buf = new buffer.ReadBuffer(this.networkId2.toBuffer());
     equalBuffers(test, this.networkIdBuffer, buf.buffer);
 

@@ -100,7 +100,7 @@ const Types = {
  */
 class Exportable {
 
-  ["export"]() {
+  ['export']() {
     const subject = this.__exportas ? this._mapping() : this;
     return (this.__usertype ? QUserType.get(this.__usertype) : QMap).from(subject);
   }
