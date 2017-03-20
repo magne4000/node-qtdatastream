@@ -1,12 +1,5 @@
-const { types, transform } = require('../index');
+const { types } = require('../index');
 import { traits } from 'traits-decorator';
-
-function equalBuffers(test, x, y) {
-  if (x.compare(y) === 0) {
-    return test.ok(true);
-  }
-  return test.ok(false, `${x.inspect()} !== ${y.inspect()}`);
-}
 
 exports.decorators = {
   setUp: function(done) {
@@ -43,10 +36,9 @@ exports.decorators = {
       }
     }
 
-    this.wt = new transform.WriteTransform();
     this.network = new Network(1, {
       useRandomServer: false,
-      perform: ['a', 'b']
+      perform: [ 'a', 'b' ]
     });
     this.out = {
       obj: {
