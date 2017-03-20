@@ -21,7 +21,7 @@ const { dateToJulianDay, julianDayToDate, str: bstr } = require('./util');
  */
 class QClass {
   constructor(obj) {
-    this.obj = (this.obj !== undefined && typeof this.obj.export === 'function') ? obj.export() : obj;
+    this.obj = (obj !== undefined && typeof obj.export === 'function') ? obj.export() : obj;
   }
 
   /**
@@ -139,17 +139,17 @@ function exportas(qclass, exportkey) {
     }
     if (!target.hasOwnProperty('__exportas')) {
       Object.defineProperty(target, '__exportas', {
-        enumerable: false,
+        enumerable: true,
         configurable: false,
         writable: false,
         value: {}
       });
     }
-    Object.defineProperty(target.__exportas, key, {
-      enumerable: false,
+    Object.defineProperty(target.__exportas, exportkey || key, {
+      enumerable: true,
       configurable: false,
       writable: false,
-      value: (context) => qclass.from(context[exportkey || key])
+      value: (context) => qclass.from(context[key])
     });
     return descriptor;
   };
