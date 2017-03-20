@@ -21,7 +21,7 @@ const { dateToJulianDay, julianDayToDate, str: bstr } = require('./util');
  */
 class QClass {
   constructor(obj) {
-    this.obj = (obj !== undefined && typeof obj.export === 'function') ? obj.export() : obj;
+    this.obj = (obj !== undefined && obj !== null && typeof obj.export === 'function') ? obj.export() : obj;
   }
 
   /**

@@ -33,6 +33,9 @@ exports.decorators = {
       @types.exportas(types.QUInt)
       autoReconnectInterval = 60;
 
+      @types.exportas(types.QString)
+      nullStr = null;
+
       constructor(id, ...args) {
         this.id = id;
         this._shouldnt_be_exported = 'blob';
@@ -51,7 +54,8 @@ exports.decorators = {
         UseRandomServer: { obj: false },
         Perform: { obj: [ 'a', 'b' ] },
         AutoIdentifyService: { obj: 'NickServ' },
-        autoReconnectInterval: { obj: 60 }
+        autoReconnectInterval: { obj: 60 },
+        nullStr: { obj: null }
       }
     };
     done();
