@@ -107,7 +107,7 @@ function exportable(aclass) {
     const self = typeof this._export === 'function' ? this._export : () => this;
     let subject = this.__exportas ? this._mapping() : self();
     subject = deepMap(subject, prepare);
-    return (this.__usertype ? QUserType.get(this.__usertype) : QMap).from(subject);
+    return (this.constructor.__usertype ? QUserType.get(this.constructor.__usertype) : QMap).from(subject);
   };
 
   aclass.prototype._mapping = function() {
@@ -697,10 +697,10 @@ class QList extends QClass {
       static from(subject) {
         if (Array.isArray(subject)) {
           subject = subject.map(elt => {
-            return qclass.from(elt);
+            return prepare(qclass.from(elt));
           });
         }
-        return new parent(subject);
+        return parent.from(subject);
       }
     };
   }

@@ -3,6 +3,7 @@ const { types } = require('../index');
 exports.decorators = {
   setUp: function(done) {
     types.QUserType.register('NetworkId', types.Types.INT);
+    types.QUserType.register('NetworkInfo', types.Types.MAP);
 
     @types.exportable
     @types.usertype('NetworkInfo')
@@ -47,7 +48,8 @@ exports.decorators = {
         AutoIdentifyService: { __obj: 'NickServ' },
         autoReconnectInterval: { __obj: 60 },
         nullStr: { __obj: null }
-      }
+      },
+      name: 'NetworkInfo'
     };
     done();
   },
