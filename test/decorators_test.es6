@@ -1,11 +1,10 @@
 const { types } = require('../index');
-import { traits } from 'traits-decorator';
 
 exports.decorators = {
   setUp: function(done) {
     types.QUserType.register('NetworkId', types.Types.INT);
 
-    @traits(types.Exportable)
+    @types.exportable
     @types.usertype('NetworkInfo')
     class Network {
 
@@ -41,20 +40,20 @@ exports.decorators = {
       perform: [ 'a', 'b' ]
     });
     this.out = {
-      obj: {
-        NetworkId: { obj: 1, name: 'NetworkId' },
-        UseRandomServer: { obj: false },
-        Perform: { obj: [ 'a', 'b' ] },
-        AutoIdentifyService: { obj: 'NickServ' },
-        autoReconnectInterval: { obj: 60 },
-        nullStr: { obj: null }
+      __obj: {
+        NetworkId: { __obj: 1, name: 'NetworkId' },
+        UseRandomServer: { __obj: false },
+        Perform: { __obj: [ 'a', 'b' ] },
+        AutoIdentifyService: { __obj: 'NickServ' },
+        autoReconnectInterval: { __obj: 60 },
+        nullStr: { __obj: null }
       }
     };
     done();
   },
   'no args': function(test) {
-    const qclass = types.QClass.from(this.network);
-    test.deepEqual(qclass.obj, this.out);
+    const qobj = types.QClass.from(this.network);
+    test.deepEqual(qobj, this.out);
     test.done();
   }
 };

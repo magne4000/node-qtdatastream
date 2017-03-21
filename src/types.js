@@ -21,7 +21,7 @@ const { dateToJulianDay, julianDayToDate, str: bstr } = require('./util');
  */
 class QClass {
   constructor(obj) {
-    this.obj = (obj !== undefined && obj !== null && typeof obj.export === 'function') ? obj.export() : obj;
+    this.__obj = obj;
   }
 
   /**
@@ -30,9 +30,14 @@ class QClass {
    * @abstract
    * @static
    * @param {*} subject
+   * @param {boolean} [force=false]
    * @returns {QClass}
    */
-  static from(subject) {
+  static from(subject, force = false) {
+    if (subject instanceof this && !force) {
+      return subject;
+    }
+    subject = prepare(subject);
     if (subject instanceof this) {
       return subject;
     }
@@ -93,20 +98,19 @@ const Types = {
 };
 
 /**
- * Abstract class that custom classes should implement
- * in order to use @exportas decorator.
- * @abstract
- * @static
+ * Decorator that custom classes should implement
+ * to be exportable by QtDatastream
+ * @param {class} aclass
  */
-class Exportable {
-
-  ['export']() {
+function exportable(aclass) {
+  aclass.prototype.export = function() {
     const self = typeof this._export === 'function' ? this._export : () => this;
-    const subject = this.__exportas ? this._mapping() : self();
+    let subject = this.__exportas ? this._mapping() : self();
+    subject = deepMap(subject, prepare);
     return (this.__usertype ? QUserType.get(this.__usertype) : QMap).from(subject);
-  }
+  };
 
-  _mapping() {
+  aclass.prototype._mapping = function() {
     const ret = {};
     const keys = Object.keys(this.__exportas);
     for (let key of keys) {
@@ -118,7 +122,34 @@ class Exportable {
       });
     }
     return ret;
+  };
+
+  aclass.from = function(obj) {
+    return new this(obj);
+  };
+}
+
+function prepare(obj) {
+  return (obj !== undefined && obj !== null && typeof obj.export === 'function') ? obj.export() : obj;
+}
+
+function mapObject(obj, fn) {
+  const keys = Object.keys(obj);
+  for (let key of keys) {
+    obj[key] = fn(obj[key]);
   }
+  return obj;
+}
+
+function deepMap(obj, fn) {
+  const deepMapper = val => (val !== null && typeof val === 'object') ? deepMap(val, fn) : fn(val);
+  if (Array.isArray(obj)) {
+    return obj.map(deepMapper);
+  }
+  if (obj !== null && typeof obj === 'object') {
+    return mapObject(obj, deepMapper);
+  }
+  return obj;
 }
 
 function usertype(susertype) {
@@ -149,7 +180,7 @@ function exportas(qclass, exportkey) {
       enumerable: true,
       configurable: false,
       writable: false,
-      value: (context) => qclass.from(context[key])
+      value: context => qclass.from(context[key])
     });
     return descriptor;
   };
@@ -218,7 +249,7 @@ class QBool extends QClass {
    */
   toBuffer() {
     const buf = Buffer.alloc(1);
-    buf.writeInt8(this.obj, 0);
+    buf.writeInt8(this.__obj, 0);
     return buf;
   }
 
@@ -258,7 +289,7 @@ class QShort extends QClass {
    */
   toBuffer() {
     const buf = Buffer.alloc(2);
-    buf.writeUInt16BE(this.obj, 0, true);
+    buf.writeUInt16BE(this.__obj, 0, true);
     return buf;
   }
 
@@ -298,7 +329,7 @@ class QInt extends QClass {
    */
   toBuffer() {
     const buf = Buffer.alloc(4);
-    buf.writeInt32BE(this.obj, 0, true);
+    buf.writeInt32BE(this.__obj, 0, true);
     return buf;
   }
 
@@ -338,7 +369,7 @@ class QUInt extends QClass {
    */
   toBuffer() {
     const buf = Buffer.alloc(4);
-    buf.writeUInt32BE(this.obj, 0, true);
+    buf.writeUInt32BE(this.__obj, 0, true);
     return buf;
   }
 
@@ -377,7 +408,7 @@ class QInt64 extends QClass {
    * @returns {Buffer}
    */
   toBuffer() {
-    return (new Int64BE(this.obj)).toBuffer();
+    return (new Int64BE(this.__obj)).toBuffer();
   }
 
   /**
@@ -415,7 +446,7 @@ class QUInt64 extends QClass {
    * @returns {Buffer}
    */
   toBuffer() {
-    return (new Uint64BE(this.obj)).toBuffer();
+    return (new Uint64BE(this.__obj)).toBuffer();
   }
 
   /**
@@ -454,7 +485,7 @@ class QDouble extends QClass {
    */
   toBuffer() {
     const buf = Buffer.alloc(8);
-    buf.writeDoubleBE(this.obj, 0, true);
+    buf.writeDoubleBE(this.__obj, 0, true);
     return buf;
   }
 
@@ -477,8 +508,8 @@ qtype(Types.DOUBLE)(QDouble);
 class QChar extends QClass {
   constructor(obj){
     super(obj);
-    if (typeof this.obj !== 'string') throw new Error(`${this.obj} is not a string`);
-    if (this.obj.length !== 1) throw new Error(`${this.obj} length must equal 1`);
+    if (typeof this.__obj !== 'string') throw new Error(`${this.__obj} is not a string`);
+    if (this.__obj.length !== 1) throw new Error(`${this.__obj} length must equal 1`);
   }
 
   /**
@@ -500,7 +531,7 @@ class QChar extends QClass {
    * @returns {Buffer}
    */
   toBuffer() {
-    return Buffer.from(this.obj, 'ucs2').swap16();
+    return Buffer.from(this.__obj, 'ucs2').swap16();
   }
 
   /**
@@ -553,10 +584,10 @@ class QByteArray extends QClass {
    * @returns {Buffer}
    */
   toBuffer() {
-    if (this.obj === null) {
+    if (this.__obj === null) {
       return QUInt.from(0xffffffff).toBuffer();
     }
-    const buf = Buffer.from(this.obj);
+    const buf = Buffer.from(this.__obj);
     const buflength = QUInt.from(buf.length).toBuffer();
     return Buffer.concat([ buflength, buf ]);
   }
@@ -600,14 +631,14 @@ class QString extends QClass {
    * @returns {Buffer}
    */
   toBuffer() {
-    if (this.obj === null) {
+    if (this.__obj === null) {
       return QUInt.from(0xffffffff).toBuffer();
     }
     let bufstring;
-    if (typeof this.obj === 'number') {
-      bufstring = Buffer.from(String(this.obj), 'ucs2');
+    if (typeof this.__obj === 'number') {
+      bufstring = Buffer.from(String(this.__obj), 'ucs2');
     } else {
-      bufstring = Buffer.from(this.obj, 'ucs2');
+      bufstring = Buffer.from(this.__obj, 'ucs2');
     }
     bufstring.swap16();
     const buflength = QUInt.from(bufstring.length).toBuffer();
@@ -647,6 +678,34 @@ class QList extends QClass {
   }
 
   /**
+   * @function of
+   * @memberof module:qtdatastream/types.QList
+   * @static
+   * @param {(string|module:qtdatastream/types.QClass)} qclass
+   * @example
+   * // TODO
+   * // CustomClass must implement Exportable
+   * QList.of(CustomClass)
+   * QList.of('myUserType')
+   */
+  static ['of'](qclass) {
+    if (typeof qclass === 'string') {
+      qclass = QUserType.get(qclass);
+    }
+    const parent = this;
+    return class extends parent {
+      static from(subject) {
+        if (Array.isArray(subject)) {
+          subject = subject.map(elt => {
+            return qclass.from(elt);
+          });
+        }
+        return new parent(subject);
+      }
+    };
+  }
+
+  /**
    * @function toBuffer
    * @memberof module:qtdatastream/types.QList
    * @inner
@@ -655,8 +714,8 @@ class QList extends QClass {
   toBuffer() {
     const bufs = [];
     // nb of elements in the list
-    bufs.push(QUInt.from(this.obj.length).toBuffer());
-    for (let el of this.obj) {
+    bufs.push(QUInt.from(this.__obj.length).toBuffer());
+    for (let el of this.__obj) {
       // Values are QVariant
       bufs.push(QVariant.from(el).toBuffer());
     }
@@ -704,8 +763,8 @@ class QStringList extends QClass {
   toBuffer() {
     const bufs = [];
         // nb of elements in the list
-    bufs.push(QUInt.from(this.obj.length).toBuffer());
-    for (let el of this.obj) {
+    bufs.push(QUInt.from(this.__obj.length).toBuffer());
+    for (let el of this.__obj) {
             // Values are QString
       bufs.push(QString.from(el).toBuffer());
     }
@@ -753,11 +812,11 @@ class QDateTime extends QClass {
    */
   toBuffer() {
     const bufs = [];
-    const milliseconds = (this.obj.getTime() - (this.obj.getTimezoneOffset() * 60000)) % 86400000;
-    const julianday = dateToJulianDay(this.obj);
+    const milliseconds = (this.__obj.getTime() - (this.__obj.getTimezoneOffset() * 60000)) % 86400000;
+    const julianday = dateToJulianDay(this.__obj);
     bufs.push(QUInt.from(julianday).toBuffer());
     bufs.push(QUInt.from(milliseconds).toBuffer());
-    bufs.push(QBool.from(this.obj.getTimezoneOffset() === 0).toBuffer());
+    bufs.push(QBool.from(this.__obj.getTimezoneOffset() === 0).toBuffer());
     return Buffer.concat(bufs);
   }
 
@@ -806,24 +865,24 @@ class QMap extends QClass {
     const bufs = [];
     // keys are all QString
     // values are all QVariant
-    if (this.obj instanceof Map) {
+    if (this.__obj instanceof Map) {
       // Map number of elements
-      bufs.push(QUInt.from(this.obj.size).toBuffer());
-      for (let [ key, value ] of this.obj) {
+      bufs.push(QUInt.from(this.__obj.size).toBuffer());
+      for (let [ key, value ] of this.__obj) {
         // write key
         bufs.push(QString.from(key).toBuffer());
         // write value
         bufs.push(QVariant.from(value).toBuffer());
       }
     } else {
-      const keys = Object.keys(this.obj);
+      const keys = Object.keys(this.__obj);
       // Map number of elements
       bufs.push(QUInt.from(keys.length).toBuffer());
       for (let key of keys) {
         // write key
         bufs.push(QString.from(key).toBuffer());
         // write value
-        bufs.push(QVariant.from(this.obj[key]).toBuffer());
+        bufs.push(QVariant.from(this.__obj[key]).toBuffer());
       }
     }
     return Buffer.concat(bufs);
@@ -907,7 +966,7 @@ class QUserType extends QClass {
       toBuffer(skipname = false) {
         const bufs = [ this._getNameBuffer(skipname) ];
         for (let elt of compiled) {
-          bufs.push(elt.quserclass.from(this.obj[elt.key]).toBuffer(true));
+          bufs.push(elt.quserclass.from(this.__obj[elt.key]).toBuffer(true));
         }
         return Buffer.concat(bufs);
       }
@@ -939,7 +998,7 @@ class QUserType extends QClass {
       }
 
       toBuffer(skipname = false) {
-        const bufs = [ this._getNameBuffer(skipname), qclass.from(this.obj).toBuffer(true) ];
+        const bufs = [ this._getNameBuffer(skipname), qclass.from(this.__obj).toBuffer(true) ];
         return Buffer.concat(bufs);
       }
     };
@@ -1017,7 +1076,7 @@ class QUserType extends QClass {
    * @returns {Buffer}
    */
   toBuffer(skipname = false) {
-    const bufs = [ this._getNameBuffer(skipname), QUserType.usertypes.get(this.name).from(this.obj).toBuffer(true) ];
+    const bufs = [ this._getNameBuffer(skipname), QUserType.usertypes.get(this.name).from(this.__obj).toBuffer(true) ];
     return Buffer.concat(bufs);
   }
 
@@ -1078,38 +1137,35 @@ class QVariant extends QClass {
    * @returns {Buffer}
    */
   toBuffer() {
-    const isNull = (this.obj === undefined || this.obj === null);
-    const typeofobj = typeof this.obj;
+    const isNull = (this.__obj === undefined || this.__obj === null);
+    const typeofobj = typeof this.__obj;
     let qclass;
-    if (this.obj === undefined) {
+    if (this.__obj === undefined) {
       qclass = QInvalid;
-    } else if (this.obj instanceof QUserType) {
+    } else if (this.__obj instanceof QUserType) {
       qclass = QUserType;
-    } else if (this.obj instanceof QVariant) {
+    } else if (this.__obj instanceof QVariant) {
       throw new Error(`Can't nest QVariant`);
-    } else if (this.obj instanceof QClass) {
-      qclass = this.obj.constructor;
+    } else if (this.__obj instanceof QClass) {
+      qclass = this.__obj.constructor;
     } else if (typeofobj === 'string') {
       qclass = QString;
     } else if (typeofobj === 'number') {
       qclass = QVariant.coerceNumbersClass;
     } else if (typeofobj === 'boolean') {
       qclass = QBool;
-    } else if (this.obj instanceof Date) {
+    } else if (this.__obj instanceof Date) {
       qclass = QDateTime;
-    } else if (this.obj instanceof Array) {
+    } else if (this.__obj instanceof Array) {
       qclass = QList;
     } else {
       qclass = QMap;
-    }
-    if (!qclass) {
-      throw new Error(`Undefined class ${qclass} from QVariant`);
     }
     const bufqvarianttype = QUInt.from(qclass.qtype).toBuffer();
     const bufqvariantisnull = QBool.from(isNull).toBuffer();
     const bufs = [ bufqvarianttype, bufqvariantisnull ];
     if (!isNull) {
-      bufs.push(qclass.from(this.obj).toBuffer());
+      bufs.push(qclass.from(this.__obj).toBuffer());
     }
     return Buffer.concat(bufs);
   }
@@ -1147,7 +1203,7 @@ module.exports = {
   QMap,
   QUserType,
   QVariant,
-  Exportable,
+  exportable,
   exportas,
   usertype
 };
