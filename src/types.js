@@ -97,93 +97,8 @@ const Types = {
   SHORT: 133
 };
 
-/**
- * Decorator that custom classes should implement
- * to be exportable by QtDatastream
- * @param {class} aclass
- */
-function exportable(aclass) {
-  aclass.prototype.export = function() {
-    const self = typeof this._export === 'function' ? this._export : () => this;
-    let subject = this.__exportas ? this._mapping() : self();
-    subject = deepMap(subject, prepare);
-    return (this.constructor.__usertype ? QUserType.get(this.constructor.__usertype) : QMap).from(subject);
-  };
-
-  aclass.prototype._mapping = function() {
-    const ret = {};
-    const keys = Object.keys(this.__exportas);
-    for (let key of keys) {
-      Object.defineProperty(ret, key, {
-        enumerable: true,
-        configurable: false,
-        writable: false,
-        value: this.__exportas[key](this)
-      });
-    }
-    return ret;
-  };
-
-  aclass.from = function(obj) {
-    return new this(obj);
-  };
-}
-
 function prepare(obj) {
   return (obj !== undefined && obj !== null && typeof obj.export === 'function') ? obj.export() : obj;
-}
-
-function mapObject(obj, fn) {
-  const keys = Object.keys(obj);
-  for (let key of keys) {
-    obj[key] = fn(obj[key]);
-  }
-  return obj;
-}
-
-function deepMap(obj, fn) {
-  const deepMapper = val => (val !== null && typeof val === 'object') ? deepMap(val, fn) : fn(val);
-  if (Array.isArray(obj)) {
-    return obj.map(deepMapper);
-  }
-  if (obj !== null && typeof obj === 'object') {
-    return mapObject(obj, deepMapper);
-  }
-  return obj;
-}
-
-function usertype(susertype) {
-  return function(target) {
-    Object.defineProperty(target, '__usertype', {
-      enumerable: false,
-      configurable: false,
-      writable: false,
-      value: susertype
-    });
-  };
-}
-
-function exportas(qclass, exportkey) {
-  return function(target, key, descriptor) {
-    if (!('set' in descriptor)) {
-      descriptor.writable = true;
-    }
-    if (!target.hasOwnProperty('__exportas')) {
-      Object.defineProperty(target, '__exportas', {
-        enumerable: true,
-        configurable: false,
-        writable: false,
-        value: {}
-      });
-    }
-    Object.defineProperty(target.__exportas, exportkey || key, {
-      enumerable: true,
-      configurable: false,
-      writable: false,
-      value: context => qclass.from(context[key])
-    });
-    return descriptor;
-  };
 }
 
 /**
@@ -1202,8 +1117,5 @@ module.exports = {
   QDateTime,
   QMap,
   QUserType,
-  QVariant,
-  exportable,
-  exportas,
-  usertype
+  QVariant
 };
