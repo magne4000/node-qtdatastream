@@ -138,6 +138,61 @@ qtsocket.write(data);
 ```
 Some more examples can be found in test folder.
 
+### ES6/7
+ES7 decorators can be used to simplify serializable data representation
+```javascript
+const { types: { QUserType, QString, QUInt, Types }, serialization: { Serializable, serialize } } = require('qtdatastream');
+// Register usertype
+QUserType.register('Network::Server', Types.MAP);
+
+@Serializable('Network::Server')
+export class Server {
+    @serialize(QString, {in: 'HostIn', out: 'HostOut'))
+    host;
+
+    @serialize(QUInt, 'Port')
+    port = 6667;
+
+    @serialize(QUInt)
+    sslVersion = 0;
+
+    constructor(args) {
+        this.blob = true; // will not be serialized at export
+        Object.assign(this, args);
+    }
+}
+
+const parsedUserType = {
+    HostIn: 'myHost',
+    Port: 1234
+}; // This usually comes from qtsocket
+const server = new Server(parsedUserType);
+// server == {
+//     host: 'myHost',
+//     port: 1234,
+//     sslVersion: 0
+// }
+
+// This will call server.export() method before sending to the server,
+// which exports the object as dictated by Server class and 'Network::Server' usertype
+qtsocket.write(server)
+```
+
+`Serializable` parameter (usertype) is optionnal. If unspecified, it will be exported as a `QMap`.
+
+If `Serializable` class implements `_export` method, the return of this function will be used
+instead of object own attributes.
+```javascript
+@Serializable()
+export class Server {
+  _export() {
+    return {
+      'a': 'b'
+    };
+  }
+}
+```
+
 ## Example
 ```javascript
 const { Socket } = require('qtdatastream').socket;

@@ -6,16 +6,47 @@
  * Licensed under the MIT license.
  */
 
+/** @module qtdatastream/serialization */
+
 const { QUserType, QMap } = require('./types');
 
 /**
- * A class using this decorator is serializable
- * @param {string)} usertype
+ * A class using this decorator is serializable.
+ * If usertype is not specified, objects from this class will be exported as QMap.
+ * @static
+ * @param {?string} usertype
+ * @example
+ * \@Serializable('Network::Server')
+ * export class Server {
+ *     \@serialize(QString, {in: 'HostIn', out: 'HostOut'))
+ *     host;
+ *
+ *     \@serialize(QUInt, 'Port')
+ *     port = 6667;
+ *
+ *     \@serialize(QUInt)
+ *     sslVersion = 0;
+ *
+ *     constructor(args) {
+ *         this.blob = true; // will not be serialized at export
+ *         Object.assign(this, args);
+ *     }
+ * }
+ *
+ * @example
+ * \@Serializable()
+ * export class Server {
+ *   x = 12;
+ *
+ *   _export() {
+ *     return {
+ *       'a': this.x
+ *     };
+ *   }
+ * }
  */
 function Serializable(usertype) {
-
   return function(aclass) {
-
     if (usertype) {
       Object.defineProperty(aclass, '__usertype', {
         enumerable: false,
@@ -54,12 +85,28 @@ function Serializable(usertype) {
 
 /**
  * A class attribute using this decorator is serializable
+ * @static
  * @param {QClass} qclass
  * @param {(?string|{in: string, out: string})} serializekey
+ * @example
+ * \@Serializable()
+ * export class Server {
+ *     \@serialize(QString, {in: 'HostIn', out: 'HostOut'))
+ *     host;
+ *
+ *     \@serialize(QUInt, 'Port')
+ *     port = 6667;
+ *
+ *     \@serialize(QUInt)
+ *     sslVersion = 0;
+ *
+ *     constructor(args) {
+ *         Object.assign(this, args);
+ *     }
+ * }
  */
 function serialize(qclass, serializekey = {}) {
-
-  if (typeof serializekey === "string") {
+  if (typeof serializekey === 'string') {
     serializekey = {
       in: serializekey,
       out: serializekey
