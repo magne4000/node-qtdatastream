@@ -4,7 +4,8 @@
         "dictionaries": ["jsdoc"]
     },
     "plugins": [
-        "plugins/markdown"
+        "plugins/markdown",
+        "node_modules/jsdoc-escape-at"
     ],
     "templates": {
         "cleverLinks": false,

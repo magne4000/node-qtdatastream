@@ -15,34 +15,27 @@ module.exports = function(grunt) {
     nodeunit: {
       files: ['test/*_test.js']
     },
+    eslint: {
+      target: ['src/*.js', 'test/*_test.js']
+    },
     jsdoc: {
       dist: {
-        src: ['lib/*.js', 'package.json', 'README.md'],
+        src: ['src/*.js', 'package.json', 'README.md'],
         options: {
-          template: 'node_modules/loke-jsdoc-theme',
+          template: 'node_modules/docdash',
           configure: 'jsdoc.conf.json',
           destination: 'doc'
         }
       }
-    },
-    watch: {
-      lib: {
-        files: '<%= jshint.lib.src %>',
-        tasks: ['nodeunit', 'jsdoc']
-      },
-      test: {
-        files: '<%= jshint.test.src %>',
-        tasks: ['nodeunit']
-      },
-    },
+    }
   });
 
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-nodeunit');
-  grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-jsdoc');
+  grunt.loadNpmTasks('grunt-eslint');
 
   // Default task.
-  grunt.registerTask('default', ['nodeunit', 'jsdoc']);
+  grunt.registerTask('default', ['eslint', 'nodeunit', 'jsdoc']);
 
 };
