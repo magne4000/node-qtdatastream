@@ -36,7 +36,6 @@ if (debug && !debuglib.enabled('qtdatastream:*')) {
  * qtsocket.write('Hello');
  */
 class Socket extends events.EventEmitter {
-
   constructor(socket) {
     super();
     this.socket = socket;

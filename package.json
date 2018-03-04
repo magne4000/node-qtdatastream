@@ -9,14 +9,15 @@
     "buffer"
   ],
   "description": "Javascript library to serialize data like Qt (QDataStream)",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/magne4000/node-qtdatastream",
   "author": {
     "name": "Joël Charles",
     "email": "joel.charles91@gmail.com"
   },
   "files": [
-    "LICENSE",
+    ".babelrc",
+    "LICENSE-MIT",
     "README.md",
     "src",
     "index.js"
@@ -53,11 +54,10 @@
     "grunt-eslint": "^19.0.0",
     "grunt-jsdoc": "^2.1.0",
     "jsdoc": "^3.4.3",
-    "jsdoc-escape-at": "^1.0.1",
-    "webpack": "^2.2.1"
+    "jsdoc-escape-at": "^1.0.1"
   },
   "dependencies": {
-    "debug": "^2.6.1",
-    "int64-buffer": "^0.1.9"
+    "debug": "^3.1.0",
+    "int64-buffer": "^0.1.10"
   }
 }

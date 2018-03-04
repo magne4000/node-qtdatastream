@@ -13,7 +13,7 @@ Install the module with `npm install node-qtdatastream --production`,
 or `npm install node-qtdatastream` for development purpose.
 
 ## Documentation
-[Technical documentation](http://magne4000.github.io/qtdatastream/1.0.0/)
+[Technical documentation](http://magne4000.github.io/qtdatastream/1.0.1/)
 
 ### Type inference
 Javascript types can be automatically converted to Qt Types, and here is the default behavior
