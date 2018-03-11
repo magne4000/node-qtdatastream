@@ -9,7 +9,7 @@
     "buffer"
   ],
   "description": "Javascript library to serialize data like Qt (QDataStream)",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "homepage": "https://github.com/magne4000/node-qtdatastream",
   "author": {
     "name": "Joël Charles",
