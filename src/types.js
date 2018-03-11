@@ -577,6 +577,7 @@ qtype(Types.STRING)(QString);
  * @param {*} obj
  */
 class QList extends QClass {
+
   /**
    * @function read
    * @memberof module:qtdatastream/types.QList
@@ -752,6 +753,7 @@ qtype(Types.DATETIME)(QDateTime);
  * @param {*} obj
  */
 class QMap extends QClass {
+
   /**
    * @function read
    * @memberof module:qtdatastream/types.QMap

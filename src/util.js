@@ -65,8 +65,33 @@ function julianDayToDate(i) {
   return new Date(Y, M-1, D);
 }
 
+function mapObject(obj, fn) {
+  const keys = Object.keys(obj);
+  for (let key of keys) {
+    const descriptor = Object.getOwnPropertyDescriptor(obj, key);
+    Object.assign(descriptor, {
+      value: fn(obj[key])
+    });
+    Object.defineProperty(obj, key, descriptor);
+  }
+  return obj;
+}
+
+function deepMap(obj, fn) {
+  const deepMapper = val => (val !== null && typeof val === 'object') ? deepMap(val, fn) : fn(val);
+  if (Array.isArray(obj)) {
+    return obj.map(deepMapper);
+  }
+  if (obj !== null && typeof obj === 'object') {
+    return mapObject(obj, deepMapper);
+  }
+  return obj;
+}
+
 module.exports = {
   str,
   dateToJulianDay,
-  julianDayToDate
+  julianDayToDate,
+  mapObject,
+  deepMap
 };

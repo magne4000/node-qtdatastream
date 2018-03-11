@@ -9,6 +9,7 @@
 /** @module qtdatastream/serialization */
 
 const { QUserType, QMap } = require('./types');
+const { deepMap } = require('./util');
 
 /**
  * A class using this decorator is serializable.
@@ -57,7 +58,7 @@ function Serializable(usertype) {
     }
 
     aclass.prototype.export = function() {
-      const self = typeof this._export === 'function' ? this._export : () => this;
+      const self = typeof this._export === 'function' ? this._export.bind(this) : () => this;
       let subject = this.__serialize ? this._mapping_out() : self();
       subject = deepMap(subject, prepare);
       return (this.constructor.__usertype ? QUserType.get(this.constructor.__usertype) : QMap).from(subject);
@@ -150,29 +151,6 @@ function serialize(qclass, serializekey = {}) {
 
 function prepare(obj) {
   return (obj !== undefined && obj !== null && typeof obj.export === 'function') ? obj.export() : obj;
-}
-
-function mapObject(obj, fn) {
-  const keys = Object.keys(obj);
-  for (let key of keys) {
-    const descriptor = Object.getOwnPropertyDescriptor(obj, key);
-    Object.assign(descriptor, {
-      value: fn(obj[key])
-    });
-    Object.defineProperty(obj, key, descriptor);
-  }
-  return obj;
-}
-
-function deepMap(obj, fn) {
-  const deepMapper = val => (val !== null && typeof val === 'object') ? deepMap(val, fn) : fn(val);
-  if (Array.isArray(obj)) {
-    return obj.map(deepMapper);
-  }
-  if (obj !== null && typeof obj === 'object') {
-    return mapObject(obj, deepMapper);
-  }
-  return obj;
 }
 
 module.exports = {

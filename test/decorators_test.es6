@@ -69,6 +69,39 @@ exports.decorators = {
   }
 };
 
+exports.decorators_export = {
+  setUp: function(done) {
+    @Serializable()
+    class Test {
+
+      _export() {
+        return {
+          a: {
+            b: 2,
+          },
+          c: 'test'
+        };
+      }
+    }
+
+    this.test = new Test();
+    this.out = {
+      __obj: {
+        a: {
+          b: 2,
+        },
+        c: 'test',
+      }
+    };
+    done();
+  },
+  'no args': function(test) {
+    const qobj = types.QClass.from(this.test);
+    test.deepEqual(qobj, this.out);
+    test.done();
+  }
+};
+
 exports.decorators_serialization = {
   setUp: function(done) {
     types.QUserType.register('NetworkId', types.Types.INT);
