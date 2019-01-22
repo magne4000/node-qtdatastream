@@ -9,7 +9,7 @@
     "buffer"
   ],
   "description": "Javascript library to serialize data like Qt (QDataStream)",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "homepage": "https://github.com/magne4000/node-qtdatastream",
   "author": {
     "name": "Joël Charles",
@@ -40,24 +40,24 @@
   "devDependencies": {
     "babel-cli": "^6.23.0",
     "babel-core": "^6.24.0",
-    "babel-eslint": "^7.1.1",
-    "babel-loader": "^6.4.0",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.5",
     "babel-plugin-transform-class-properties": "^6.23.0",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.2.1",
     "babel-preset-es2015": "^6.22.0",
-    "docdash": "^0.4.0",
-    "eslint": "^3.16.0",
+    "docdash": "^1.0.2",
+    "eslint": "^5.12.1",
     "grunt": "~1.0.1",
-    "grunt-contrib-nodeunit": "~1.0.0",
-    "grunt-eslint": "^19.0.0",
+    "grunt-contrib-nodeunit": "^2.0.0",
+    "grunt-eslint": "^21.0.0",
     "grunt-jsdoc": "^2.1.0",
     "jsdoc": "^3.4.3",
     "jsdoc-escape-at": "^1.0.1"
   },
   "dependencies": {
-    "debug": "^3.1.0",
-    "int64-buffer": "^0.1.10"
+    "debug": "^4.1.1",
+    "int64-buffer": "^0.99.1007"
   }
 }

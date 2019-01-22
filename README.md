@@ -226,5 +226,5 @@ export DEBUG="qtdatastream:*"
 ```
 
 ## License
-Copyright (c) 2017 Joël Charles
+Copyright (c) 2019 Joël Charles
 Licensed under the MIT license.

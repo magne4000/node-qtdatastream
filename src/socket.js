@@ -70,7 +70,6 @@ class Socket extends events.EventEmitter {
     const { socket } = this;
     this.write_stream.unpipe(socket);
     socket.unpipe(this.read_stream);
-    socket.removeAllListeners();
     this.socket = null;
     return socket;
   }
