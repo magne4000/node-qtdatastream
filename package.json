@@ -39,9 +39,11 @@
     "prepublishOnly": "grunt default"
   },
   "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/eslint-parser": "^7.25.1",
+    "@eslint/eslintrc": "^3.1.0",
+    "@eslint/js": "^9.8.0",
     "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
-    "babel-eslint": "^10.1.0",
     "babel-loader": "^9.1.3",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-decorators-legacy": "^1.3.5",
@@ -49,11 +51,11 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-es2015": "^6.24.1",
     "docdash": "^2.0.2",
-    "eslint": "^5.12.1",
+    "eslint": "^9.8.0",
     "globals": "^15.8.0",
     "grunt": "^1.6.1",
     "grunt-contrib-nodeunit": "^5.0.0",
-    "grunt-eslint": "^21.0.0",
+    "grunt-eslint": "^25.0.0",
     "grunt-jsdoc": "^2.4.1",
     "jsdoc": "^4.0.3",
     "jsdoc-escape-at": "^1.0.1"
