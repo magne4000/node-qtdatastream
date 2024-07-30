@@ -111,16 +111,16 @@ exports.qmap = {
       // first QVariant value
       0x00, 0x00, 0x00, 0x08, // type (QMap)
       0x00, // is not null
-          0x00, 0x00, 0x00, 0x01, // number of elements in the map
+      0x00, 0x00, 0x00, 0x01, // number of elements in the map
 
-          // QString key
-          0x00, 0x00, 0x00, 0x02, // length 2
-          0x00, 0x63, // value
+      // QString key
+      0x00, 0x00, 0x00, 0x02, // length 2
+      0x00, 0x63, // value
 
-          // QVariant value
-          0x00, 0x00, 0x00, 0x03, // type (QUInt)
-          0x00, // is not null
-          0x00, 0x00, 0x00, 0x02, // value
+      // QVariant value
+      0x00, 0x00, 0x00, 0x03, // type (QUInt)
+      0x00, // is not null
+      0x00, 0x00, 0x00, 0x02, // value
 
       // second QString key
       0x00, 0x00, 0x00, 0x02, // length 2
@@ -133,7 +133,7 @@ exports.qmap = {
     ]);
     this.data = [
       new TestData(types.QMap, { a: { c: 2 }, b: 1 }, buffer),
-      new ElaboratedTestData(types.QMap, new Map([[ 'a', new Map([['c', 2]]) ], [ 'b', 1 ]]), buffer, { a: { c: 2 }, b: 1 }),
+      new ElaboratedTestData(types.QMap, new Map([[ 'a', new Map([[ 'c', 2 ]]) ], [ 'b', 1 ]]), buffer, { a: { c: 2 }, b: 1 }),
     ];
 
     done();
