@@ -31,7 +31,7 @@
   },
   "license": "MIT",
   "engines": {
-    "node": ">= 6"
+    "node": ">= 18"
   },
   "scripts": {
     "test": "grunt nodeunit",
