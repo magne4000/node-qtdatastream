@@ -603,7 +603,7 @@ class QList extends QClass {
    * QList.of(CustomClass)
    * QList.of('myUserType')
    */
-  static ['of'](qclass) {
+  static of(qclass) {
     if (typeof qclass === 'string') {
       qclass = QUserType.get(qclass);
     }

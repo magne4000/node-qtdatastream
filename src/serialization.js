@@ -118,7 +118,7 @@ function serialize(qclass, serializekey = {}) {
     if (!('set' in descriptor)) {
       descriptor.writable = true;
     }
-    if (!aclass.hasOwnProperty('__serialize')) {
+    if (!Object.hasOwn(aclass, '__serialize')) {
       Object.defineProperty(aclass, '__serialize', {
         enumerable: true,
         configurable: false,
