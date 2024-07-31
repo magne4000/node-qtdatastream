@@ -97,6 +97,7 @@ class ReadTransform extends Transform {
       try {
         size = types.QUInt.read(buffer);
       } catch (e) {
+        loggerr(e);
         throw new Error('Error while fetching buffer size');
       }
       if (debug) {

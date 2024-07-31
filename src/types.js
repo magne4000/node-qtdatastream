@@ -577,7 +577,6 @@ qtype(Types.STRING)(QString);
  * @param {*} obj
  */
 class QList extends QClass {
-
   /**
    * @function read
    * @memberof module:qtdatastream/types.QList
@@ -604,7 +603,7 @@ class QList extends QClass {
    * QList.of(CustomClass)
    * QList.of('myUserType')
    */
-  static ['of'](qclass) {
+  static of(qclass) {
     if (typeof qclass === 'string') {
       qclass = QUserType.get(qclass);
     }
@@ -753,7 +752,6 @@ qtype(Types.DATETIME)(QDateTime);
  * @param {*} obj
  */
 class QMap extends QClass {
-
   /**
    * @function read
    * @memberof module:qtdatastream/types.QMap
