@@ -790,7 +790,7 @@ class QMap extends QClass {
         bufs.push(QVariant.from(value).toBuffer());
       }
     } else {
-      const keys = Object.keys(this.__obj);
+      const keys = this.__obj ? Object.keys(this.__obj) : [];
       // Map number of elements
       bufs.push(QUInt.from(keys.length).toBuffer());
       for (let key of keys) {
